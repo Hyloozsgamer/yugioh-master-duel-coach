@@ -305,7 +305,7 @@ class LiveCoachOverlay:
         self.deck_lbl_tag.pack(side="left", padx=(0, 3))
 
         available_decks = self._get_available_decks_list()
-        cur_deck_name = self.brain.active_deck.get("deck_name", "") if self.brain.active_deck else ("Cataclismo Dracónico Ciber Dragón" if "Cataclismo Dracónico Ciber Dragón" in available_decks else (available_decks[0] if available_decks else ""))
+        cur_deck_name = self.brain.active_deck.get("deck_name", "") if self.brain.active_deck else (available_decks[0] if available_decks else "")
 
         self.deck_combo = ttk.Combobox(
             self.deck_action_row,
@@ -606,9 +606,8 @@ class LiveCoachOverlay:
                     except Exception:
                         pass
             decks.sort()
-            if "Cataclismo Dracónico Ciber Dragón" in decks:
-                decks.remove("Cataclismo Dracónico Ciber Dragón")
-                decks.insert(0, "Cataclismo Dracónico Ciber Dragón")
+            # No forzar mazos por defecto: mantener orden limpio
+            pass
             return decks
         except Exception:
             return []
@@ -733,7 +732,7 @@ class LiveCoachOverlay:
         pop = tk.Toplevel(self.root)
         self._strat_popup = pop
         pop.title(f"Plan de Juego - {deck_name}")
-        pop.geometry("460x600+120+120")
+        pop.geometry("480x620+120+100")
         pop.configure(bg="#070C1B")
         pop.attributes("-topmost", True)
 
@@ -741,14 +740,24 @@ class LiveCoachOverlay:
         head.pack(fill="x")
         tk.Label(
             head,
-            text=f"📋 ESTRATEGIA: {deck_name.upper()}",
+            text=f"ESTRATEGIA: {deck_name.upper()}",
             font=("Segoe UI", 9, "bold"),
             fg="#00F5FF",
             bg="#0B1220"
         ).pack(side="left")
+
+        def _copy_strat():
+            try:
+                pop.clipboard_clear()
+                pop.clipboard_append(content)
+                copy_btn.config(text="Copiado!", bg="#10B981", fg="#FFFFFF")
+                pop.after(2000, lambda: copy_btn.config(text="Copiar", bg="#1E293B", fg="#E2E8F0"))
+            except Exception:
+                pass
+
         tk.Button(
             head,
-            text="✕ Cerrar",
+            text="Cerrar",
             font=("Segoe UI", 8, "bold"),
             fg="#E2E8F0",
             bg="#1E293B",
@@ -759,6 +768,21 @@ class LiveCoachOverlay:
             pady=2,
             command=pop.destroy
         ).pack(side="right")
+
+        copy_btn = tk.Button(
+            head,
+            text="Copiar",
+            font=("Segoe UI", 8, "bold"),
+            fg="#E2E8F0",
+            bg="#1E293B",
+            activebackground="#00F5FF",
+            activeforeground="#040711",
+            relief="flat",
+            padx=8,
+            pady=2,
+            command=_copy_strat
+        )
+        copy_btn.pack(side="right", padx=(0, 6))
 
         body = tk.Frame(pop, bg="#070C1B", padx=8, pady=8)
         body.pack(fill="both", expand=True)
@@ -772,7 +796,7 @@ class LiveCoachOverlay:
             fg="#E2E8F0",
             font=("Segoe UI", 9),
             wrap="word",
-            padx=10,
+            padx=12,
             pady=10,
             yscrollcommand=scrollbar.set,
             relief="flat",
@@ -782,7 +806,32 @@ class LiveCoachOverlay:
         txt.pack(side="left", fill="both", expand=True)
         scrollbar.config(command=txt.yview)
 
-        txt.insert("1.0", content)
+        txt.tag_config("h1", font=("Segoe UI", 12, "bold"), foreground="#00F5FF", spacing1=8, spacing3=4)
+        txt.tag_config("h2", font=("Segoe UI", 10, "bold"), foreground="#FACC15", spacing1=8, spacing3=3)
+        txt.tag_config("bullet_point", font=("Segoe UI", 9, "bold"), foreground="#10B981")
+        txt.tag_config("step_num", font=("Segoe UI", 9, "bold"), foreground="#A7F3D0")
+        txt.tag_config("body_text", font=("Segoe UI", 9), foreground="#E2E8F0")
+        txt.tag_config("tip_box", font=("Segoe UI", 9), foreground="#FEF08A")
+        txt.tag_config("separator", font=("Segoe UI", 4), foreground="#1E293B")
+
+        for line in content.splitlines():
+            s = line.strip()
+            if not s:
+                txt.insert("end", chr(10))
+            elif s.startswith("# "):
+                txt.insert("end", s[2:] + chr(10), "h1")
+            elif s.startswith("## "):
+                txt.insert("end", chr(10) + s[3:] + chr(10), "h2")
+            elif s.startswith("---") or s.startswith("==="):
+                txt.insert("end", "----------------------------------------" + chr(10), "separator")
+            elif s.startswith("- ") or s.startswith("* "):
+                txt.insert("end", "  * ", "bullet_point")
+                txt.insert("end", s[2:] + chr(10), "body_text")
+            elif s.startswith("💡"):
+                txt.insert("end", "  " + s + chr(10), "tip_box")
+            else:
+                txt.insert("end", line + chr(10), "body_text")
+
         txt.config(state="disabled")
 
     def _apply_deck_scan_result(self, data: Optional[Dict[str, Any]]):
@@ -1084,24 +1133,30 @@ class LiveCoachOverlay:
         threading.Thread(target=_f5_loop, daemon=True).start()
 
     def _fast_scanning_loop(self):
-        time.sleep(0.5)
-        while self.is_running:
-            if not self.is_paused and not self.is_analyzing and not self.is_scanning_deck:
-                frame = self.brain.capture_game_screen()
-                if frame is not None:
-                    if self.brain._has_frame_changed(frame):
-                        self.is_analyzing = True
-                        self.root.after(0, lambda: self.status_lbl.config(
-                            text="● Analizando jugada óptima...",
-                            fg="#00F5FF"
-                        ))
-                        threading.Thread(target=self._run_analysis_async, args=(frame,), daemon=True).start()
-                else:
-                    self.root.after(0, lambda: self.status_lbl.config(
-                        text="● Buscando Master Duel...",
-                        fg="#F59E0B"
-                    ))
-            time.sleep(0.25)
+        import ctypes
+        user32 = ctypes.windll.user32
+        last_auto_scan = 0.0
+        time.sleep(1.0)
+        while getattr(self, "is_running", True):
+            try:
+                now = time.time()
+                # Cooldown de 15 segundos para no agotar la cuota de la API
+                if not self.is_paused and not self.is_analyzing and not self.is_scanning_deck and (now - last_auto_scan >= 15.0):
+                    hwnd = self.brain._find_masterduel_hwnd()
+                    # Solo escanear si la ventana activa en primer plano es Master Duel
+                    if hwnd and user32.GetForegroundWindow() == hwnd:
+                        frame = self.brain.capture_game_screen()
+                        if frame is not None and self.brain._has_frame_changed(frame):
+                            last_auto_scan = now
+                            self.is_analyzing = True
+                            self.root.after(0, lambda: self.status_lbl.config(
+                                text="● Analizando jugada óptima...",
+                                fg="#00F5FF"
+                            ))
+                            threading.Thread(target=self._run_analysis_async, args=(frame,), daemon=True).start()
+            except Exception:
+                pass
+            time.sleep(1.0)
 
     def _run_analysis_async(self, frame):
         try:

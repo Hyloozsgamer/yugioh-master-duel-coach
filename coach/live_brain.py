@@ -23,13 +23,12 @@ class LiveVisionCoach:
         self.db = db
         self.api_key = self._load_api_key()
         self.models_pool = [
+            "gemini-robotics-er-2-preview",
+            "gemini-3.5-flash-lite",
             "gemini-3.6-flash",
-            "gemini-3.8-flash",
             "gemini-3.7-flash",
-            "gemini-3-flash-preview",
-            "gemini-flash-lite-latest",
-            "gemini-3.1-flash-lite-preview",
-            "gemini-3.5-flash",
+            "gemini-3.8-flash",
+            "gemini-3.1-flash-lite",
             "gemini-flash-latest"
         ]
         self.current_model_idx = 0
@@ -237,9 +236,10 @@ class LiveVisionCoach:
 
     def scan_screen_auto(self, frame: np.ndarray, lang: str = 'ES') -> Optional[Dict[str, Any]]:
         """
-        Escaneo unificado e inteligente: detecta automáticamente si la pantalla
-        es de Mazo / Receta / Modo Solo o si es un Duelo activo, devolviendo la estrategia
-        en una sola llamada optimizada de alta velocidad.
+        Escaneo unificado e inteligente de alta precisión:
+        Captura la pantalla completa y la zona de mano con zoom,
+        detecta si es pantalla de Mazo/Modo Solo o Duelo Activo,
+        y devuelve la jugada óptima legal y la estrategia completa.
         """
         if not self.api_key or frame is None:
             return None
@@ -249,67 +249,126 @@ class LiveVisionCoach:
         _, buf = cv2.imencode(".jpg", resized, [cv2.IMWRITE_JPEG_QUALITY, 76])
         b64_img = base64.b64encode(buf).decode("utf-8")
 
+        # Recorte de mano (zona inferior donde se ven las cartas en mano)
+        hand_crop = frame[int(h * 0.68):int(h * 0.98), int(w * 0.16):int(w * 0.88)]
+        hand_resized = cv2.resize(hand_crop, (600, int(hand_crop.shape[0] * 600 / hand_crop.shape[1])))
+        _, hand_buf = cv2.imencode(".jpg", hand_resized, [cv2.IMWRITE_JPEG_QUALITY, 80])
+        b64_hand = base64.b64encode(hand_buf).decode("utf-8")
+
         lang_names = {'ES': 'Español', 'EN': 'English', 'FR': 'Français', 'DE': 'Deutsch', 'IT': 'Italiano'}
         target_lang = lang_names.get(str(lang).upper(), 'Español')
 
-        prompt = f"""Eres el Head Coach profesional y maestro de estrategia de Yu-Gi-Oh! Master Duel.
-Analiza con máxima precisión esta captura de pantalla de Yu-Gi-Oh! Master Duel.
-El usuario tiene configurado el asistente en idioma: {target_lang}.
+        # Inyectar contexto de mazo activo si existe
+        deck_ctx = ""
+        if self.active_deck:
+            d_name = self.active_deck.get("deck_name", "Arquetipo Activo")
+            d_starters = ", ".join(self.active_deck.get("key_starters", []))
+            d_extra = ", ".join(self.active_deck.get("extra_deck_cards", []))
+            deck_ctx = f"""
+MAZO DETECTADO EN USO ({d_name}):
+- Starters clave: {d_starters}
+- Extra Deck: {d_extra}
+"""
 
-Determina qué tipo de pantalla muestra la imagen:
-1. Si muestra una PANTALLA DE MAZO / MODO SOLO / DECK PRESTADO / VISTA DE RECETA / SELECCIÓN DE DUELO:
+        prompt = f"""Eres el Head Coach profesional y maestro estratega de Yu-Gi-Oh! Master Duel.
+Analiza con máxima precisión táctica esta captura de Yu-Gi-Oh! Master Duel.
+Idioma del usuario: {target_lang}.
+{deck_ctx}
+Se te proporcionan 2 imágenes:
+1. Pantalla completa de Master Duel.
+2. Recorte ampliado de la mano del jugador.
+
+REGLAS DE CLASIFICACIÓN ESTRICTAS:
+- Si muestra "Deck prestado", vista de receta, menú de Modo Solo, selección de cartas o lista de mazo con botón "Copiar Deck", clasifica como "DECK".
+- Si muestra un duelo activo (tapete, puntos de vida LP, contador de fase, cartas en mano activables), clasifica como "DUEL".
+
+1. Si es PANTALLA DE MAZO / MODO SOLO / DECK PRESTADO:
 Devuelve:
 {{
   "screen_type": "DECK",
   "is_deck_screen": true,
   "deck_name": "Nombre exacto del Deck en {target_lang}",
   "archetype": "Arquetipo principal",
-  "loaner_tip": "Consejo táctico directo y concreto para ganar con este deck",
+  "loaner_tip": "Consejo táctico directo y concreto para vencer a la IA de este escenario",
   "key_starters": ["Nombre Exacto Starter 1", "Nombre Exacto Starter 2"],
-  "extra_deck_cards": ["Nombre Exacto Jefe Extra 1", "Nombre Exacto Jefe Extra 2"],
-  "tuners_or_extenders": ["Nombre Exacto Extensor 1"],
+  "tuners_or_extenders": ["Nombre Extensor 1", "Nombre Extensor 2"],
+  "extra_deck_cards": ["Nombre Jefe Extra 1", "Nombre Jefe Extra 2"],
+  "support_spells_traps": ["Magia/Trampa Clave 1"],
   "z_nodes": [
-    {{"node": 1, "phase": "1. INICIO", "card": "Carta Starter", "action": "Invocación Normal / Efecto inicial", "ev": 98}},
-    {{"node": 2, "phase": "2. EXTENSIÓN", "card": "Carta Extensora", "action": "Invocación Especial / Búsqueda", "ev": 95}},
-    {{"node": 3, "phase": "3. EXTRA DECK", "card": "Monstruo Extra", "action": "Invocación Xyz/Sincronía/Enlace", "ev": 96}},
+    {{"node": 1, "phase": "1. INICIO", "card": "Carta Starter", "action": "Invocación Normal o Activación inicial", "ev": 98}},
+    {{"node": 2, "phase": "2. EXTENSIÓN", "card": "Carta Extensora", "action": "Invocación Especial o Búsqueda", "ev": 95}},
+    {{"node": 3, "phase": "3. EXTRA DECK", "card": "Monstruo Extra", "action": "Invocación Xyz/Sincronía/Fusión/Enlace", "ev": 96}},
     {{"node": 4, "phase": "4. REMATE", "card": "Jefe Final", "action": "Control de mesa o Remate de turno", "ev": 95}}
   ],
+  "neural_sequence": [
+    {{"node": 1, "phase": "1. INICIO", "card": "Carta Starter", "action": "Invocación Normal o Activación inicial", "ev": 98, "status": "ACTIVE"}},
+    {{"node": 2, "phase": "2. EXTENSIÓN", "card": "Carta Extensora", "action": "Invocación Especial o Búsqueda", "ev": 95, "status": "PENDING"}},
+    {{"node": 3, "phase": "3. EXTRA DECK", "card": "Monstruo Extra", "action": "Invocación Xyz/Sincronía/Fusión/Enlace", "ev": 96, "status": "PENDING"}},
+    {{"node": 4, "phase": "4. REMATE", "card": "Jefe Final", "action": "Control de mesa o Remate de turno", "ev": 95, "status": "PENDING"}}
+  ],
   "strategy": {{
-    "win_condition": "Objetivo táctico principal para ganar la partida",
-    "combo_steps": [
-      "1. Paso 1 detallado",
-      "2. Paso 2 detallado",
-      "3. Paso 3 detallado",
-      "4. Paso 4 detallado"
+    "win_condition": "Objetivo táctico principal para ganar la partida con este mazo",
+    "main_combo": [
+      "1. Paso 1 detallado: Carta y efecto exacto a activar",
+      "2. Paso 2 detallado: Qué buscar o invocar",
+      "3. Paso 3 detallado: Invocación del Extra Deck",
+      "4. Paso 4 detallado: Remate o campo final"
     ],
-    "end_board": "Campo final recomendado"
+    "alt_combo": [
+      "1. Ruta si no abres con el starter ideal o vas segundo",
+      "2. Jugada de ruptura de campo rival"
+    ],
+    "opponent_turn": "Interrupciones y efectos a activar en el turno rival",
+    "end_board": "Campo final recomendado al pasar turno",
+    "solo_mode_guide": "Qué jugada o monstruo de la IA en este escenario debes anular prioritariamente"
   }}
 }}
 
-2. Si es un DUELO ACTIVO (partida en curso con tapete, LP, cartas en mano abajo, fase actual):
+2. Si es un DUELO ACTIVO (partida en curso):
 Devuelve:
 {{
   "screen_type": "DUEL",
   "in_duel": true,
   "active_modal": null,
   "hand_cards": [
-    {{"slot": 1, "name": "Nombre Exacto Carta 1 en {target_lang}", "play_index": "1º", "is_optimal": true}}
+    {{"slot": 1, "name": "Nombre Exacto de Carta en Mano en {target_lang}", "play_index": "1º", "is_optimal": true}}
   ],
   "opponent_board": {{
     "monsters_count": 0,
     "monsters_summary": "Monstruos del rival o campo despejado",
     "threat_level": "BAJO/MEDIO/ALTO"
   }},
-  "optimal_play": {{
-    "play_name": "Nombre de la Jugada recomendada",
-    "confidence": 98,
-    "summary": "Explicación de qué carta jugar y qué efecto activar"
+  "recommended_play": {{
+    "card_name": "Nombre exacto de la carta en mano a jugar AHORA",
+    "action": "Acción específica (ej: ✨ Activar efecto en mano / ⚡ Invocación Normal / 🛡️ Colocar Boca Abajo)",
+    "client_procedure": [
+      "1. Pulsa en tu mano la carta [Nombre]",
+      "2. Selecciona [Activar / Invocar]",
+      "3. Elige el objetivo [Nombre objetivo]"
+    ],
+    "reason_why": [
+      "Explicación táctica precisa de por qué es la jugada óptima",
+      "Cómo enlaza con el siguiente paso del turno"
+    ],
+    "win_equity_pct": 98
   }},
+  "optimal_play": {{
+    "card_name": "Nombre exacto de la carta en mano",
+    "action": "Acción específica",
+    "summary": "Explicación táctica directa",
+    "confidence": 98
+  }},
+  "neural_sequence": [
+    {{"node": 1, "phase": "1. INICIO", "card": "Carta en mano a jugar AHORA", "action": "Acción Inmediata", "ev": 98, "status": "ACTIVE"}},
+    {{"node": 2, "phase": "2. EXTENSIÓN", "card": "Siguiente recurso", "action": "Efecto derivado o Búsqueda", "ev": 95, "status": "PENDING"}},
+    {{"node": 3, "phase": "3. EXTRA DECK", "card": "Monstruo Extra", "action": "Invocación Extra Deck", "ev": 96, "status": "PENDING"}},
+    {{"node": 4, "phase": "4. REMATE", "card": "Objetivo de turno", "action": "Batalla o Pasar Turno con Control", "ev": 95, "status": "PENDING"}}
+  ],
   "z_nodes": [
-    {{"node": 1, "phase": "1. INICIO", "card": "Carta en mano recomendada", "action": "Activar o Invocar", "ev": 98}},
-    {{"node": 2, "phase": "2. EXTENSIÓN", "card": "Siguiente recurso", "action": "Efecto o invocación", "ev": 95}},
+    {{"node": 1, "phase": "1. INICIO", "card": "Carta en mano a jugar AHORA", "action": "Acción Inmediata", "ev": 98}},
+    {{"node": 2, "phase": "2. EXTENSIÓN", "card": "Siguiente recurso", "action": "Efecto derivado o Búsqueda", "ev": 95}},
     {{"node": 3, "phase": "3. EXTRA DECK", "card": "Monstruo Extra", "action": "Invocación Extra Deck", "ev": 96}},
-    {{"node": 4, "phase": "4. REMATE", "card": "Objetivo de turno", "action": "Avanzar a Batalla o Pasar Turno", "ev": 95}}
+    {{"node": 4, "phase": "4. REMATE", "card": "Objetivo de turno", "action": "Batalla o Pasar Turno", "ev": 95}}
   ]
 }}
 
@@ -324,11 +383,12 @@ Devuelve ÚNICAMENTE el bloque JSON válido sin comentarios ni texto fuera del J
                     {
                         "parts": [
                             {"text": prompt},
-                            {"inline_data": {"mime_type": "image/jpeg", "data": b64_img}}
+                            {"inline_data": {"mime_type": "image/jpeg", "data": b64_img}},
+                            {"inline_data": {"mime_type": "image/jpeg", "data": b64_hand}}
                         ]
                     }
                 ],
-                "generationConfig": {"temperature": 0.1, "maxOutputTokens": 2048}
+                "generationConfig": {"temperature": 0.1, "maxOutputTokens": 2500}
             }
 
             try:
@@ -342,6 +402,31 @@ Devuelve ÚNICAMENTE el bloque JSON válido sin comentarios ni texto fuera del J
                         text = text.split("```", 1)[1].split("```", 1)[0].strip()
                     parsed = json.loads(text)
                     self.current_model_idx = idx
+
+                    # Unificar claves de jugada inmediata
+                    if parsed.get("recommended_play") and not parsed.get("optimal_play"):
+                        rec = parsed["recommended_play"]
+                        parsed["optimal_play"] = {
+                            "card_name": rec.get("card_name"),
+                            "action": rec.get("action"),
+                            "summary": " • ".join(rec.get("reason_why", [])) if isinstance(rec.get("reason_why"), list) else str(rec.get("reason_why", "")),
+                            "confidence": rec.get("win_equity_pct", 95)
+                        }
+                    elif parsed.get("optimal_play") and not parsed.get("recommended_play"):
+                        opt = parsed["optimal_play"]
+                        parsed["recommended_play"] = {
+                            "card_name": opt.get("card_name") or opt.get("play_name"),
+                            "action": opt.get("action") or opt.get("summary"),
+                            "win_equity_pct": opt.get("confidence", 95),
+                            "client_procedure": [f"Juega {opt.get('card_name', 'la carta recomendada')}"],
+                            "reason_why": [opt.get("summary", "Jugada óptima calculada.")]
+                        }
+
+                    # Unificar secuencia Z
+                    if parsed.get("z_nodes") and not parsed.get("neural_sequence"):
+                        parsed["neural_sequence"] = [dict(n, status="ACTIVE" if i==0 else "PENDING") for i, n in enumerate(parsed["z_nodes"])]
+                    elif parsed.get("neural_sequence") and not parsed.get("z_nodes"):
+                        parsed["z_nodes"] = [dict(n) for n in parsed["neural_sequence"]]
 
                     if parsed.get("screen_type") == "DECK" or parsed.get("is_deck_screen") or parsed.get("key_starters") or (not parsed.get("in_duel") and parsed.get("strategy")):
                         parsed["is_deck_screen"] = True
@@ -460,12 +545,12 @@ Devuelve SIEMPRE un JSON válido con este esquema:
         return None
 
     def _save_deck_and_strategy(self, deck_data: Dict[str, Any]):
-        """Guarda la baraja y su estrategia en disco en decks_estrategias."""
         try:
             base_folder = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "decks_estrategias")
             os.makedirs(base_folder, exist_ok=True)
 
-            d_name = deck_data.get("deck_name", "Deck_Personalizado").replace(" ", "_").replace("★", "").replace("☆", "")
+            raw_name = deck_data.get("deck_name", "Deck_Personalizado")
+            d_name = raw_name.replace(" ", "_").replace("★", "").replace("☆", "").replace(":", "")
             d_name = "".join(c for c in d_name if c.isalnum() or c in "_-")
             if not d_name:
                 d_name = "Deck_Estrategia"
@@ -483,41 +568,74 @@ Devuelve SIEMPRE un JSON válido con este esquema:
             extra_str = ", ".join(deck_data.get("extra_deck_cards", [])) or "Jefes del Extra Deck"
             spells_str = ", ".join(deck_data.get("support_spells_traps", [])) or "Recursos de limpieza y protección"
 
-            md_content = f"""# 🧠 Guía Táctica y Estratégica: {deck_data.get('deck_name', 'Baraja de Préstamo')}
-**Modalidad:** {loaner_badge} | **Arquetipo:** {deck_data.get('archetype', 'General')}
+            main_steps = strat.get("main_combo") or strat.get("combo_steps") or []
+            if isinstance(main_steps, str):
+                main_steps = [main_steps]
+            
+            alt_steps = strat.get("alt_combo") or strat.get("alternative_combo") or []
+            if isinstance(alt_steps, str):
+                alt_steps = [alt_steps]
 
----
+            opp_actions = strat.get("opponent_turn") or strat.get("opponent_turn_actions") or "Activa tus Efectos Rápidos y Trampas para interrumpir al rival antes de que invoque a su Jefe."
+            solo_guide = strat.get("solo_mode_ai_guide") or strat.get("solo_mode_guide") or loaner_tip
 
-## 🎯 Condición de Victoria (Win Condition)
-{strat.get('win_condition', 'Construir presencia en mesa y agotar los recursos del rival.')}
+            lines = [
+                f"# 🧠 Guía Táctica Profesional: {raw_name}",
+                f"**Modalidad:** {loaner_badge} | **Arquetipo:** {deck_data.get('archetype', 'General')}",
+                "",
+                "---",
+                "",
+                "## 🎯 Condición de Victoria (Win Condition)",
+                strat.get('win_condition', 'Construir presencia en mesa y agotar los recursos del rival.'),
+                "",
+                "---",
+                "",
+                "## 🃏 Cartas Clave y su Rol Táctico",
+                f"- **⚡ Starters Principales (Turno 1 / Iniciadores):** {', '.join(deck_data.get('key_starters', [])) or 'Cartas de búsqueda inicial'}",
+                f"- **🔄 Extensores y Soporte:** {tuners_str}",
+                f"- **👑 Jefes del Extra Deck:** {extra_str}",
+                f"- **🛡️ Magias y Trampas Clave:** {spells_str}",
+                "",
+                "---",
+                "",
+                "## 🔄 Línea de Combo Principal (Paso a Paso)"
+            ]
+            for step in main_steps:
+                clean_s = str(step).strip()
+                if clean_s and clean_s[0].isdigit():
+                    lines.append(f"- **{clean_s}**")
+                else:
+                    lines.append(f"- {clean_s}")
 
----
+            if alt_steps:
+                lines.extend([
+                    "",
+                    "---",
+                    "",
+                    "## ⚡ Línea Alternativa / Turno 2 (Going Second)"
+                ])
+                for step in alt_steps:
+                    lines.append(f"- {step}")
 
-## 🃏 Cartas Clave del Mazo
-- **⚡ Starters (Apertura Turno 1):** {", ".join(deck_data.get('key_starters', []))}
-- **🔄 Cantantes / Extensores:** {tuners_str}
-- **👑 Jefes del Extra Deck:** {extra_str}
-- **🛡️ Magias y Trampas de Soporte:** {spells_str}
+            lines.extend([
+                "",
+                "---",
+                "",
+                "## ⚔️ Cómo Jugar en el Turno del Rival (Interrupciones)",
+                str(opp_actions),
+                "",
+                "---",
+                "",
+                "## 🛡️ Campo Final Ideal (End Board)",
+                str(strat.get('end_board', 'Monstruos jefes y recursos colocados listos para responder.')),
+                "",
+                "---",
+                "",
+                "## 💡 Guía Táctica para Vencer a la IA del Modo Solo",
+                str(solo_guide)
+            ])
 
----
-
-## 🔄 Secuencia de Combo Óptima (Paso a Paso)
-"""
-            for step in strat.get("combo_steps", []):
-                md_content += f"- {step}\n"
-
-            md_content += f"""
----
-
-## 🛡️ Campo Final Ideal (End Board)
-{strat.get('end_board', 'Monstruos jefes y trampas preparadas para el turno rival.')}
-
----
-
-## 💡 Consejo Táctico para Vencer a la IA de este Escenario
-{loaner_tip}
-"""
-
+            md_content = chr(10).join(lines) + chr(10)
             md_path = os.path.join(base_folder, f"{d_name}_estrategia.md")
             with open(md_path, "w", encoding="utf-8") as f:
                 f.write(md_content)
@@ -527,7 +645,6 @@ Devuelve SIEMPRE un JSON válido con este esquema:
         except Exception:
             pass
 
-    
     def _load_latest_deck(self) -> Optional[Dict[str, Any]]:
         """Carga la baraja configurada o la más reciente válida de decks_estrategias."""
         try:

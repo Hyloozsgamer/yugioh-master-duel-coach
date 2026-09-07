@@ -1,0 +1,103 @@
+{
+  "screen_type": "DECK",
+  "is_deck_screen": true,
+  "deck_name": "Exormana: Justicia Sagrada",
+  "archetype": "Exormana",
+  "loaner_tip": "Usa el efecto de Exormana Martha para invocar de modo especial tanto a ella como a Elis, y luego realiza una Invocación Xyz de Exormana Kaspitell para buscar más recursos y controlar el cementerio del oponente.",
+  "key_starters": [
+    "Exormana Martha",
+    "Exormana Elis"
+  ],
+  "tuners_or_extenders": [
+    "Exormana Stella",
+    "Exormana Irene"
+  ],
+  "extra_deck_cards": [
+    "Exormana Mikailis",
+    "Exormana Kaspitell"
+  ],
+  "support_spells_traps": [
+    "Pax Exormana",
+    "Retorno Exormana"
+  ],
+  "z_nodes": [
+    {
+      "node": 1,
+      "phase": "1. INICIO",
+      "card": "Exormana Martha",
+      "action": "Invocación Especial desde la mano activando su efecto",
+      "ev": 98
+    },
+    {
+      "node": 2,
+      "phase": "2. EXTENSIÓN",
+      "card": "Exormana Elis",
+      "action": "Invocación Especial por el efecto de Martha",
+      "ev": 95
+    },
+    {
+      "node": 3,
+      "phase": "3. EXTRA DECK",
+      "card": "Exormana Kaspitell",
+      "action": "Invocación Xyz usando a Martha y Elis",
+      "ev": 96
+    },
+    {
+      "node": 4,
+      "phase": "4. REMATE",
+      "card": "Exormana Mikailis",
+      "action": "Invocación Xyz para desterrar una carta del oponente o buscar Pax Exormana",
+      "ev": 95
+    }
+  ],
+  "neural_sequence": [
+    {
+      "node": 1,
+      "phase": "1. INICIO",
+      "card": "Exormana Martha",
+      "action": "Invocación Especial desde la mano activando su efecto",
+      "ev": 98,
+      "status": "ACTIVE"
+    },
+    {
+      "node": 2,
+      "phase": "2. EXTENSIGN",
+      "card": "Exormana Elis",
+      "action": "Invocación Especial por el efecto de Martha",
+      "ev": 95,
+      "status": "PENDING"
+    },
+    {
+      "node": 3,
+      "phase": "3. EXTRA DECK",
+      "card": "Exormana Kaspitell",
+      "action": "Invocación Xyz usando a Martha y Elis",
+      "ev": 96,
+      "status": "PENDING"
+    },
+    {
+      "node": 4,
+      "phase": "4. REMATE",
+      "card": "Exormana Mikailis",
+      "action": "Invocación Xyz para desterrar una carta del oponente o buscar Pax Exormana",
+      "ev": 95,
+      "status": "PENDING"
+    }
+  ],
+  "strategy": {
+    "win_condition": "Controlar el cementerio del oponente y desterrar sus amenazas clave mediante los efectos de los monstruos Xyz Exormana al interactuar con sus cartas en el cementerio.",
+    "main_combo": [
+      "1. Activa el efecto de Exormana Martha en tu mano para invocarla de modo especial junto a Exormana Elis desde tu Deck.",
+      "2. Realiza una Invocación Xyz de Exormana Kaspitell usando a Martha y Elis como materiales.",
+      "3. Activa el efecto de Kaspitell desacoplando un material para añadir a Exormana Stella o Pax Exormana a tu mano.",
+      "4. Invoca a Exormana Stella y luego realiza una Invocación Xyz de Exormana Mikailis para buscar Pax Exormana o preparar una interrupción."
+    ],
+    "alt_combo": [
+      "1. Si no tienes a Martha, invoca de modo normal a Exormana Stella y usa su efecto para invocar de modo especial a Exormana Elis desde tu mano.",
+      "2. Realiza la Invocación Xyz de Exormana Kaspitell para buscar a Martha para el siguiente turno o Pax Exormana para extender la jugada."
+    ],
+    "opponent_turn": "Utiliza el efecto rápido de Exormana Mikailis para desterrar una carta del campo o cementerio del oponente en respuesta a sus movimientos.",
+    "end_board": "Exormana Mikailis y Exormana Kaspitell en el campo, con Pax Exormana o Retorno Exormana colocados boca abajo.",
+    "solo_mode_guide": "Anula las jugadas de nivel 4 de la IA impidiendo que realice Invocaciones Xyz o de Sincronía mediante el destierro de sus monstruos clave en el cementerio con los efectos de tus Exormanas."
+  }
+}
