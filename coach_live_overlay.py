@@ -144,7 +144,8 @@ class LiveCoachOverlay:
         if hasattr(self, "scan_deck_btn"):
             self.scan_deck_btn.config(text=f"{t('scan_btn_hotkey', lang_code)}")
         if hasattr(self, "deck_lbl_tag"):
-            self.deck_lbl_tag.config(text=t("active_deck_label", lang_code))
+            if hasattr(self, "deck_lbl_tag") and self.deck_lbl_tag.winfo_exists():
+                self.deck_lbl_tag.config(text=t("active_deck_label", lang_code))
 
         # Re-render pills & hand
         self._render_combo_pills()
@@ -333,6 +334,17 @@ class LiveCoachOverlay:
             command=self._show_current_deck_strategy
         )
         self.deck_quick_btn.pack(side="right")
+
+        self.deck_info_lbl = tk.Label(
+            self.deck_alert_frame,
+            text="",
+            font=("Segoe UI", 7),
+            fg="#D1FAE5",
+            bg="#0E1E38",
+            justify="left",
+            wraplength=330
+        )
+        self.deck_info_lbl.pack(anchor="w", pady=(2, 0))
 
         # =========================================================================
         # SECCIÓN 1: ⭐ HERO CARD - JUGADA INMEDIATA (QUÉ JUGAR AHORA)
@@ -791,33 +803,12 @@ class LiveCoachOverlay:
         banner_msg = f"[{tag}: {d_name.upper()}]\n🎮 ¡Ya puedes darle a jugar!"
         self.deck_title_lbl.config(text=banner_msg, font=("Segoe UI", 9, "bold"), fg="#A7F3D0", bg="#064E3B")
         
-        for w in self.deck_action_row.winfo_children():
-            w.destroy()
-
-        info_text = f"Starters: {starters}\nFin: {strat.get('end_board', '')[:45]}"
-        tk.Label(
-            self.deck_action_row,
-            text=info_text,
-            font=("Segoe UI", 7),
-            fg="#D1FAE5",
-            bg="#064E3B",
-            justify="left",
-            wraplength=250
-        ).pack(side="left")
-
-        if md_file and os.path.exists(md_file):
-            tk.Button(
-                self.deck_action_row,
-                text="📋 Ver Estrategia",
-                font=("Segoe UI", 7, "bold"),
-                fg="#040711",
-                bg="#10B981",
-                activebackground="#34D399",
-                relief="flat",
-                padx=4,
-                pady=1,
-                command=lambda p=md_file, n=d_name: self._show_strategy_popup(p, n)
-            ).pack(side="right")
+        info_text = f"Starters: {starters} | Fin: {strat.get('end_board', '')[:45]}"
+        if hasattr(self, "deck_info_lbl") and self.deck_info_lbl.winfo_exists():
+            self.deck_info_lbl.config(text=info_text, bg="#064E3B")
+        if hasattr(self, "deck_combo") and self.deck_combo.winfo_exists():
+            if d_name in self.deck_combo["values"]:
+                self.deck_combo.set(d_name)
 
         self.status_lbl.config(text=f"● MODO SOLO: {d_name} listo. ¡Pulsa Jugar en Master Duel!", fg="#10B981")
 

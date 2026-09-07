@@ -486,8 +486,7 @@ El juego en pantalla de Master Duel puede estar en cualquiera de los idiomas sop
 
 REGLAS ESTRICTAS DE FIDELIDAD (PROHIBIDO INVENTAR):
 1. Redacta todas tus recomendaciones, nombres de jugada, advertencias y pasos del turno en {target_lang}.
-1. Si la imagen NO muestra una partida real de Master Duel (ej: escritorio, YouTube o navegador), responde:
-   {{"in_duel": false, "status_message": "Master Duel no esta visible en pantalla"}}
+1. Si la imagen muestra cualquier partida o tablero de Yu-Gi-Oh! Master Duel (incluso si está en un navegador, stream de YouTube/Twitch o modo repetición), reporta "in_duel": true y analiza la mano y jugadas normalmente.
 2. SOLO reporta cartas que veas FISICAMENTE en la mano o en el campo del jugador en espanol.
 3. NUNCA INVENTES CARTAS QUE EL JUGADOR NO TIENE. Si ves 2 cartas en mano, 'hand_cards' debe tener exactamente esas 2 cartas.
 4. Para la secuencia de 4 pasos en Z:
