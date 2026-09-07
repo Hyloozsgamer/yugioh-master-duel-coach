@@ -12,6 +12,20 @@ LANGUAGES = {
 }
 
 TRANSLATIONS = {
+    "scan_btn_hotkey": {
+        "ES": "🔍 ESCANEAR [F5]",
+        "EN": "🔍 SCAN [F5]",
+        "FR": "🔍 SCANNER [F5]",
+        "DE": "🔍 SCANNEN [F5]",
+        "IT": "🔍 SCANSIONA [F5]"
+    },
+    "active_deck_label": {
+        "ES": "🗂️ Mazo:",
+        "EN": "🗂️ Deck:",
+        "FR": "🗂️ Deck:",
+        "DE": "🗂️ Deck:",
+        "IT": "🗂️ Deck:"
+    },
     "app_title": {
         "ES": "COACH TÁCTICO MASTER DUEL",
         "EN": "MASTER DUEL TACTICAL COACH",

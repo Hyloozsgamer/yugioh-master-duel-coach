@@ -23,17 +23,19 @@ class LiveVisionCoach:
         self.db = db
         self.api_key = self._load_api_key()
         self.models_pool = [
-            "gemini-flash-lite-latest",
-            "gemini-3.5-flash-lite",
-            "gemini-3.1-flash-lite"
+            "gemini-3.5-flash",
+            "gemini-3-flash-preview",
+            "gemini-flash-latest"
         ]
         self.current_model_idx = 0
         self._last_call_time = 0.0
-        self._min_call_interval = 0.6
+        self._min_call_interval = 2.5
+        self._last_auto_scan_time = 0.0
+        self._last_gray_sample = None
         self._last_frame_hash = None
         self._pending_frame_hash = None
         self._sct = None
-        self.active_deck = self._load_latest_deck()  # Carga baraja previa escaneada si existe
+        self.active_deck = self._load_latest_deck()
         self._init_capture()
 
     def _load_api_key(self) -> str:
@@ -149,15 +151,36 @@ class LiveVisionCoach:
         return None
 
     def _has_frame_changed(self, frame: np.ndarray) -> bool:
+        now = time.time()
+        # Cooldown estricto de 2.5s entre llamadas automáticas para respetar cuotas gratuitas de Google Gemini
+        if now - self._last_auto_scan_time < 2.5:
+            return False
+
         h, w = frame.shape[:2]
         roi_hand = frame[int(h * 0.70):int(h * 0.98), int(w * 0.18):int(w * 0.85)]
         roi_center = frame[int(h * 0.20):int(h * 0.75), int(w * 0.20):int(w * 0.80)]
-        
-        sample = np.concatenate([cv2.resize(roi_hand, (35, 18)), cv2.resize(roi_center, (35, 18))])
-        frame_hash = hash(sample.tobytes())
-        
-        self._pending_frame_hash = frame_hash
-        return self._last_frame_hash is None or frame_hash != self._last_frame_hash
+
+        try:
+            gh = cv2.cvtColor(roi_hand, cv2.COLOR_BGR2GRAY)
+            gc = cv2.cvtColor(roi_center, cv2.COLOR_BGR2GRAY)
+            sample = np.concatenate([cv2.resize(gh, (32, 16)), cv2.resize(gc, (32, 16))])
+        except Exception:
+            return False
+
+        if self._last_gray_sample is None:
+            self._last_gray_sample = sample
+            self._last_auto_scan_time = now
+            return True
+
+        diff = float(np.mean(np.abs(sample.astype(np.float32) - self._last_gray_sample.astype(np.float32))))
+        # Diferencia significativa de píxeles (cartas jugadas/robadas, no solo partículas flotantes)
+        if diff > 9.0:
+            self._last_gray_sample = sample
+            self._last_auto_scan_time = now
+            return True
+
+        return False
+
 
     def commit_frame_hash(self):
         if self._pending_frame_hash is not None:
@@ -247,7 +270,7 @@ Devuelve SIEMPRE un JSON válido con este esquema:
 
             try:
                 req = urllib.request.Request(url, data=json.dumps(payload).encode("utf-8"), headers={"Content-Type": "application/json"})
-                with urllib.request.urlopen(req, timeout=10.0) as resp:
+                with urllib.request.urlopen(req, timeout=6.0) as resp:
                     data = json.loads(resp.read().decode("utf-8"))
                     text = data["candidates"][0]["content"]["parts"][0]["text"]
                     if "```json" in text:
@@ -337,30 +360,76 @@ Devuelve SIEMPRE un JSON válido con este esquema:
 
     
     def _load_latest_deck(self) -> Optional[Dict[str, Any]]:
-        """Carga la baraja mas reciente escaneada en decks_estrategias si existe."""
+        """Carga la baraja configurada o la más reciente válida de decks_estrategias."""
         try:
             base_folder = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "decks_estrategias")
             if not os.path.exists(base_folder):
                 return None
-            json_files = [os.path.join(base_folder, f) for f in os.listdir(base_folder) if f.endswith(".json")]
-            if not json_files:
-                return None
-            full_decks = []
-            for jf in json_files:
+
+            cfg_path = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "coach_config.json")
+            target_name = None
+            if os.path.exists(cfg_path):
                 try:
-                    with open(jf, "r", encoding="utf-8") as f:
-                        data = json.load(f)
-                    if data.get("main_deck_cards") or data.get("key_starters"):
-                        full_decks.append((os.path.getmtime(jf), len(data.get("main_deck_cards", [])), data))
+                    with open(cfg_path, "r", encoding="utf-8") as f:
+                        cfg = json.load(f)
+                        target_name = cfg.get("active_deck_name")
                 except Exception:
                     pass
-            if full_decks:
-                # Priorizar decks completos (40+ cartas) y luego fecha
-                full_decks.sort(key=lambda x: (x[1] >= 40, x[0]), reverse=True)
-                return full_decks[0][2]
+
+            if target_name:
+                found = self.load_deck_by_name(target_name)
+                if found:
+                    return found
+
+            ignored = ["pantalla", "menu", "menú", "carga", "n/a", "traceback", "tienda", "sobre"]
+            valid_decks = []
+            for f in os.listdir(base_folder):
+                if f.endswith(".json"):
+                    p = os.path.join(base_folder, f)
+                    try:
+                        with open(p, "r", encoding="utf-8") as jf:
+                            data = json.load(jf)
+                            d_name = data.get("deck_name", "").lower()
+                            if any(ig in d_name for ig in ignored):
+                                continue
+                            if data.get("key_starters") or data.get("strategy"):
+                                valid_decks.append((os.path.getmtime(p), data))
+                    except Exception:
+                        pass
+
+            if valid_decks:
+                valid_decks.sort(key=lambda x: x[0], reverse=True)
+                return valid_decks[0][1]
         except Exception:
             pass
         return None
+
+    def load_deck_by_name(self, name: str) -> Optional[Dict[str, Any]]:
+        """Busca y carga una baraja por coincidencia de nombre en decks_estrategias."""
+        try:
+            base_folder = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "decks_estrategias")
+            if not os.path.exists(base_folder):
+                return None
+            name_clean = name.strip().lower()
+            for f in os.listdir(base_folder):
+                if f.endswith(".json"):
+                    p = os.path.join(base_folder, f)
+                    try:
+                        with open(p, "r", encoding="utf-8") as jf:
+                            data = json.load(jf)
+                            d_name = data.get("deck_name", "").strip().lower()
+                            if d_name == name_clean or (len(name_clean) > 4 and name_clean in d_name):
+                                self.active_deck = data
+                                return data
+                    except Exception:
+                        pass
+        except Exception:
+            pass
+        return None
+
+    def set_active_deck(self, deck_dict: Dict[str, Any]):
+        """Actualiza manualmente la baraja activa en memoria."""
+        self.active_deck = deck_dict
 
     def analyze_live_duel(self, frame: np.ndarray, lang: str = 'ES') -> Optional[Dict[str, Any]]:
         if not self.api_key:
@@ -470,7 +539,7 @@ Devuelve SOLO JSON valido:
 
             try:
                 req = urllib.request.Request(url, data=json.dumps(payload).encode("utf-8"), headers={"Content-Type": "application/json"})
-                with urllib.request.urlopen(req, timeout=10.0) as resp:
+                with urllib.request.urlopen(req, timeout=6.0) as resp:
                     data = json.loads(resp.read().decode("utf-8"))
                     text = data["candidates"][0]["content"]["parts"][0]["text"]
                     if "```json" in text:

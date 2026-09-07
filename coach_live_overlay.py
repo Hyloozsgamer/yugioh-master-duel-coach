@@ -140,17 +140,22 @@ class LiveCoachOverlay:
             self.scan_deck_btn.config(text=f"{t('scan_deck_btn', lang_code)}")
         if hasattr(self, "status_lbl"):
             self.status_lbl.config(text=t("scanning_status", lang_code))
+        if hasattr(self, "scan_deck_btn"):
+            self.scan_deck_btn.config(text=f"{t('scan_btn_hotkey', lang_code)}")
+        if hasattr(self, "deck_lbl_tag"):
+            self.deck_lbl_tag.config(text=t("active_deck_label", lang_code))
 
         # Re-render pills & hand
         self._render_combo_pills()
     def _build_ui(self):
-        # 1. Cabecera limpia y profesional
+        # 1. Cabecera KaibaCorp organizada en 2 filas limpias
         header = tk.Frame(self.root, bg="#0A1124", padx=8, pady=5, highlightthickness=1, highlightbackground="#1E293B")
         header.pack(fill="x")
-        
+
+        # Fila 1: Título de App + Indicador EN VIVO + Botón Acoplar
         top_row = tk.Frame(header, bg="#0A1124")
         top_row.pack(fill="x")
-        
+
         self.title_lbl = tk.Label(
             top_row,
             text=f"⚡ {t('app_title', self.current_lang)}",
@@ -159,30 +164,7 @@ class LiveCoachOverlay:
             bg="#0A1124"
         )
         self.title_lbl.pack(side="left")
-        
-        # Selector de Idioma (ES | EN | FR | DE | IT)
-        lang_bar = tk.Frame(top_row, bg="#0A1124")
-        lang_bar.pack(side="right", padx=(2, 0))
 
-        for l_code in ["IT", "DE", "FR", "EN", "ES"]:
-            is_cur = (l_code == self.current_lang)
-            b = tk.Button(
-                lang_bar,
-                text=l_code,
-                font=("Segoe UI", 6, "bold"),
-                fg="#040711" if is_cur else "#94A3B8",
-                bg="#00F5FF" if is_cur else "#1E293B",
-                activebackground="#00F5FF",
-                activeforeground="#040711",
-                relief="flat",
-                padx=3,
-                pady=0,
-                command=lambda c=l_code: self._set_language(c)
-            )
-            b.pack(side="right", padx=1)
-            self.lang_buttons[l_code] = b
-
-        # Botón Acoplar
         dock_btn = tk.Button(
             top_row,
             text="📌",
@@ -192,44 +174,75 @@ class LiveCoachOverlay:
             activebackground="#00F5FF",
             activeforeground="#040711",
             relief="flat",
-            padx=3,
+            padx=4,
             pady=0,
             command=self._manual_dock
         )
-        dock_btn.pack(side="right", padx=(2, 1))
+        dock_btn.pack(side="right", padx=(2, 0))
 
-        self.scan_deck_btn = tk.Button(
-            top_row,
-            text="📋 Escanear Deck",
-            font=("Segoe UI", 7, "bold"),
-            fg="#FEF08A",
-            bg="#854D0E",
-            activebackground="#FACC15",
-            activeforeground="#040711",
-            relief="flat",
-            padx=4,
-            pady=0,
-            command=self._trigger_deck_scan
-        )
-        self.scan_deck_btn.pack(side="right", padx=(3, 0))
-        
         self.live_badge = tk.Label(
             top_row,
-            text="● EN VIVO",
+            text=f"● {t('live_badge', self.current_lang)}",
             font=("Segoe UI", 8, "bold"),
             fg="#10B981",
             bg="#0A1124"
         )
         self.live_badge.pack(side="right", padx=(0, 4))
-        
+
+        # Fila 2: Selector de Idioma (Izquierda) + BOTÓN ESCANEAR [F5] (Derecha y Destacado)
+        row2 = tk.Frame(header, bg="#0A1124")
+        row2.pack(fill="x", pady=(4, 0))
+
+        lang_bar = tk.Frame(row2, bg="#0A1124")
+        lang_bar.pack(side="left")
+
+        for l_code in ["ES", "EN", "FR", "DE", "IT"]:
+            is_cur = (l_code == self.current_lang)
+            b = tk.Button(
+                lang_bar,
+                text=l_code,
+                font=("Segoe UI", 7, "bold"),
+                fg="#040711" if is_cur else "#94A3B8",
+                bg="#00F5FF" if is_cur else "#1E293B",
+                activebackground="#00F5FF",
+                activeforeground="#040711",
+                relief="flat",
+                padx=4,
+                pady=1,
+                command=lambda c=l_code: self._set_language(c)
+            )
+            b.pack(side="left", padx=(0, 2))
+            self.lang_buttons[l_code] = b
+
+        # BOTÓN ESCANEAR 100% VISIBLE Y CON ACCESO POR F5
+        self.scan_deck_btn = tk.Button(
+            row2,
+            text=t("scan_btn_hotkey", self.current_lang),
+            font=("Segoe UI", 8, "bold"),
+            fg="#040711",
+            bg="#FACC15",
+            activebackground="#FEF08A",
+            activeforeground="#040711",
+            relief="flat",
+            padx=8,
+            pady=1,
+            cursor="hand2",
+            command=self._trigger_deck_or_duel_scan
+        )
+        self.scan_deck_btn.pack(side="right")
+
         self.status_lbl = tk.Label(
             header,
-            text="Escaneando Master Duel en tiempo real...",
+            text=t("scanning_status", self.current_lang),
             font=("Segoe UI", 8),
             fg="#94A3B8",
             bg="#0A1124"
         )
-        self.status_lbl.pack(anchor="w", pady=(1, 0))
+        self.status_lbl.pack(anchor="w", pady=(3, 0))
+
+        # Atajos de teclado para escaneo instantáneo
+        self.root.bind_all("<F5>", lambda e: self._trigger_deck_or_duel_scan())
+        self.root.bind_all("<space>", lambda e: self._trigger_deck_or_duel_scan())
 
         # Banner de Ventana Modal (si se abre Extra Deck / Cementerio en el juego)
         self.modal_banner = tk.Label(
@@ -261,14 +274,14 @@ class LiveCoachOverlay:
         self.root.bind_all("<MouseWheel>", lambda event: self.main_canvas.yview_scroll(int(-1*(event.delta/120)), "units"))
 
         # =========================================================================
-        # SECCIÓN MODO SOLO: BANNER DE ESTRATEGIA Y ESTADO DEL DECK
+        # SECCIÓN MODO SOLO: BANNER DE ESTRATEGIA Y SELECTOR DE DECK ACTIVO
         # =========================================================================
         self.deck_alert_frame = tk.Frame(self.scroll_content, bg="#0E1E38", padx=6, pady=4, highlightthickness=1, highlightbackground="#0284C7")
         self.deck_alert_frame.pack(fill="x", padx=4, pady=2)
 
         self.deck_title_lbl = tk.Label(
             self.deck_alert_frame,
-            text="📋 MODO SOLO: Abre tu Deck para crear su Estrategia",
+            text="📋 MODO SOLO: Selecciona tu mazo o pulsa Escanear [F5]:",
             font=("Segoe UI", 8, "bold"),
             fg="#38BDF8",
             bg="#0E1E38",
@@ -278,20 +291,37 @@ class LiveCoachOverlay:
         self.deck_title_lbl.pack(anchor="w")
 
         self.deck_action_row = tk.Frame(self.deck_alert_frame, bg="#0E1E38")
-        self.deck_action_row.pack(fill="x", pady=(2, 0))
+        self.deck_action_row.pack(fill="x", pady=(3, 0))
 
-        self.deck_desc_lbl = tk.Label(
+        self.deck_lbl_tag = tk.Label(
             self.deck_action_row,
-            text="Abre 'Confirmar baraja' o el Editor y pulsa:",
-            font=("Segoe UI", 7),
+            text=t("active_deck_label", self.current_lang),
+            font=("Segoe UI", 7, "bold"),
             fg="#94A3B8",
             bg="#0E1E38"
         )
-        self.deck_desc_lbl.pack(side="left")
+        self.deck_lbl_tag.pack(side="left", padx=(0, 3))
+
+        available_decks = self._get_available_decks_list()
+        cur_deck_name = self.brain.active_deck.get("deck_name", "") if self.brain.active_deck else ("Cataclismo Dracónico Ciber Dragón" if "Cataclismo Dracónico Ciber Dragón" in available_decks else (available_decks[0] if available_decks else ""))
+
+        self.deck_combo = ttk.Combobox(
+            self.deck_action_row,
+            values=available_decks,
+            state="readonly",
+            font=("Segoe UI", 7),
+            width=25
+        )
+        if cur_deck_name in available_decks:
+            self.deck_combo.set(cur_deck_name)
+        elif available_decks:
+            self.deck_combo.set(available_decks[0])
+        self.deck_combo.pack(side="left", fill="x", expand=True, padx=(0, 4))
+        self.deck_combo.bind("<<ComboboxSelected>>", self._on_deck_dropdown_changed)
 
         self.deck_quick_btn = tk.Button(
             self.deck_action_row,
-            text="🔍 Escanear Ahora",
+            text="📋 Guía",
             font=("Segoe UI", 7, "bold"),
             fg="#040711",
             bg="#38BDF8",
@@ -299,7 +329,7 @@ class LiveCoachOverlay:
             relief="flat",
             padx=4,
             pady=0,
-            command=self._trigger_deck_scan
+            command=self._show_current_deck_strategy
         )
         self.deck_quick_btn.pack(side="right")
 
@@ -545,6 +575,108 @@ class LiveCoachOverlay:
         except Exception:
             pass
 
+    def _get_available_decks_list(self) -> List[str]:
+        try:
+            base = os.path.join(os.path.dirname(os.path.abspath(__file__)), "decks_estrategias")
+            if not os.path.exists(base):
+                return []
+            ignored = ["pantalla", "menu", "menú", "carga", "n/a", "traceback", "tienda", "sobre"]
+            decks = []
+            for f in os.listdir(base):
+                if f.endswith(".json"):
+                    try:
+                        with open(os.path.join(base, f), "r", encoding="utf-8") as jf:
+                            d = json.load(jf)
+                            name = d.get("deck_name", "").strip()
+                            if name and not any(ig in name.lower() for ig in ignored) and name not in decks:
+                                decks.append(name)
+                    except Exception:
+                        pass
+            decks.sort()
+            if "Cataclismo Dracónico Ciber Dragón" in decks:
+                decks.remove("Cataclismo Dracónico Ciber Dragón")
+                decks.insert(0, "Cataclismo Dracónico Ciber Dragón")
+            return decks
+        except Exception:
+            return []
+
+    def _on_deck_dropdown_changed(self, event=None):
+        selected = self.deck_combo.get()
+        if not selected:
+            return
+        deck_data = self.brain.load_deck_by_name(selected)
+        if deck_data:
+            self._save_active_deck_name(selected)
+            self._apply_deck_scan_result(deck_data)
+            self.status_lbl.config(text=f"● Mazo activo: {selected}", fg="#10B981")
+
+    def _save_active_deck_name(self, name: str):
+        try:
+            cfg_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), "coach_config.json")
+            cfg = {}
+            if os.path.exists(cfg_path):
+                with open(cfg_path, "r", encoding="utf-8") as f:
+                    cfg = json.load(f)
+            cfg["active_deck_name"] = name
+            with open(cfg_path, "w", encoding="utf-8") as f:
+                json.dump(cfg, f, indent=2)
+        except Exception:
+            pass
+
+    def _show_current_deck_strategy(self):
+        d_obj = self.current_deck_data or self.brain.active_deck
+        if not d_obj:
+            self.status_lbl.config(text="⚠️ Selecciona o escanea un mazo primero", fg="#FEF08A")
+            return
+        md_path = d_obj.get("saved_md_path")
+        d_name = d_obj.get("deck_name", "Estrategia")
+        if not md_path or not os.path.exists(md_path):
+            base = os.path.join(os.path.dirname(os.path.abspath(__file__)), "decks_estrategias")
+            clean_n = "".join(c for c in d_name.replace(" ", "_") if c.isalnum() or c in "_-")
+            md_path = os.path.join(base, f"{clean_n}_estrategia.md")
+        self._show_strategy_popup(md_path, d_name)
+
+    def _trigger_deck_or_duel_scan(self):
+        """Disparo manual prioritario por botón ESCANEAR o tecla F5."""
+        if self.is_scanning_deck or self.is_analyzing:
+            return
+
+        frame = self.brain.capture_game_screen()
+        if frame is None:
+            self.status_lbl.config(text="⚠️ Abre o enfoca Yu-Gi-Oh! Master Duel", fg="#FEF08A")
+            return
+
+        self.status_lbl.config(text="🔍 Escaneando juego en tiempo real...", fg="#00F5FF")
+        self.is_analyzing = True
+
+        def task():
+            try:
+                # 1. Intentar análisis de duelo
+                analysis = self.brain.analyze_live_duel(frame, lang=self.current_lang)
+                if analysis and analysis.get("in_duel"):
+                    self.brain.commit_frame_hash()
+                    self.root.after(0, lambda a=analysis: self._apply_live_analysis(a))
+                    return
+
+                # 2. Si no es duelo, intentar escaneo de deck
+                deck_res = self.brain.analyze_deck_screen(frame, lang=self.current_lang)
+                if deck_res and (deck_res.get("is_deck_screen") or deck_res.get("key_starters")):
+                    self.brain.commit_frame_hash()
+                    self.root.after(0, lambda d=deck_res: self._apply_deck_scan_result(d))
+                    return
+
+                if analysis:
+                    self.brain.commit_frame_hash()
+                    self.root.after(0, lambda a=analysis: self._apply_live_analysis(a))
+                else:
+                    self.root.after(0, lambda: self.status_lbl.config(text="● Listo - Pulsa Escanear [F5]", fg="#94A3B8"))
+            except Exception:
+                self.root.after(0, lambda: self.status_lbl.config(text="● Listo - Pulsa Escanear [F5]", fg="#94A3B8"))
+            finally:
+                self.is_analyzing = False
+
+        threading.Thread(target=task, daemon=True).start()
+
     def _trigger_deck_scan(self):
         """Dispara el escaneo de baraja en pantalla completa y genera la estrategia."""
         if self.is_scanning_deck:
@@ -697,7 +829,7 @@ class LiveCoachOverlay:
         s1 = key_starters[0] if len(key_starters) > 0 else main_cards[0] if main_cards else "Carta Principal"
         s2 = key_starters[1] if len(key_starters) > 1 else (data.get("main_deck_cards", [main_cards[1] if len(main_cards) > 1 else "Extensor"])[0] if data.get("main_deck_cards") else main_cards[1] if len(main_cards) > 1 else "Extensor")
         s3 = extra_cards[0] if len(extra_cards) > 0 else extra_cards[0] if extra_cards else "Extra Deck"
-        s4 = extra_cards[1] if len(extra_cards) > 1 else (extra_cards[0] if extra_cards else "I:P Enmascarada")
+        s4 = extra_cards[1] if len(extra_cards) > 1 else (extra_cards[0] if extra_cards else ("Ciber Dragón Final" if "ciber" in d_name.lower() else "Jefe Extra Deck"))
 
         act1 = combo_steps[0] if len(combo_steps) > 0 else "Invocación Normal (Starter)"
         act2 = combo_steps[1] if len(combo_steps) > 1 else "Activar efecto para extender"
@@ -952,14 +1084,14 @@ class LiveCoachOverlay:
     def _run_analysis_async(self, frame):
         try:
             # 1. Comprobar si estamos en duelo activo
-            analysis = self.brain.analyze_live_duel(frame)
+            analysis = self.brain.analyze_live_duel(frame, lang=self.current_lang)
             if analysis and analysis.get("in_duel"):
                 self.brain.commit_frame_hash()
                 self.root.after(0, lambda a=analysis: self._apply_live_analysis(a))
                 return
 
             # 2. Si NO estamos en duelo, comprobar si es pantalla de Deck / Modo Solo
-            deck_res = self.brain.analyze_deck_screen(frame)
+            deck_res = self.brain.analyze_deck_screen(frame, lang=self.current_lang)
             if deck_res and (deck_res.get("is_deck_screen") or deck_res.get("key_starters")):
                 new_name = deck_res.get("deck_name", "").strip()
                 cur_name = self.current_deck_data.get("deck_name", "").strip() if self.current_deck_data else ""
