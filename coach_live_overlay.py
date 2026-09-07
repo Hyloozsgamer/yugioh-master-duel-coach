@@ -82,6 +82,7 @@ class LiveCoachOverlay:
         # Iniciar bucle de escaneo rápido de duelo
         self.auto_thread = threading.Thread(target=self._fast_scanning_loop, daemon=True)
         self.auto_thread.start()
+        self._start_global_f5_listener()
 
     def _load_lang_config(self) -> str:
         config_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), "coach_config.json")
@@ -1060,6 +1061,25 @@ class LiveCoachOverlay:
         return None
     def _animate_z_pulse(self):
         pass
+
+    def _start_global_f5_listener(self):
+        def _f5_loop():
+            import ctypes
+            user32 = ctypes.windll.user32
+            VK_F5 = 0x74
+            last_time = 0.0
+            while getattr(self, "is_running", True):
+                try:
+                    # Comprueba si la tecla F5 está pulsada en cualquier ventana de Windows
+                    if (user32.GetAsyncKeyState(VK_F5) & 0x8000) != 0:
+                        now = time.time()
+                        if now - last_time > 1.2:
+                            last_time = now
+                            self.root.after(0, self._trigger_deck_or_duel_scan)
+                except Exception:
+                    pass
+                time.sleep(0.06)
+        threading.Thread(target=_f5_loop, daemon=True).start()
 
     def _fast_scanning_loop(self):
         time.sleep(0.5)

@@ -83,7 +83,13 @@ class LiveVisionCoach:
                     try:
                         p = psutil.Process(pid.value)
                         if "masterduel" in p.name().lower():
-                            found_hwnd = hwnd
+                            rect = ctypes.wintypes.RECT()
+                            user32.GetWindowRect(hwnd, ctypes.byref(rect))
+                            w = rect.right - rect.left
+                            h = rect.bottom - rect.top
+                            # Descartar ventanas internas de 0x0 (IME/helper) y quedarse con la ventana real del juego
+                            if w >= 400 and h >= 300:
+                                found_hwnd = hwnd
                     except Exception:
                         pass
                 return True
@@ -221,7 +227,7 @@ REGLAS DE PRECISIÓN Y CERO ALUCINACIONES:
 5. Especifica los 4 NODOS EXACTOS de la secuencia Z con CARTAS REALES:
 
 Devuelve SIEMPRE un JSON válido con este esquema:
-{
+{{
   "is_deck_screen": true,
   "is_loaner": true,
   "screen_type": "SOLO_GATE / LOANER_DECK",
@@ -234,12 +240,12 @@ Devuelve SIEMPRE un JSON válido con este esquema:
   "extra_deck_cards": ["Nombre Exacto Jefe Extra 1", "Nombre Exacto Jefe Extra 2"],
   "support_spells_traps": ["Magia/Trampa Clave 1"],
   "z_nodes": [
-    {"node": 1, "phase": "1. INICIO", "card": "Nombre Real Starter", "action": "Invocación Normal (Nivel/Efecto inicial)", "ev": 98},
-    {"node": 2, "phase": "2. EXTENSIÓN", "card": "Nombre Real Cantante/Extensor", "action": "Invocación Especial o Cantante", "ev": 94},
-    {"node": 3, "phase": "3. EXTRA DECK", "card": "Nombre Real Monstruo Extra", "action": "Invocación por Sincronía/Enlace/Xyz", "ev": 96},
-    {"node": 4, "phase": "4. REMATE", "card": "Nombre Real Jefe o Trampa", "action": "Control de mesa / Victoria", "ev": 95}
+    {{"node": 1, "phase": "1. INICIO", "card": "Nombre Real Starter", "action": "Invocación Normal (Nivel/Efecto inicial)", "ev": 98}},
+    {{"node": 2, "phase": "2. EXTENSIÓN", "card": "Nombre Real Cantante/Extensor", "action": "Invocación Especial o Cantante", "ev": 94}},
+    {{"node": 3, "phase": "3. EXTRA DECK", "card": "Nombre Real Monstruo Extra", "action": "Invocación por Sincronía/Enlace/Xyz", "ev": 96}},
+    {{"node": 4, "phase": "4. REMATE", "card": "Nombre Real Jefe o Trampa", "action": "Control de mesa / Victoria", "ev": 95}}
   ],
-  "strategy": {
+  "strategy": {{
     "win_condition": "Objetivo táctico principal para ganar la partida...",
     "combo_steps": [
       "1. [Paso 1 con nombres de cartas exactas y niveles/acciones]",
@@ -249,8 +255,8 @@ Devuelve SIEMPRE un JSON válido con este esquema:
     ],
     "end_board": "Campo final recomendado y recursos preparados...",
     "ideal_hand": ["Carta 1", "Carta 2"]
-  }
-}"""
+  }}
+}}"""
 
         for attempt in range(len(self.models_pool)):
             idx = (self.current_model_idx + attempt) % len(self.models_pool)
