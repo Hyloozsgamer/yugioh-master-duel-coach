@@ -650,46 +650,48 @@ class LiveCoachOverlay:
         self._show_strategy_popup(md_path, d_name)
 
     def _trigger_deck_or_duel_scan(self):
-        """Disparo manual prioritario por botón ESCANEAR o tecla F5."""
-        if self.is_scanning_deck or self.is_analyzing:
+        """Disparo manual prioritario e inmediato por botón ESCANEAR o tecla F5."""
+        if getattr(self, "_manual_scan_in_progress", False):
             return
+        self._manual_scan_in_progress = True
 
-        frame = self.brain.capture_game_screen()
-        if frame is None:
-            self.status_lbl.config(text="⚠️ Abre o enfoca Yu-Gi-Oh! Master Duel", fg="#FEF08A")
-            return
-
-        self.status_lbl.config(text="🔍 Escaneando juego en tiempo real...", fg="#00F5FF")
-        self.is_analyzing = True
+        # Feedback visual instantáneo en el botón
+        self.scan_deck_btn.config(text="⌛ ESCANEANDO...", bg="#FEF08A")
+        self.status_lbl.config(text="🔍 Analizando pantalla de Master Duel...", fg="#00F5FF")
+        self.root.update_idletasks()
 
         def task():
             try:
-                # 1. Intentar análisis de duelo
-                analysis = self.brain.analyze_live_duel(frame, lang=self.current_lang)
-                if analysis and analysis.get("in_duel"):
-                    self.brain.commit_frame_hash()
-                    self.root.after(0, lambda a=analysis: self._apply_live_analysis(a))
+                frame = self.brain.capture_game_screen()
+                if frame is None:
+                    self.root.after(0, lambda: self.status_lbl.config(text="⚠️ Abre o enfoca Yu-Gi-Oh! Master Duel", fg="#FEF08A"))
                     return
 
-                # 2. Si no es duelo, intentar escaneo de deck
-                deck_res = self.brain.analyze_deck_screen(frame, lang=self.current_lang)
-                if deck_res and (deck_res.get("is_deck_screen") or deck_res.get("key_starters")):
-                    self.brain.commit_frame_hash()
-                    self.root.after(0, lambda d=deck_res: self._apply_deck_scan_result(d))
-                    return
+                # Escaneo unificado instantáneo en una sola llamada de alta velocidad
+                res = self.brain.scan_screen_auto(frame, lang=self.current_lang)
 
-                if analysis:
+                if res and (res.get("screen_type") == "DECK" or res.get("is_deck_screen")):
                     self.brain.commit_frame_hash()
-                    self.root.after(0, lambda a=analysis: self._apply_live_analysis(a))
+                    self.root.after(0, lambda r=res: self._apply_deck_scan_result(r))
+                    return
+                elif res and (res.get("screen_type") == "DUEL" or res.get("in_duel")):
+                    self.brain.commit_frame_hash()
+                    self.root.after(0, lambda r=res: self._apply_live_analysis(r))
+                    return
+                elif res and res.get("key_starters"):
+                    self.brain.commit_frame_hash()
+                    self.root.after(0, lambda r=res: self._apply_deck_scan_result(r))
+                    return
                 else:
-                    self.root.after(0, lambda: self.status_lbl.config(text="● Listo - Pulsa Escanear [F5]", fg="#94A3B8"))
-            except Exception:
-                self.root.after(0, lambda: self.status_lbl.config(text="● Listo - Pulsa Escanear [F5]", fg="#94A3B8"))
+                    self.root.after(0, lambda: self.status_lbl.config(text="● Escaneo completado: Esperando jugada [F5]", fg="#10B981"))
+            except Exception as e:
+                self.root.after(0, lambda: self.status_lbl.config(text="● Listo para escanear [F5]", fg="#94A3B8"))
             finally:
+                self._manual_scan_in_progress = False
                 self.is_analyzing = False
+                self.root.after(0, lambda: self.scan_deck_btn.config(text=t("scan_btn_hotkey", self.current_lang), bg="#FACC15"))
 
         threading.Thread(target=task, daemon=True).start()
-
     def _trigger_deck_scan(self):
         """Dispara el escaneo de baraja en pantalla completa y genera la estrategia."""
         if self.is_scanning_deck:
@@ -802,38 +804,47 @@ class LiveCoachOverlay:
         tag = "DECK PRESTADO" if is_loaner else "DECK"
         banner_msg = f"[{tag}: {d_name.upper()}]\n🎮 ¡Ya puedes darle a jugar!"
         self.deck_title_lbl.config(text=banner_msg, font=("Segoe UI", 9, "bold"), fg="#A7F3D0", bg="#064E3B")
-        
+
         info_text = f"Starters: {starters} | Fin: {strat.get('end_board', '')[:45]}"
         if hasattr(self, "deck_info_lbl") and self.deck_info_lbl.winfo_exists():
             self.deck_info_lbl.config(text=info_text, bg="#064E3B")
         if hasattr(self, "deck_combo") and self.deck_combo.winfo_exists():
-            if d_name in self.deck_combo["values"]:
-                self.deck_combo.set(d_name)
+            current_vals = list(self.deck_combo["values"])
+            if d_name not in current_vals:
+                current_vals.append(d_name)
+                self.deck_combo["values"] = current_vals
+            self.deck_combo.set(d_name)
+            self._save_active_deck_name(d_name)
 
         self.status_lbl.config(text=f"● MODO SOLO: {d_name} listo. ¡Pulsa Jugar en Master Duel!", fg="#10B981")
 
         # Cargar el combo de esta baraja en los 4 nodos Z inmediatamente
-        main_cards = data.get("main_deck_cards", [])
-        key_starters = data.get("key_starters", [])
-        extra_cards = data.get("extra_deck_cards", [])
-        combo_steps = strat.get("combo_steps", [])
+        if data.get("z_nodes") and len(data.get("z_nodes")) >= 4:
+            self.nodes_data = data["z_nodes"]
+            for i, n in enumerate(self.nodes_data):
+                n["status"] = "ACTIVE" if i == 0 else "PENDING"
+        else:
+            main_cards = data.get("main_deck_cards", [])
+            key_starters = data.get("key_starters", [])
+            extra_cards = data.get("extra_deck_cards", [])
+            combo_steps = strat.get("combo_steps", [])
 
-        s1 = key_starters[0] if len(key_starters) > 0 else main_cards[0] if main_cards else "Carta Principal"
-        s2 = key_starters[1] if len(key_starters) > 1 else (data.get("main_deck_cards", [main_cards[1] if len(main_cards) > 1 else "Extensor"])[0] if data.get("main_deck_cards") else main_cards[1] if len(main_cards) > 1 else "Extensor")
-        s3 = extra_cards[0] if len(extra_cards) > 0 else extra_cards[0] if extra_cards else "Extra Deck"
-        s4 = extra_cards[1] if len(extra_cards) > 1 else (extra_cards[0] if extra_cards else ("Ciber Dragón Final" if "ciber" in d_name.lower() else "Jefe Extra Deck"))
+            s1 = key_starters[0] if len(key_starters) > 0 else main_cards[0] if main_cards else "Carta Principal"
+            s2 = key_starters[1] if len(key_starters) > 1 else (data.get("main_deck_cards", [main_cards[1] if len(main_cards) > 1 else "Extensor"])[0] if data.get("main_deck_cards") else main_cards[1] if len(main_cards) > 1 else "Extensor")
+            s3 = extra_cards[0] if len(extra_cards) > 0 else extra_cards[0] if extra_cards else "Extra Deck"
+            s4 = extra_cards[1] if len(extra_cards) > 1 else (extra_cards[0] if extra_cards else ("Ciber Dragón Final" if "ciber" in d_name.lower() else "Jefe Extra Deck"))
 
-        act1 = combo_steps[0] if len(combo_steps) > 0 else "Invocación Normal (Starter)"
-        act2 = combo_steps[1] if len(combo_steps) > 1 else "Activar efecto para extender"
-        act3 = combo_steps[2] if len(combo_steps) > 2 else "Invocación Enlace Link-2"
-        act4 = combo_steps[3] if len(combo_steps) > 3 else "Dejar interrupciones preparadas"
+            act1 = combo_steps[0] if len(combo_steps) > 0 else "Invocación Normal (Starter)"
+            act2 = combo_steps[1] if len(combo_steps) > 1 else "Activar efecto para extender"
+            act3 = combo_steps[2] if len(combo_steps) > 2 else "Invocación Enlace Link-2"
+            act4 = combo_steps[3] if len(combo_steps) > 3 else "Dejar interrupciones preparadas"
 
-        self.nodes_data = [
-            {"node": 1, "phase": "1. INICIO", "card": s1, "action": act1, "ev": 98, "status": "ACTIVE"},
-            {"node": 2, "phase": "2. EXTENSIÓN", "card": s2, "action": act2, "ev": 94, "status": "PENDING"},
-            {"node": 3, "phase": "3. ENLACE", "card": s3, "action": act3, "ev": 92, "status": "PENDING"},
-            {"node": 4, "phase": "4. REMATE", "card": s4, "action": act4, "ev": 95, "status": "PENDING"}
-        ]
+            self.nodes_data = [
+                {"node": 1, "phase": "1. INICIO", "card": s1, "action": act1, "ev": 98, "status": "ACTIVE"},
+                {"node": 2, "phase": "2. EXTENSIÓN", "card": s2, "action": act2, "ev": 94, "status": "PENDING"},
+                {"node": 3, "phase": "3. ENLACE", "card": s3, "action": act3, "ev": 92, "status": "PENDING"},
+                {"node": 4, "phase": "4. REMATE", "card": s4, "action": act4, "ev": 95, "status": "PENDING"}
+            ]
         combo_steps = strat.get("combo_steps", [])
         if combo_steps:
             self.route_summary_lbl.config(text="Cadena: " + " ➔ ".join(combo_steps[:4]))

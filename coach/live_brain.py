@@ -23,8 +23,13 @@ class LiveVisionCoach:
         self.db = db
         self.api_key = self._load_api_key()
         self.models_pool = [
-            "gemini-3.5-flash",
+            "gemini-3.6-flash",
+            "gemini-3.8-flash",
+            "gemini-3.7-flash",
             "gemini-3-flash-preview",
+            "gemini-flash-lite-latest",
+            "gemini-3.1-flash-lite-preview",
+            "gemini-3.5-flash",
             "gemini-flash-latest"
         ]
         self.current_model_idx = 0
@@ -117,6 +122,47 @@ class LiveVisionCoach:
 
     def capture_game_screen(self) -> Optional[np.ndarray]:
         self._attach_to_desktop()
+        hwnd = self._find_masterduel_hwnd()
+        if hwnd:
+            try:
+                import ctypes
+                import ctypes.wintypes
+                user32 = ctypes.windll.user32
+                gdi32 = ctypes.windll.gdi32
+                if not user32.IsIconic(hwnd):
+                    rect = ctypes.wintypes.RECT()
+                    user32.GetWindowRect(hwnd, ctypes.byref(rect))
+                    w = rect.right - rect.left
+                    h = rect.bottom - rect.top
+                    if w >= 400 and h >= 300:
+                        hwnd_dc = user32.GetWindowDC(hwnd)
+                        m_dc = gdi32.CreateCompatibleDC(hwnd_dc)
+                        bmp = gdi32.CreateCompatibleBitmap(hwnd_dc, w, h)
+                        gdi32.SelectObject(m_dc, bmp)
+                        # PW_RENDERFULLCONTENT = 2
+                        res = user32.PrintWindow(hwnd, m_dc, 2)
+                        if res != 0:
+                            bmpinfo = ctypes.c_buffer(40)
+                            ctypes.memmove(bmpinfo, bytes([40, 0, 0, 0]), 4)
+                            ctypes.memmove(ctypes.addressof(bmpinfo) + 4, int(w).to_bytes(4, 'little', signed=True), 4)
+                            ctypes.memmove(ctypes.addressof(bmpinfo) + 8, int(-h).to_bytes(4, 'little', signed=True), 4)
+                            ctypes.memmove(ctypes.addressof(bmpinfo) + 12, (1).to_bytes(2, 'little'), 2)
+                            ctypes.memmove(ctypes.addressof(bmpinfo) + 14, (32).to_bytes(2, 'little'), 2)
+                            buf = ctypes.create_string_buffer(w * h * 4)
+                            gdi32.GetDIBits(m_dc, bmp, 0, h, buf, bmpinfo, 0)
+                            bgr = np.frombuffer(buf, dtype=np.uint8).reshape((h, w, 4))[:, :, :3]
+                            gdi32.DeleteObject(bmp)
+                            gdi32.DeleteDC(m_dc)
+                            user32.ReleaseDC(hwnd, hwnd_dc)
+                            if np.mean(bgr) > 5.0:
+                                return bgr
+                        else:
+                            gdi32.DeleteObject(bmp)
+                            gdi32.DeleteDC(m_dc)
+                            user32.ReleaseDC(hwnd, hwnd_dc)
+            except Exception:
+                pass
+
         if self._sct is None:
             try:
                 import mss
@@ -124,24 +170,22 @@ class LiveVisionCoach:
             except Exception:
                 return None
 
-        hwnd = self._find_masterduel_hwnd()
         if hwnd:
             try:
                 import ctypes
                 import ctypes.wintypes
                 user32 = ctypes.windll.user32
-                if user32.IsIconic(hwnd):
-                    return None
-                rect = ctypes.wintypes.RECT()
-                user32.GetWindowRect(hwnd, ctypes.byref(rect))
-                w = rect.right - rect.left
-                h = rect.bottom - rect.top
-                if w >= 400 and h >= 300:
-                    mon = {"top": rect.top, "left": rect.left, "width": w, "height": h}
-                    shot = self._sct.grab(mon)
-                    img = np.array(shot, dtype=np.uint8)[:, :, :3]
-                    if np.mean(img) > 2.0:
-                        return img
+                if not user32.IsIconic(hwnd):
+                    rect = ctypes.wintypes.RECT()
+                    user32.GetWindowRect(hwnd, ctypes.byref(rect))
+                    w = rect.right - rect.left
+                    h = rect.bottom - rect.top
+                    if w >= 400 and h >= 300:
+                        mon = {"top": rect.top, "left": rect.left, "width": w, "height": h}
+                        shot = self._sct.grab(mon)
+                        img = np.array(shot, dtype=np.uint8)[:, :, :3]
+                        if np.mean(img) > 2.0:
+                            return img
             except Exception:
                 pass
 
@@ -155,11 +199,10 @@ class LiveVisionCoach:
             pass
 
         return None
-
     def _has_frame_changed(self, frame: np.ndarray) -> bool:
         now = time.time()
         # Cooldown estricto de 2.5s entre llamadas automáticas para respetar cuotas gratuitas de Google Gemini
-        if now - self._last_auto_scan_time < 2.5:
+        if now - self._last_auto_scan_time < 7.0:
             return False
 
         h, w = frame.shape[:2]
@@ -180,7 +223,7 @@ class LiveVisionCoach:
 
         diff = float(np.mean(np.abs(sample.astype(np.float32) - self._last_gray_sample.astype(np.float32))))
         # Diferencia significativa de píxeles (cartas jugadas/robadas, no solo partículas flotantes)
-        if diff > 9.0:
+        if diff > 14.0:
             self._last_gray_sample = sample
             self._last_auto_scan_time = now
             return True
@@ -192,6 +235,126 @@ class LiveVisionCoach:
         if self._pending_frame_hash is not None:
             self._last_frame_hash = self._pending_frame_hash
 
+    def scan_screen_auto(self, frame: np.ndarray, lang: str = 'ES') -> Optional[Dict[str, Any]]:
+        """
+        Escaneo unificado e inteligente: detecta automáticamente si la pantalla
+        es de Mazo / Receta / Modo Solo o si es un Duelo activo, devolviendo la estrategia
+        en una sola llamada optimizada de alta velocidad.
+        """
+        if not self.api_key or frame is None:
+            return None
+
+        h, w = frame.shape[:2]
+        resized = cv2.resize(frame, (800, int(h * 800 / w)))
+        _, buf = cv2.imencode(".jpg", resized, [cv2.IMWRITE_JPEG_QUALITY, 76])
+        b64_img = base64.b64encode(buf).decode("utf-8")
+
+        lang_names = {'ES': 'Español', 'EN': 'English', 'FR': 'Français', 'DE': 'Deutsch', 'IT': 'Italiano'}
+        target_lang = lang_names.get(str(lang).upper(), 'Español')
+
+        prompt = f"""Eres el Head Coach profesional y maestro de estrategia de Yu-Gi-Oh! Master Duel.
+Analiza con máxima precisión esta captura de pantalla de Yu-Gi-Oh! Master Duel.
+El usuario tiene configurado el asistente en idioma: {target_lang}.
+
+Determina qué tipo de pantalla muestra la imagen:
+1. Si muestra una PANTALLA DE MAZO / MODO SOLO / DECK PRESTADO / VISTA DE RECETA / SELECCIÓN DE DUELO:
+Devuelve:
+{{
+  "screen_type": "DECK",
+  "is_deck_screen": true,
+  "deck_name": "Nombre exacto del Deck en {target_lang}",
+  "archetype": "Arquetipo principal",
+  "loaner_tip": "Consejo táctico directo y concreto para ganar con este deck",
+  "key_starters": ["Nombre Exacto Starter 1", "Nombre Exacto Starter 2"],
+  "extra_deck_cards": ["Nombre Exacto Jefe Extra 1", "Nombre Exacto Jefe Extra 2"],
+  "tuners_or_extenders": ["Nombre Exacto Extensor 1"],
+  "z_nodes": [
+    {{"node": 1, "phase": "1. INICIO", "card": "Carta Starter", "action": "Invocación Normal / Efecto inicial", "ev": 98}},
+    {{"node": 2, "phase": "2. EXTENSIÓN", "card": "Carta Extensora", "action": "Invocación Especial / Búsqueda", "ev": 95}},
+    {{"node": 3, "phase": "3. EXTRA DECK", "card": "Monstruo Extra", "action": "Invocación Xyz/Sincronía/Enlace", "ev": 96}},
+    {{"node": 4, "phase": "4. REMATE", "card": "Jefe Final", "action": "Control de mesa o Remate de turno", "ev": 95}}
+  ],
+  "strategy": {{
+    "win_condition": "Objetivo táctico principal para ganar la partida",
+    "combo_steps": [
+      "1. Paso 1 detallado",
+      "2. Paso 2 detallado",
+      "3. Paso 3 detallado",
+      "4. Paso 4 detallado"
+    ],
+    "end_board": "Campo final recomendado"
+  }}
+}}
+
+2. Si es un DUELO ACTIVO (partida en curso con tapete, LP, cartas en mano abajo, fase actual):
+Devuelve:
+{{
+  "screen_type": "DUEL",
+  "in_duel": true,
+  "active_modal": null,
+  "hand_cards": [
+    {{"slot": 1, "name": "Nombre Exacto Carta 1 en {target_lang}", "play_index": "1º", "is_optimal": true}}
+  ],
+  "opponent_board": {{
+    "monsters_count": 0,
+    "monsters_summary": "Monstruos del rival o campo despejado",
+    "threat_level": "BAJO/MEDIO/ALTO"
+  }},
+  "optimal_play": {{
+    "play_name": "Nombre de la Jugada recomendada",
+    "confidence": 98,
+    "summary": "Explicación de qué carta jugar y qué efecto activar"
+  }},
+  "z_nodes": [
+    {{"node": 1, "phase": "1. INICIO", "card": "Carta en mano recomendada", "action": "Activar o Invocar", "ev": 98}},
+    {{"node": 2, "phase": "2. EXTENSIÓN", "card": "Siguiente recurso", "action": "Efecto o invocación", "ev": 95}},
+    {{"node": 3, "phase": "3. EXTRA DECK", "card": "Monstruo Extra", "action": "Invocación Extra Deck", "ev": 96}},
+    {{"node": 4, "phase": "4. REMATE", "card": "Objetivo de turno", "action": "Avanzar a Batalla o Pasar Turno", "ev": 95}}
+  ]
+}}
+
+Devuelve ÚNICAMENTE el bloque JSON válido sin comentarios ni texto fuera del JSON."""
+
+        for attempt in range(len(self.models_pool)):
+            idx = (self.current_model_idx + attempt) % len(self.models_pool)
+            model_name = self.models_pool[idx]
+            url = f"https://generativelanguage.googleapis.com/v1beta/models/{model_name}:generateContent?key={self.api_key}"
+            payload = {
+                "contents": [
+                    {
+                        "parts": [
+                            {"text": prompt},
+                            {"inline_data": {"mime_type": "image/jpeg", "data": b64_img}}
+                        ]
+                    }
+                ],
+                "generationConfig": {"temperature": 0.1, "maxOutputTokens": 2048}
+            }
+
+            try:
+                req = urllib.request.Request(url, data=json.dumps(payload).encode("utf-8"), headers={"Content-Type": "application/json"})
+                with urllib.request.urlopen(req, timeout=18.0) as resp:
+                    data = json.loads(resp.read().decode("utf-8"))
+                    text = data["candidates"][0]["content"]["parts"][0]["text"]
+                    if "```json" in text:
+                        text = text.split("```json", 1)[1].split("```", 1)[0].strip()
+                    elif "```" in text:
+                        text = text.split("```", 1)[1].split("```", 1)[0].strip()
+                    parsed = json.loads(text)
+                    self.current_model_idx = idx
+
+                    if parsed.get("screen_type") == "DECK" or parsed.get("is_deck_screen") or parsed.get("key_starters") or (not parsed.get("in_duel") and parsed.get("strategy")):
+                        parsed["is_deck_screen"] = True
+                        parsed["screen_type"] = "DECK"
+                        self.active_deck = parsed
+                        self._save_deck_and_strategy(parsed)
+
+                    return parsed
+            except Exception:
+                continue
+
+        return None
+
     def analyze_deck_screen(self, frame: np.ndarray, lang: str = 'ES') -> Optional[Dict[str, Any]]:
         """
         Escanea la pantalla de baraja o Puerta de Modo Solo en Master Duel,
@@ -201,8 +364,8 @@ class LiveVisionCoach:
             return None
 
         h, w = frame.shape[:2]
-        resized = cv2.resize(frame, (1024, int(h * 1024 / w)))
-        _, buf = cv2.imencode(".jpg", resized, [cv2.IMWRITE_JPEG_QUALITY, 85])
+        resized = cv2.resize(frame, (880, int(h * 880 / w)))
+        _, buf = cv2.imencode(".jpg", resized, [cv2.IMWRITE_JPEG_QUALITY, 78])
         b64_img = base64.b64encode(buf).decode("utf-8")
 
         lang_names = {'ES': 'Español', 'EN': 'English', 'FR': 'Français', 'DE': 'Deutsch', 'IT': 'Italiano'}
@@ -271,12 +434,12 @@ Devuelve SIEMPRE un JSON válido con este esquema:
                         ]
                     }
                 ],
-                "generationConfig": {"temperature": 0.1, "maxOutputTokens": 1000}
+                "generationConfig": {"temperature": 0.1, "maxOutputTokens": 1800}
             }
 
             try:
                 req = urllib.request.Request(url, data=json.dumps(payload).encode("utf-8"), headers={"Content-Type": "application/json"})
-                with urllib.request.urlopen(req, timeout=6.0) as resp:
+                with urllib.request.urlopen(req, timeout=18.0) as resp:
                     data = json.loads(resp.read().decode("utf-8"))
                     text = data["candidates"][0]["content"]["parts"][0]["text"]
                     if "```json" in text:
@@ -474,7 +637,7 @@ Devuelve SIEMPRE un JSON válido con este esquema:
 {loaner_label} ({d_name}):
 - Starters incluidos en el préstamo: {starters}
 - Extra Deck del préstamo: {extra}
-REGLA CRUCIAL: Estás jugando con una BARAJA DE PRÉSTAMO. Recomienda ÚNICAMENTE jugadas posibles con las cartas que Konami entrega en este préstamo. No asumas staples competitivas de fuera."""
+CONTEXTO DE ESTRATEGIA: Si las cartas en mano corresponden a este mazo ({d_name}), sigue esta ruta. Si el jugador tiene otras cartas o juega otro arquetipo, analiza las cartas REALES de su mano y recomienda la mejor jugada posible."""
 
         lang_names = {'ES': 'Español', 'EN': 'English', 'FR': 'Français', 'DE': 'Deutsch', 'IT': 'Italiano'}
         target_lang = lang_names.get(str(lang).upper(), 'Español')
@@ -539,12 +702,12 @@ Devuelve SOLO JSON valido:
                         ]
                     }
                 ],
-                "generationConfig": {"temperature": 0.0, "maxOutputTokens": 1200}
+                "generationConfig": {"temperature": 0.0, "maxOutputTokens": 1800}
             }
 
             try:
                 req = urllib.request.Request(url, data=json.dumps(payload).encode("utf-8"), headers={"Content-Type": "application/json"})
-                with urllib.request.urlopen(req, timeout=6.0) as resp:
+                with urllib.request.urlopen(req, timeout=18.0) as resp:
                     data = json.loads(resp.read().decode("utf-8"))
                     text = data["candidates"][0]["content"]["parts"][0]["text"]
                     if "```json" in text:

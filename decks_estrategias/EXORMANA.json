@@ -1,72 +1,59 @@
 {
+  "screen_type": "DECK",
   "is_deck_screen": true,
-  "is_loaner": true,
-  "screen_type": "SOLO_GATE / LOANER_DECK",
   "deck_name": "EXORMANA",
   "archetype": "Exormana (Exosister)",
-  "total_cards_estimated": 40,
-  "loaner_tip": "Usa los efectos de interrupción en el Cementerio del rival para activar rápidamente las Invocaciones Xyz de tus Exormana y asegurar ataques consecutivos.",
+  "loaner_tip": "Aprovecha el efecto de Exormana Marta para realizar una Invocación Xyz de un solo paso a Mikailis o Kaspitel, buscar Exormana Returnia y controlar por completo el cementerio del rival.",
   "key_starters": [
     "Exormana Marta",
-    "Exormana Elis"
-  ],
-  "tuners_or_extenders": [
-    "Exormana Stella",
-    "Exormana Sophia"
+    "Exormana Pax"
   ],
   "extra_deck_cards": [
-    "Exormana Magnifica",
-    "Exormana Mikailis",
-    "Exormana Kaspitell",
-    "Exormana Asophiel"
+    "Exormanas Magnifica",
+    "Exormana Mikailis"
   ],
-  "support_spells_traps": [
-    "Exormana Vadic",
-    "Exormana Carpedium",
-    "Exormana Pax"
+  "tuners_or_extenders": [
+    "Exormana Elis",
+    "Sakitama"
   ],
   "z_nodes": [
     {
       "node": 1,
       "phase": "1. INICIO",
       "card": "Exormana Marta",
-      "action": "Invocación Normal y efecto para invocar otra Exormana",
+      "action": "Invocación Especial desde mano junto con Exormana Elis desde el Deck",
       "ev": 98
     },
     {
       "node": 2,
       "phase": "2. EXTENSIÓN",
-      "card": "Exormana Elis",
-      "action": "Invocación Especial desde la mano",
-      "ev": 94
+      "card": "Exormana Mikailis",
+      "action": "Invocación Xyz de Rango 4 y búsqueda de Trampa Exormana Returnia",
+      "ev": 96
     },
     {
       "node": 3,
       "phase": "3. EXTRA DECK",
-      "card": "Exormana Mikailis",
-      "action": "Invocación Xyz de Rango 4 para buscar o interrumpir",
-      "ev": 96
+      "card": "Exormana Kaspitel",
+      "action": "Invocación Xyz secundaria para buscar otro monstruo Exormana",
+      "ev": 95
     },
     {
       "node": 4,
       "phase": "4. REMATE",
-      "card": "Exormana Magnifica",
-      "action": "Invocación Xyz superpuesta para control y ataques múltiples",
-      "ev": 95
+      "card": "Exormanas Magnifica",
+      "action": "Invocación Xyz de Rango 8 usando 2 Xyz de Rango 4 para desterrar cartas e interrumpir al rival",
+      "ev": 97
     }
   ],
   "strategy": {
-    "win_condition": "Establecer a Exormana Magnifica en el campo y castigar cualquier movimiento del oponente que mueva cartas desde o hacia el Cementerio.",
+    "win_condition": "Establecer un campo de control con Exormanas Magnifica respaldada por Exormana Returnia y Exormana Vadis para desterrar los recursos clave del oponente.",
     "combo_steps": [
-      "1. Activa 'Exormana Pax' para buscar a 'Exormana Marta' si no la tienes en mano.",
-      "2. Invoca de Modo Normal a 'Exormana Marta', activando su efecto para invocar a 'Exormana Elis' desde el Deck.",
-      "3. Utiliza los dos monstruos de Nivel 4 para realizar una Invocación Xyz de 'Exormana Mikailis' o 'Exormana Kaspitell'.",
-      "4. Superpone cartas para invocar al monstruo jefe 'Exormana Magnifica' y aprovecha sus efectos rápidos para asegurar la victoria."
+      "1. Activa el efecto de Exormana Marta en mano para Invocarte Especialmente junto con Exormana Elis desde el Deck.",
+      "2. Invoca por Xyz a Exormana Mikailis usando a Marta y Elis como materiales; desacopla un material para buscar Exormana Returnia.",
+      "3. Utiliza una Invocación Normal adicional (como Sakitama) para invocar a Exormana Kaspitel y buscar una Exormana adicional.",
+      "4. Invoca por Xyz a Exormanas Magnifica usando a Mikailis y Kaspitel como materiales, coloca tus trampas y pasa turno."
     ],
-    "end_board": "Exormana Magnifica en el campo con materiales listos para responder a los efectos del rival y cartas de trampa de arquetipo en la zona de magia y trampas.",
-    "ideal_hand": [
-      "Exormana Marta",
-      "Exormana Pax"
-    ]
+    "end_board": "Exormanas Magnifica + Exormana Returnia boca abajo + Exormana Vadis / Interrupciones boca abajo"
   }
 }

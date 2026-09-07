@@ -4,30 +4,30 @@
 ---
 
 ## 🎯 Condición de Victoria (Win Condition)
-Establecer a Exormana Magnifica en el campo y castigar cualquier movimiento del oponente que mueva cartas desde o hacia el Cementerio.
+Establecer un campo de control con Exormanas Magnifica respaldada por Exormana Returnia y Exormana Vadis para desterrar los recursos clave del oponente.
 
 ---
 
 ## 🃏 Cartas Clave del Mazo
-- **⚡ Starters (Apertura Turno 1):** Exormana Marta, Exormana Elis
-- **🔄 Cantantes / Extensores:** Exormana Stella, Exormana Sophia
-- **👑 Jefes del Extra Deck:** Exormana Magnifica, Exormana Mikailis, Exormana Kaspitell, Exormana Asophiel
-- **🛡️ Magias y Trampas de Soporte:** Exormana Vadic, Exormana Carpedium, Exormana Pax
+- **⚡ Starters (Apertura Turno 1):** Exormana Marta, Exormana Pax
+- **🔄 Cantantes / Extensores:** Exormana Elis, Sakitama
+- **👑 Jefes del Extra Deck:** Exormanas Magnifica, Exormana Mikailis
+- **🛡️ Magias y Trampas de Soporte:** Recursos de limpieza y protección
 
 ---
 
 ## 🔄 Secuencia de Combo Óptima (Paso a Paso)
-- 1. Activa 'Exormana Pax' para buscar a 'Exormana Marta' si no la tienes en mano.
-- 2. Invoca de Modo Normal a 'Exormana Marta', activando su efecto para invocar a 'Exormana Elis' desde el Deck.
-- 3. Utiliza los dos monstruos de Nivel 4 para realizar una Invocación Xyz de 'Exormana Mikailis' o 'Exormana Kaspitell'.
-- 4. Superpone cartas para invocar al monstruo jefe 'Exormana Magnifica' y aprovecha sus efectos rápidos para asegurar la victoria.
+- 1. Activa el efecto de Exormana Marta en mano para Invocarte Especialmente junto con Exormana Elis desde el Deck.
+- 2. Invoca por Xyz a Exormana Mikailis usando a Marta y Elis como materiales; desacopla un material para buscar Exormana Returnia.
+- 3. Utiliza una Invocación Normal adicional (como Sakitama) para invocar a Exormana Kaspitel y buscar una Exormana adicional.
+- 4. Invoca por Xyz a Exormanas Magnifica usando a Mikailis y Kaspitel como materiales, coloca tus trampas y pasa turno.
 
 ---
 
 ## 🛡️ Campo Final Ideal (End Board)
-Exormana Magnifica en el campo con materiales listos para responder a los efectos del rival y cartas de trampa de arquetipo en la zona de magia y trampas.
+Exormanas Magnifica + Exormana Returnia boca abajo + Exormana Vadis / Interrupciones boca abajo
 
 ---
 
 ## 💡 Consejo Táctico para Vencer a la IA de este Escenario
-Usa los efectos de interrupción en el Cementerio del rival para activar rápidamente las Invocaciones Xyz de tus Exormana y asegurar ataques consecutivos.
+Aprovecha el efecto de Exormana Marta para realizar una Invocación Xyz de un solo paso a Mikailis o Kaspitel, buscar Exormana Returnia y controlar por completo el cementerio del rival.
