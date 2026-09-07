@@ -1,0 +1,73 @@
+{
+  "is_deck_screen": true,
+  "is_loaner": true,
+  "screen_type": "SOLO_GATE / LOANER_DECK",
+  "deck_name": "Cataclismo Dracónico",
+  "archetype": "Ciber Dragón / Ciberoscuro",
+  "total_cards_estimated": 40,
+  "loaner_tip": "Prioriza buscar 'Núcleo Ciber Dragón' para acceder a 'Vínculo de Poder'. No gastes tus recursos de fusión hasta tener el OTK asegurado, ya que el deck carece de recuperación a largo plazo.",
+  "key_starters": [
+    "Núcleo Ciber Dragón",
+    "Quimera Ciberoscura"
+  ],
+  "tuners_or_extenders": [
+    "Ciber Dragón",
+    "Ciber Dragón Herz"
+  ],
+  "extra_deck_cards": [
+    "Ciber Dragón Final",
+    "Ciber Dragón Gemelo",
+    "Ciber Dragón Infinito",
+    "Ciber Dragón Nova"
+  ],
+  "support_spells_traps": [
+    "Vínculo de Poder",
+    "Sobrecarga de Fusión",
+    "Ciberemergencia"
+  ],
+  "z_nodes": [
+    {
+      "node": 1,
+      "phase": "1. INICIO",
+      "card": "Núcleo Ciber Dragón",
+      "action": "Invocación Normal para buscar Vínculo de Poder",
+      "ev": 98
+    },
+    {
+      "node": 2,
+      "phase": "2. EXTENSIÓN",
+      "card": "Ciber Dragón",
+      "action": "Invocación Especial por efecto propio",
+      "ev": 94
+    },
+    {
+      "node": 3,
+      "phase": "3. EXTRA DECK",
+      "card": "Ciber Dragón Nova",
+      "action": "Invocación Xyz de Rango 5",
+      "ev": 96
+    },
+    {
+      "node": 4,
+      "phase": "4. REMATE",
+      "card": "Ciber Dragón Infinito",
+      "action": "Negación de efectos y control de campo",
+      "ev": 95
+    }
+  ],
+  "strategy": {
+    "win_condition": "Ejecutar un OTK (One Turn Kill) utilizando 'Vínculo de Poder' para invocar un monstruo de Fusión con ATK duplicado.",
+    "combo_steps": [
+      "1. Invocar normalmente a 'Núcleo Ciber Dragón' para añadir 'Vínculo de Poder' a la mano.",
+      "2. Invocar especialmente a 'Ciber Dragón' desde la mano si el rival controla monstruos.",
+      "3. Activar 'Vínculo de Poder' desterrando materiales desde el campo o cementerio para invocar a 'Ciber Dragón Final'.",
+      "4. Atacar directamente o sobre monstruos en posición de ataque para finalizar el duelo."
+    ],
+    "end_board": "Ciber Dragón Infinito con materiales acoplados para negar una carta del rival.",
+    "ideal_hand": [
+      "Núcleo Ciber Dragón",
+      "Vínculo de Poder",
+      "Ciber Dragón"
+    ]
+  }
+}

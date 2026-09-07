@@ -1,0 +1,61 @@
+{
+  "is_deck_screen": true,
+  "is_loaner": false,
+  "screen_type": "SHOP_SCREEN",
+  "deck_name": "N/A (Tienda de Master Duel)",
+  "archetype": "N/A",
+  "total_cards_estimated": 0,
+  "loaner_tip": "Estás en la pantalla de la Tienda. Para maximizar tus recursos, prioriza la compra de la 'Colección de Nibiru' o 'Conjunto Juicio Solemne', ya que ofrecen cartas de interrupción universales (Handtraps y Trampas) esenciales para cualquier deck competitivo.",
+  "key_starters": [],
+  "tuners_or_extenders": [],
+  "extra_deck_cards": [],
+  "support_spells_traps": [
+    "Nibiru, el Ser Primitivo",
+    "Juicio Solemne",
+    "Impermanencia Infinita",
+    "Flor de Ceniza y Primavera Feliz"
+  ],
+  "z_nodes": [
+    {
+      "node": 1,
+      "phase": "1. INICIO",
+      "card": "Gemas",
+      "action": "Acumular 750 gemas",
+      "ev": 100
+    },
+    {
+      "node": 2,
+      "phase": "2. EXTENSIÓN",
+      "card": "Colección de Nibiru",
+      "action": "Adquirir el lote de oferta",
+      "ev": 99
+    },
+    {
+      "node": 3,
+      "phase": "3. EXTRA DECK",
+      "card": "Nibiru, el Ser Primitivo",
+      "action": "Añadir a tu Deck Principal",
+      "ev": 98
+    },
+    {
+      "node": 4,
+      "phase": "4. REMATE",
+      "action": "Utilizar la carta para limpiar el campo rival",
+      "ev": 97
+    }
+  ],
+  "strategy": {
+    "win_condition": "Optimizar la inversión de gemas en los 'Conjuntos' de la tienda para obtener cartas staples (genéricas) que sirven en cualquier mazo.",
+    "combo_steps": [
+      "1. Navega a la pestaña 'Especial' en la tienda.",
+      "2. Selecciona el 'Conjunto' que contenga la carta de interrupción necesaria (ej: Flor de Ceniza para negar buscadores).",
+      "3. Realiza la compra por 750 gemas para obtener la carta y 10 sobres de cartas.",
+      "4. Integra la carta obtenida en tu Deck principal para mejorar tu capacidad de respuesta ante el rival."
+    ],
+    "end_board": "Deck optimizado con interrupciones de alta calidad (Handtraps).",
+    "ideal_hand": [
+      "Gemas suficientes",
+      "Decisión estratégica"
+    ]
+  }
+}

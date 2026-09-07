@@ -1,0 +1,69 @@
+{
+  "is_deck_screen": true,
+  "is_loaner": true,
+  "screen_type": "SOLO_GATE / LOANER_DECK",
+  "deck_name": "Guerrero Sincronía - Modo Solo",
+  "archetype": "Guerrero / Sincronía",
+  "total_cards_estimated": 40,
+  "loaner_tip": "Gestiona tus Cantantes y niveles con precisión para desplegar monstruos de Sincronía disruptivos en el primer turno.",
+  "key_starters": [
+    "Junk Synchron",
+    "Doppelwarrior"
+  ],
+  "tuners_or_extenders": [
+    "Jet Synchron",
+    "Quillbolt Hedgehog"
+  ],
+  "extra_deck_cards": [
+    "Junk Destroyer",
+    "Stardust Dragon"
+  ],
+  "support_spells_traps": [
+    "Revil Sincronía",
+    "Tifón del Espacio Místico"
+  ],
+  "z_nodes": [
+    {
+      "node": 1,
+      "phase": "1. INICIO",
+      "card": "Junk Synchron",
+      "action": "Invocación Normal y efecto para revivir un monstruo de Nivel 2 o menor desde el Cementerio.",
+      "ev": 98
+    },
+    {
+      "node": 2,
+      "phase": "2. EXTENSIÓN",
+      "card": "Doppelwarrior",
+      "action": "Invocación Especial desde la mano al usarse un monstruo para Sincronía y generar fichas.",
+      "ev": 94
+    },
+    {
+      "node": 3,
+      "phase": "3. EXTRA DECK",
+      "card": "Junk Destroyer",
+      "action": "Invocación por Sincronía utilizando los materiales en mesa para destruir cartas del rival.",
+      "ev": 96
+    },
+    {
+      "node": 4,
+      "phase": "4. REMATE",
+      "card": "Stardust Dragon",
+      "action": "Protección de campo y control de ofensiva para asegurar la victoria.",
+      "ev": 95
+    }
+  ],
+  "strategy": {
+    "win_condition": "Establecer una presencia abrumadora en el campo mediante Sincronías sucesivas y control de recursos en el Cementerio.",
+    "combo_steps": [
+      "1. Invocación Normal de Junk Synchron, activando su efecto para revivir un monstruo Cantante o de Nivel 2.",
+      "2. Invoca de manera Especial a Doppelwarrior desde tu mano cumpliendo su condición de activación.",
+      "3. Utiliza los monstruos en el campo para realizar una Invocación por Sincronía de Nivel alto como Junk Destroyer.",
+      "4. Genera fichas adicionales gracias a los efectos disparados en cadena y prepara jugadas secundarias con Jet Synchron."
+    ],
+    "end_board": "Junk Destroyer o Stardust Dragon en el campo principal con cartas de soporte en mano listas para responder al rival.",
+    "ideal_hand": [
+      "Junk Synchron",
+      "Doppelwarrior"
+    ]
+  }
+}

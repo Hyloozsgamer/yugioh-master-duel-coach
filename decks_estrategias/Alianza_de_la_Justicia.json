@@ -1,0 +1,68 @@
+{
+  "is_deck_screen": true,
+  "is_loaner": true,
+  "screen_type": "SOLO_GATE / LOANER_DECK",
+  "deck_name": "Alianza de la Justicia",
+  "archetype": "Aliado de la Justicia",
+  "total_cards_estimated": 40,
+  "loaner_tip": "El arquetipo 'Aliado de la Justicia' está diseñado específicamente para destruir monstruos de ATRIBUTO LUZ. No malgastes tus recursos contra monstruos de otros atributos; guarda tus efectos de destrucción para cuando el rival despliegue sus cartas de LUZ.",
+  "key_starters": [
+    "Aliado de la Justicia Ciclo Lector",
+    "Aliado de la Justicia Buscador"
+  ],
+  "tuners_or_extenders": [
+    "Aliado de la Justicia Nucleo"
+  ],
+  "extra_deck_cards": [
+    "Catastor, Aliado de la Justicia",
+    "Aliado de la Justicia Decisivo"
+  ],
+  "support_spells_traps": [
+    "Torbellino de Justicia"
+  ],
+  "z_nodes": [
+    {
+      "node": 1,
+      "phase": "1. INICIO",
+      "card": "Aliado de la Justicia Buscador",
+      "action": "Invocación Normal (Nivel 4) para buscar piezas",
+      "ev": 98
+    },
+    {
+      "node": 2,
+      "phase": "2. EXTENSIÓN",
+      "card": "Aliado de la Justicia Nucleo",
+      "action": "Invocación Especial (Cantante Nivel 3)",
+      "ev": 94
+    },
+    {
+      "node": 3,
+      "phase": "3. EXTRA DECK",
+      "card": "Catastor, Aliado de la Justicia",
+      "action": "Sincronía (Nivel 4 + Nivel 3)",
+      "ev": 96
+    },
+    {
+      "node": 4,
+      "phase": "4. REMATE",
+      "card": "Catastor, Aliado de la Justicia",
+      "action": "Destrucción automática contra monstruos no-OSCURO",
+      "ev": 95
+    }
+  ],
+  "strategy": {
+    "win_condition": "Controlar el campo mediante la eliminación selectiva de monstruos de atributo LUZ y utilizar a Catastor para ganar cualquier batalla contra monstruos que no sean de atributo OSCURO.",
+    "combo_steps": [
+      "1. Invocar de forma normal a 'Aliado de la Justicia Buscador' para filtrar el mazo.",
+      "2. Invocar de forma especial a 'Aliado de la Justicia Nucleo' (Cantante) si las condiciones del campo lo permiten.",
+      "3. Realizar la Invocación por Sincronía de 'Catastor, Aliado de la Justicia' (Nivel 5).",
+      "4. Atacar al monstruo más fuerte del rival; el efecto de Catastor destruirá al objetivo antes del cálculo de daño si no es de atributo OSCURO."
+    ],
+    "end_board": "Catastor, Aliado de la Justicia en posición de ataque y una carta de trampa de soporte colocada para proteger la línea frontal.",
+    "ideal_hand": [
+      "Aliado de la Justicia Buscador",
+      "Aliado de la Justicia Nucleo",
+      "Torbellino de Justicia"
+    ]
+  }
+}

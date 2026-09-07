@@ -1,0 +1,68 @@
+{
+  "is_deck_screen": true,
+  "is_loaner": false,
+  "screen_type": "SOLO_GATE / PACK_OPENING",
+  "deck_name": "Paquete de Selección: Revestimiento de armadura obsidiana",
+  "archetype": "Número / Therion",
+  "total_cards_estimated": 8,
+  "loaner_tip": "Has obtenido cartas de soporte para arquetipos de alto nivel. Prioriza el uso de 'Therion \"Duke\" Yul' para invocarlo desde el cementerio equipando un monstruo Máquina/Planta, lo que te da una interrupción rápida.",
+  "key_starters": [
+    "Therion \"Duke\" Yul",
+    "Aladragón Explosivo"
+  ],
+  "tuners_or_extenders": [
+    "Aladragón Explosivo"
+  ],
+  "extra_deck_cards": [
+    "Número 101: Honor Silencioso ARCA",
+    "Paladín de la Ilusión de los Ojos Anómalos"
+  ],
+  "support_spells_traps": [
+    "Mezcla: D-D"
+  ],
+  "z_nodes": [
+    {
+      "node": 1,
+      "phase": "1. INICIO",
+      "card": "Therion \"Duke\" Yul",
+      "action": "Invocación Especial desde mano (si hay un monstruo en GY)",
+      "ev": 98
+    },
+    {
+      "node": 2,
+      "phase": "2. EXTENSIÓN",
+      "card": "Aladragón Explosivo",
+      "action": "Invocación Normal / Efecto de invocación especial",
+      "ev": 94
+    },
+    {
+      "node": 3,
+      "phase": "3. EXTRA DECK",
+      "card": "Número 101: Honor Silencioso ARCA",
+      "action": "Invocación Xyz (Nivel 4 + Nivel 4)",
+      "ev": 96
+    },
+    {
+      "node": 4,
+      "phase": "4. REMATE",
+      "card": "Número 101: Honor Silencioso ARCA",
+      "action": "Efecto: Acoplar monstruo del rival como material",
+      "ev": 95
+    }
+  ],
+  "strategy": {
+    "win_condition": "Controlar el campo mediante la absorción de monstruos clave del oponente usando el efecto de Número 101.",
+    "combo_steps": [
+      "1. Invoca a Therion \"Duke\" Yul desde tu mano seleccionando un monstruo en tu Cementerio para equiparlo.",
+      "2. Invoca a Aladragón Explosivo para preparar una posible Sincronía o mantener presencia en campo.",
+      "3. Utiliza dos monstruos de Nivel 4 para realizar la Invocación Xyz de Número 101: Honor Silencioso ARCA.",
+      "4. Activa el efecto de Número 101 para absorber un monstruo de ataque especial del rival y neutralizar su amenaza."
+    ],
+    "end_board": "Número 101: Honor Silencioso ARCA con material y Therion \"Duke\" Yul con protección de equipo.",
+    "ideal_hand": [
+      "Therion \"Duke\" Yul",
+      "Aladragón Explosivo",
+      "Mezcla: D-D"
+    ]
+  }
+}

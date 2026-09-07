@@ -1,0 +1,72 @@
+{
+  "is_deck_screen": true,
+  "is_loaner": true,
+  "screen_type": "SOLO_GATE / LOANER_DECK",
+  "deck_name": "Revolución Cibernética",
+  "archetype": "Ciber Dragón",
+  "total_cards_estimated": 40,
+  "loaner_tip": "Usa 'Núcleo Ciber Dragón' para buscar 'Vínculo de Poder' y asegura un OTK rápido en el turno de combate.",
+  "key_starters": [
+    "Núcleo Ciber Dragón",
+    "Ciber Dragón Herz"
+  ],
+  "tuners_or_extenders": [
+    "Flor de Ceniza & Primavera Feliz",
+    "Ciber Dragón Nachster"
+  ],
+  "extra_deck_cards": [
+    "Ciber Dragón Nova",
+    "Ciber Dragón de Eternidad",
+    "Ciber Dragón Fusión",
+    "Ciber Dragón Endovica"
+  ],
+  "support_spells_traps": [
+    "Vínculo de Poder",
+    "Agujero Oscuro",
+    "Tifón del Espacio Místico"
+  ],
+  "z_nodes": [
+    {
+      "node": 1,
+      "phase": "1. INICIO",
+      "card": "Núcleo Ciber Dragón",
+      "action": "Invocación Normal -> Buscar 'Vínculo de Poder'",
+      "ev": 98
+    },
+    {
+      "node": 2,
+      "phase": "2. EXTENSIÓN",
+      "card": "Ciber Dragón Nachster",
+      "action": "Invocación Especial descartando carta y reviviendo 'Ciber Dragón'",
+      "ev": 94
+    },
+    {
+      "node": 3,
+      "phase": "3. EXTRA DECK",
+      "card": "Ciber Dragón Nova",
+      "action": "Invocación Xyz usando dos monstruos Nivel 5",
+      "ev": 96
+    },
+    {
+      "node": 4,
+      "phase": "4. REMATE",
+      "card": "Vínculo de Poder",
+      "action": "Activar Magia para Fusionar y doblar el ATK para el OTK",
+      "ev": 95
+    }
+  ],
+  "strategy": {
+    "win_condition": "OTK (One-Turn-Kill) utilizando 'Vínculo de Poder' para maximizar el ATK de los monstruos de Fusión y limpiar el campo.",
+    "combo_steps": [
+      "1. Invocación Normal de 'Núcleo Ciber Dragón' para añadir 'Vínculo de Poder' o 'Emergencia Cibernética' a la mano.",
+      "2. Invocación Especial de 'Ciber Dragón Nachster' desde la mano descartando una carta, y utiliza su efecto para revivir un 'Ciber Dragón' desde el Cementerio.",
+      "3. Utiliza los materiales en campo para Invocar por Xyz a 'Ciber Dragón Nova' y luego súbelo a 'Ciber Dragón de Eternidad' si la situación lo requiere.",
+      "4. Activa 'Vínculo de Poder' para Fusionar monstruos desde tu mano o campo y golpear con un ATK descomunal para cerrar el duelo."
+    ],
+    "end_board": "Monstruo de Fusión potenciado masivamente con 'Vínculo de Poder' y opciones de interrupción en el Cementerio.",
+    "ideal_hand": [
+      "Núcleo Ciber Dragón",
+      "Vínculo de Poder"
+    ]
+  }
+}

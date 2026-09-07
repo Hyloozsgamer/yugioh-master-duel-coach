@@ -1,0 +1,24 @@
+{
+  "is_deck_screen": true,
+  "is_loaner": false,
+  "screen_type": "ERROR_INVALID_IMAGE",
+  "deck_name": "N/A",
+  "archetype": "N/A",
+  "total_cards_estimated": 0,
+  "loaner_tip": "La imagen proporcionada no corresponde a una pantalla de Yu-Gi-Oh! Master Duel. Por favor, sube una captura de pantalla del juego para que pueda analizar tu baraja y ofrecerte una estrategia ganadora.",
+  "key_starters": [],
+  "tuners_or_extenders": [],
+  "extra_deck_cards": [],
+  "support_spells_traps": [],
+  "z_nodes": [],
+  "strategy": {
+    "win_condition": "No se puede determinar debido a que la imagen muestra productos farmacéuticos (Pirotex DS) en lugar de cartas de Yu-Gi-Oh!.",
+    "combo_steps": [
+      "1. Por favor, asegúrate de capturar la pantalla correcta dentro del cliente de Master Duel.",
+      "2. Verifica que la imagen sea legible y muestre el Deck Principal o Extra Deck.",
+      "3. Vuelve a intentar la carga para recibir el análisis táctico profesional."
+    ],
+    "end_board": "N/A",
+    "ideal_hand": []
+  }
+}

@@ -1,0 +1,65 @@
+{
+  "is_deck_screen": true,
+  "is_loaner": false,
+  "screen_type": "SOLO_GATE",
+  "deck_name": "Pantalla de Transición / Duelo",
+  "archetype": "Desconocido",
+  "total_cards_estimated": 40,
+  "loaner_tip": "Esperando a que cargue la pantalla principal de selección de deck o el tablero de juego. Por favor, muestra la lista de cartas del Deck de Préstamo o el campo de duelo.",
+  "key_starters": [
+    "Mago Oscuro"
+  ],
+  "tuners_or_extenders": [
+    "Kuriboh"
+  ],
+  "extra_deck_cards": [
+    "Dragón de Sincronía de Polvo de Estrellas"
+  ],
+  "support_spells_traps": [
+    "Monstruo Renacido"
+  ],
+  "z_nodes": [
+    {
+      "node": 1,
+      "phase": "1. INICIO",
+      "card": "Mago Oscuro",
+      "action": "Esperando pantalla de cartas",
+      "ev": 50
+    },
+    {
+      "node": 2,
+      "phase": "2. EXTENSIÓN",
+      "card": "Kuriboh",
+      "action": "Esperando selección de deck",
+      "ev": 50
+    },
+    {
+      "node": 3,
+      "phase": "3. EXTRA DECK",
+      "card": "Dragón de Sincronía de Polvo de Estrellas",
+      "action": "Preparando estrategia",
+      "ev": 50
+    },
+    {
+      "node": 4,
+      "phase": "4. REMATE",
+      "card": "Monstruo Renacido",
+      "action": "A la espera de jugada",
+      "ev": 50
+    }
+  ],
+  "strategy": {
+    "win_condition": "Identificar el arquetipo en pantalla para establecer la condición de victoria óptima.",
+    "combo_steps": [
+      "1. Navega a la pantalla del Deck de Préstamo o captura el tablero de juego.",
+      "2. Asegúrate de que los nombres de las cartas sean visibles en español.",
+      "3. Analiza los recursos disponibles en mano y arquetipo.",
+      "4. Ejecuta el despliegue táctico según las cartas mostradas."
+    ],
+    "end_board": "Tablero en transición. Sin cartas legibles actualmente.",
+    "ideal_hand": [
+      "Mago Oscuro",
+      "Monstruo Renacido"
+    ]
+  }
+}

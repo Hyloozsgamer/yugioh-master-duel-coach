@@ -1,0 +1,65 @@
+{
+  "is_deck_screen": true,
+  "is_loaner": true,
+  "screen_type": "SOLO_GATE",
+  "deck_name": "Deck de Préstamo",
+  "archetype": "Desconocido",
+  "total_cards_estimated": 40,
+  "loaner_tip": "La imagen proporcionada muestra una pantalla en negro o sin datos visibles del deck. Asegúrate de capturar la pantalla cuando el deck de préstamo y sus cartas estén completamente cargados.",
+  "key_starters": [
+    "Carta Inicial No Visible"
+  ],
+  "tuners_or_extenders": [
+    "Cantante No Visible"
+  ],
+  "extra_deck_cards": [
+    "Monstruo Jefe No Visible"
+  ],
+  "support_spells_traps": [
+    "Soporte No Visible"
+  ],
+  "z_nodes": [
+    {
+      "node": 1,
+      "phase": "1. INICIO",
+      "card": "Carta Inicial No Visible",
+      "action": "Invocación Normal (Esperando datos)",
+      "ev": 50
+    },
+    {
+      "node": 2,
+      "phase": "2. EXTENSIÓN",
+      "card": "Cantante No Visible",
+      "action": "Invocación Especial (Esperando datos)",
+      "ev": 50
+    },
+    {
+      "node": 3,
+      "phase": "3. EXTRA DECK",
+      "card": "Monstruo Jefe No Visible",
+      "action": "Invocación Extra (Esperando datos)",
+      "ev": 50
+    },
+    {
+      "node": 4,
+      "phase": "4. REMATE",
+      "card": "Soporte No Visible",
+      "action": "Control de mesa (Esperando datos)",
+      "ev": 50
+    }
+  ],
+  "strategy": {
+    "win_condition": "Por favor, proporciona una captura de pantalla clara donde se muestren las cartas del Deck de Préstamo en el Modo Solo de Yu-Gi-Oh! Master Duel para realizar un análisis táctico preciso.",
+    "combo_steps": [
+      "1. Carga una imagen con las cartas del deck visibles.",
+      "2. Identifica los starters principales.",
+      "3. Ejecuta el combo base del arquetipo.",
+      "4. Asegura la victoria contra la IA."
+    ],
+    "end_board": "Campo pendiente de análisis por falta de información visual.",
+    "ideal_hand": [
+      "Carta por definir",
+      "Carta por definir"
+    ]
+  }
+}

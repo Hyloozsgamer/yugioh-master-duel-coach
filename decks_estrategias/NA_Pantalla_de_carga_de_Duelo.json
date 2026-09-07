@@ -1,0 +1,55 @@
+{
+  "is_deck_screen": true,
+  "is_loaner": false,
+  "screen_type": "SOLO_GATE",
+  "deck_name": "N/A (Pantalla de carga de Duelo)",
+  "archetype": "N/A",
+  "total_cards_estimated": 40,
+  "loaner_tip": "La imagen proporcionada corresponde a una animación de inicio de duelo (pantalla de carga) y no a la interfaz de edición o visualización de un Deck. Por favor, proporciona una captura de pantalla de la lista de cartas del Deck de Préstamo para poder realizar el análisis estratégico detallado.",
+  "key_starters": [],
+  "tuners_or_extenders": [],
+  "extra_deck_cards": [],
+  "support_spells_traps": [],
+  "z_nodes": [
+    {
+      "node": 1,
+      "phase": "1. INICIO",
+      "card": "N/A",
+      "action": "Esperando captura de Deck",
+      "ev": 0
+    },
+    {
+      "node": 2,
+      "phase": "2. EXTENSIÓN",
+      "card": "N/A",
+      "action": "Esperando captura de Deck",
+      "ev": 0
+    },
+    {
+      "node": 3,
+      "phase": "3. EXTRA DECK",
+      "card": "N/A",
+      "action": "Esperando captura de Deck",
+      "ev": 0
+    },
+    {
+      "node": 4,
+      "phase": "4. REMATE",
+      "card": "N/A",
+      "action": "Esperando captura de Deck",
+      "ev": 0
+    }
+  ],
+  "strategy": {
+    "win_condition": "Identificar el arquetipo mediante la lista de cartas.",
+    "combo_steps": [
+      "1. Accede a la pantalla de 'Editar Deck' o 'Lista de cartas' del modo Solo.",
+      "2. Captura la imagen donde se vean los nombres de las cartas.",
+      "3. Sube la imagen para recibir el análisis táctico profesional."
+    ],
+    "end_board": "Pendiente de análisis.",
+    "ideal_hand": [
+      "Pendiente de análisis"
+    ]
+  }
+}

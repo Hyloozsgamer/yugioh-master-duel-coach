@@ -1,0 +1,69 @@
+{
+  "is_deck_screen": true,
+  "is_loaner": true,
+  "screen_type": "SOLO_GATE",
+  "deck_name": "Ciber Dragón de Élite",
+  "archetype": "Ciber Dragón",
+  "total_cards_estimated": 40,
+  "loaner_tip": "Abre con 'Núcleo Ciber Dragón' para buscar 'Vínculo de Poder' o 'Emergencia Cibernética' y busca el OTK rápido en la Fase de Batalla.",
+  "key_starters": [
+    "Núcleo Ciber Dragón",
+    "Ciber Dragón Herz"
+  ],
+  "tuners_or_extenders": [
+    "Ciber Dragón Drei",
+    "Flor de Ceniza & Primavera Feliz"
+  ],
+  "extra_deck_cards": [
+    "Ciber Dragón Final",
+    "Ciber Dragón de Eternidad"
+  ],
+  "support_spells_traps": [
+    "Vínculo de Poder",
+    "Emergencia Cibernética"
+  ],
+  "z_nodes": [
+    {
+      "node": 1,
+      "phase": "1. INICIO",
+      "card": "Núcleo Ciber Dragón",
+      "action": "Invocación Normal para buscar Vínculo de Poder o Emergencia Cibernética",
+      "ev": 98
+    },
+    {
+      "node": 2,
+      "phase": "2. EXTENSIÓN",
+      "card": "Ciber Dragón Herz",
+      "action": "Invocación Especial o recurso de extensión en mesa",
+      "ev": 94
+    },
+    {
+      "node": 3,
+      "phase": "3. EXTRA DECK",
+      "card": "Ciber Dragón Final",
+      "action": "Invocación por Fusión usando Vínculo de Poder",
+      "ev": 96
+    },
+    {
+      "node": 4,
+      "phase": "4. REMATE",
+      "card": "Vínculo de Poder",
+      "action": "Duplicar ATK masivo para OTK letal",
+      "ev": 95
+    }
+  ],
+  "strategy": {
+    "win_condition": "Establecer un OTK explosivo usando 'Vínculo de Poder' para invocar monstruos de Fusión gigantescos con ATK duplicado.",
+    "combo_steps": [
+      "1. Invocación Normal de 'Núcleo Ciber Dragón' y usa su efecto para añadir 'Emergencia Cibernética' o 'Vínculo de Poder' a tu mano.",
+      "2. Activa 'Emergencia Cibernética' para buscar un 'Ciber Dragón Herz' o un monstruo clave para la fusión.",
+      "3. Extiende el campo con monstruos adicionales como 'Ciber Dragón Herz' o 'Ciber Dragón Drei'.",
+      "4. Activa la carta mágica 'Vínculo de Poder' desterrando los materiales necesarios del campo o cementerio para Invocar por Fusión a 'Ciber Dragón Final' con el doble de ATK y asegurar la victoria."
+    ],
+    "end_board": "Monstruo de Fusión con ATK masivo impulsado por Vínculo de Poder listo para la fase de batalla.",
+    "ideal_hand": [
+      "Núcleo Ciber Dragón",
+      "Vínculo de Poder"
+    ]
+  }
+}

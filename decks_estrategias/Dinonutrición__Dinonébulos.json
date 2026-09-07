@@ -1,0 +1,69 @@
+{
+  "is_deck_screen": true,
+  "is_loaner": false,
+  "screen_type": "SOLO_GATE / PACK_OPENING",
+  "deck_name": "Dinonutrición / Dinonébulos",
+  "archetype": "Dinonébulos",
+  "total_cards_estimated": 40,
+  "loaner_tip": "Esta baraja se basa en la Invocación por Péndulo. Prioriza colocar tus escalas (Dinonébulo) para invocar múltiples monstruos de nivel 4 a la vez y acceder a Xyz de Rango 4.",
+  "key_starters": [
+    "Dinonébulo Pteranodonte",
+    "Dinonébulo Stegociber"
+  ],
+  "tuners_or_extenders": [
+    "Dinonébulo Ankylos"
+  ],
+  "extra_deck_cards": [
+    "Cavalry de Dinonébulo",
+    "Dinonébulo Rex"
+  ],
+  "support_spells_traps": [
+    "Dinonébulo Dinocarga",
+    "Dinonébulo Dinocarga"
+  ],
+  "z_nodes": [
+    {
+      "node": 1,
+      "phase": "1. INICIO",
+      "card": "Dinonébulo Pteranodonte",
+      "action": "Colocar en Zona de Péndulo (Escala 7)",
+      "ev": 98
+    },
+    {
+      "node": 2,
+      "phase": "2. EXTENSIÓN",
+      "card": "Dinonébulo Stegociber",
+      "action": "Colocar en Zona de Péndulo (Escala 3)",
+      "ev": 94
+    },
+    {
+      "node": 3,
+      "phase": "3. EXTRA DECK",
+      "card": "Dinonébulo Rex",
+      "action": "Invocación por Péndulo de monstruos Nivel 4",
+      "ev": 96
+    },
+    {
+      "node": 4,
+      "phase": "4. REMATE",
+      "card": "Cavalry de Dinonébulo",
+      "action": "Invocación Xyz de Rango 4 para control",
+      "ev": 95
+    }
+  ],
+  "strategy": {
+    "win_condition": "Establecer una escala de péndulo completa (3-7) para inundar el campo con monstruos de Nivel 4 y realizar Invocaciones Xyz constantes.",
+    "combo_steps": [
+      "1. Activa Dinonébulo Pteranodonte y Dinonébulo Stegociber en las Zonas de Péndulo.",
+      "2. Realiza la Invocación por Péndulo de todos los monstruos de Nivel 4 desde tu mano.",
+      "3. Utiliza los efectos de los Dinonébulos para buscar recursos o proteger tus escalas.",
+      "4. Superpón dos monstruos de Nivel 4 para invocar a tu Xyz jefe y limpiar la mesa del rival."
+    ],
+    "end_board": "Campo con 2-3 monstruos de Nivel 4 y un Xyz de Rango 4 con material para negar efectos.",
+    "ideal_hand": [
+      "Dinonébulo Pteranodonte",
+      "Dinonébulo Stegociber",
+      "Dinonébulo Ankylos"
+    ]
+  }
+}

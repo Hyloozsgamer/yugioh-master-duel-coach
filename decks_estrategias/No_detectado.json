@@ -1,0 +1,22 @@
+{
+  "is_deck_screen": true,
+  "is_loaner": false,
+  "screen_type": "UNKNOWN_SCREEN",
+  "deck_name": "No detectado",
+  "archetype": "No detectado",
+  "total_cards_estimated": 0,
+  "loaner_tip": "La imagen muestra la terminal o consola de comandos ejecutando un script de superposición (overlay) en lugar de la pantalla de Yu-Gi-Oh! Master Duel. Por favor, asegúrate de que el juego esté en primer plano para poder analizar tu baraja o modo de préstamo.",
+  "key_starters": [],
+  "main_deck_cards": [],
+  "extra_deck_cards": [],
+  "strategy": {
+    "win_condition": "Cambia a la ventana de Yu-Gi-Oh! Master Duel para recibir asistencia táctica en tiempo real.",
+    "combo_steps": [
+      "1. Maximiza o enfoca la ventana del juego Master Duel.",
+      "2. Navega a la pantalla del Modo Solo o de tu Deck.",
+      "3. Vuelve a capturar o invoca el análisis del Head Coach."
+    ],
+    "end_board": "Ventana de juego visible.",
+    "ideal_hand": []
+  }
+}

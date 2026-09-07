@@ -1,0 +1,70 @@
+{
+  "is_deck_screen": true,
+  "is_loaner": false,
+  "screen_type": "SOLO_GATE / LOANER_DECK",
+  "deck_name": "Abismo del Alba",
+  "archetype": "Albaz / Despia",
+  "total_cards_estimated": 40,
+  "loaner_tip": "Prioriza siempre buscar 'Fusión Marcada' para acceder a tus fusiones de alto impacto. Usa el efecto de 'Caído de Albaz' para absorber los monstruos del rival como material de fusión.",
+  "key_starters": [
+    "Caído de Albaz",
+    "Aluber el Bufón de Despia"
+  ],
+  "tuners_or_extenders": [
+    "Despian de la Tragedia"
+  ],
+  "extra_deck_cards": [
+    "Albion el Dragón Marcado",
+    "Lubellion el Dragón Abrasador",
+    "Espejojade el Dragón Hieloespejo"
+  ],
+  "support_spells_traps": [
+    "Fusión Marcada",
+    "Pedido Marcado"
+  ],
+  "z_nodes": [
+    {
+      "node": 1,
+      "phase": "1. INICIO",
+      "card": "Aluber el Bufón de Despia",
+      "action": "Invocación Normal para buscar Fusión Marcada",
+      "ev": 98
+    },
+    {
+      "node": 2,
+      "phase": "2. EXTENSIÓN",
+      "card": "Fusión Marcada",
+      "action": "Activar para enviar Caído de Albaz y Despian de la Tragedia al GY",
+      "ev": 94
+    },
+    {
+      "node": 3,
+      "phase": "3. EXTRA DECK",
+      "card": "Albion el Dragón Marcado",
+      "action": "Invocación por Fusión usando materiales del GY",
+      "ev": 96
+    },
+    {
+      "node": 4,
+      "phase": "4. REMATE",
+      "card": "Espejojade el Dragón Hieloespejo",
+      "action": "Invocación por Fusión para interrupción rápida (Baneo)",
+      "ev": 95
+    }
+  ],
+  "strategy": {
+    "win_condition": "Establecer a 'Espejojade el Dragón Hieloespejo' para controlar el campo mediante su efecto de destierro rápido y generar ventaja de recursos al enviar monstruos 'Marcado' al cementerio.",
+    "combo_steps": [
+      "1. Invoca a 'Aluber el Bufón de Despia' para añadir 'Fusión Marcada' a tu mano.",
+      "2. Activa 'Fusión Marcada', enviando 'Caído de Albaz' y 'Despian de la Tragedia' desde el Deck al Cementerio.",
+      "3. Invoca por Fusión a 'Albion el Dragón Marcado' usando los materiales enviados.",
+      "4. Usa el efecto de 'Albion' en el End Phase o durante el turno para invocar a 'Espejojade el Dragón Hieloespejo' y preparar tu interrupción principal."
+    ],
+    "end_board": "Espejojade el Dragón Hieloespejo con 'Pedido Marcado' en el campo para protección y recursión.",
+    "ideal_hand": [
+      "Aluber el Bufón de Despia",
+      "Fusión Marcada",
+      "Despian de la Tragedia"
+    ]
+  }
+}

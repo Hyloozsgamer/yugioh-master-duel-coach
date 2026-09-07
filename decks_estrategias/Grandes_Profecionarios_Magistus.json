@@ -1,0 +1,69 @@
+{
+  "is_deck_screen": true,
+  "is_loaner": true,
+  "screen_type": "SOLO_GATE",
+  "deck_name": "Grandes Profecionarios Magistus",
+  "archetype": "Magistus",
+  "total_cards_estimated": 40,
+  "loaner_tip": "Aprovecha la versatilidad de los monstruos Magistus para equipar cartas del Deck Extra y bloquear las acciones del rival con Zoroa.",
+  "key_starters": [
+    "Rilliona, la Magistus Verdadera",
+    "Endymion, el Poderoso Maestro de la Magia"
+  ],
+  "tuners_or_extenders": [
+    "Zoroa, el Magistus Conflagrante",
+    "Vritra Magistus"
+  ],
+  "extra_deck_cards": [
+    "Zoroa, el Magistus Calamidad Conflagrante",
+    "Ninarv Magistus"
+  ],
+  "support_spells_traps": [
+    "Magiscarrio Magistus",
+    "Vínculo Magistus"
+  ],
+  "z_nodes": [
+    {
+      "node": 1,
+      "phase": "1. INICIO",
+      "card": "Rilliona, la Magistus Verdadera",
+      "action": "Invocación Normal y busca carta Magistus",
+      "ev": 98
+    },
+    {
+      "node": 2,
+      "phase": "2. EXTENSIÓN",
+      "card": "Endymion, el Poderoso Maestro de la Magia",
+      "action": "Invocación Especial o despliegue en campo",
+      "ev": 94
+    },
+    {
+      "node": 3,
+      "phase": "3. EXTRA DECK",
+      "card": "Zoroa, el Magistus Calamidad Conflagrante",
+      "action": "Invocación por Sincronía usando Cantante y no Cantantes",
+      "ev": 96
+    },
+    {
+      "node": 4,
+      "phase": "4. REMATE",
+      "card": "Magiscarrio Magistus",
+      "action": "Activación de soporte y control total del duelo",
+      "ev": 95
+    }
+  ],
+  "strategy": {
+    "win_condition": "Establecer a Zoroa, el Magistus Calamidad Conflagrante en el campo para bloquear los efectos de los monstruos del adversario según el tipo equipado.",
+    "combo_steps": [
+      "1. Invoca de Modo Normal a Rilliona, la Magistus Verdadera para buscar una carta clave del arquetipo en tu Deck.",
+      "2. Utiliza cartas de extensión como Vritra Magistus para traer monstruos adicionales al campo.",
+      "3. Realiza la Sincronía combinando un Cantante Lanzador de Conjuros con monstruos no Cantantes para invocar a Zoroa, el Magistus Calamidad Conflagrante.",
+      "4. Equipa un monstruo Magistus desde tu Deck Extra a Zoroa para activar su efecto de bloqueo contra el rival."
+    ],
+    "end_board": "Zoroa, el Magistus Calamidad Conflagrante en el campo principal con un monstruo Magistus equipado en la Zona de Magias y Trampas.",
+    "ideal_hand": [
+      "Rilliona, la Magistus Verdadera",
+      "Vínculo Magistus"
+    ]
+  }
+}

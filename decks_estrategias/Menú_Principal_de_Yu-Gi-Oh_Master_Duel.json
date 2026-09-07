@@ -1,0 +1,54 @@
+{
+  "is_deck_screen": true,
+  "is_loaner": false,
+  "screen_type": "MAIN_MENU",
+  "deck_name": "Menú Principal de Yu-Gi-Oh! Master Duel",
+  "archetype": "General",
+  "total_cards_estimated": 0,
+  "loaner_tip": "Te encuentras en la pantalla principal del juego. Selecciona 'SOLO' para acceder a las puertas de Modo Solo y probar Decks de Préstamo (Loaner), o entra en 'DECK' para editar tus barajas.",
+  "key_starters": [],
+  "tuners_or_extenders": [],
+  "extra_deck_cards": [],
+  "support_spells_traps": [],
+  "z_nodes": [
+    {
+      "node": 1,
+      "phase": "1. INICIO",
+      "card": "Menú Principal",
+      "action": "Haz clic en 'SOLO' o 'DECK' en el panel izquierdo",
+      "ev": 100
+    },
+    {
+      "node": 2,
+      "phase": "2. SELECCIÓN",
+      "card": "Modo Solo",
+      "action": "Elige la Puerta y el duelo con Deck de Préstamo",
+      "ev": 100
+    },
+    {
+      "node": 3,
+      "phase": "3. ESTRATEGIA",
+      "card": "Deck de Préstamo",
+      "action": "Revisa las cartas clave y los monstruos jefe",
+      "ev": 100
+    },
+    {
+      "node": 4,
+      "phase": "4. DUELO",
+      "card": "Duelo IA",
+      "action": "Ejecuta los combos del arquetipo para asegurar la victoria",
+      "ev": 100
+    }
+  ],
+  "strategy": {
+    "win_condition": "Navegar hacia el Modo Solo o configurar tu baraja para iniciar duelos óptimos.",
+    "combo_steps": [
+      "1. Selecciona la opción 'SOLO' en el menú de la izquierda para entrar a las historias y duelos de préstamo.",
+      "2. Selecciona la puerta deseada y elige el combate que requiere el uso del Deck de Préstamo.",
+      "3. Analiza las cartas del deck proporcionado por Konami antes de comenzar el duelo.",
+      "4. Aplica los combos básicos de iniciación, extensión y llegada al monstruo jefe del arquetipo."
+    ],
+    "end_board": "Interfaz lista para iniciar un duelo en el Modo Solo.",
+    "ideal_hand": []
+  }
+}

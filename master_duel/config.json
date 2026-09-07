@@ -1,0 +1,21 @@
+{
+  "mode": "SOLO",
+  "autoFarm": true,
+  "safeMode": true,
+  "maxDecisionTime": 5000,
+  "visionConfidence": 0.85,
+  "allowHumanIntervention": true,
+  "debug": true,
+  "timeouts": {
+    "stateTimeout": 25.0,
+    "actionTimeout": 12.0,
+    "animationTimeout": 4.0,
+    "uiTimeout": 15.0
+  },
+  "hotkeys": {
+    "pause": "F8",
+    "resume": "F9",
+    "emergencyStop": "F10"
+  },
+  "deckProfile": "gladiator_beast"
+}

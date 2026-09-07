@@ -1,0 +1,36 @@
+{
+  "is_deck_screen": true,
+  "is_loaner": true,
+  "screen_type": "SOLO_GATE",
+  "deck_name": "Alianza de la Justicia - Préstamo",
+  "archetype": "Aliado de la Justicia",
+  "total_cards_estimated": 40,
+  "loaner_tip": "Estás enfrentando a un arquetipo 'Gusano' basado en efectos de volteo. Usa las herramientas específicas de Aliado de la Justicia para eliminar monstruos boca abajo y controlar el campo antes de que te sorprendan con sus efectos.",
+  "key_starters": [
+    "Buscador Aliado de la Justicia",
+    "Recluta Aliado de la Justicia"
+  ],
+  "main_deck_cards": [
+    "Buscador Aliado de la Justicia",
+    "Recluta Aliado de la Justicia",
+    "Defensor Aliado de la Justicia"
+  ],
+  "extra_deck_cards": [
+    "Desarme Aliado de la Justicia",
+    "Luminor Aliado de la Justicia"
+  ],
+  "strategy": {
+    "win_condition": "Superar la estrategia de monstruos Colocados y de tipo Gusanode la IA manteniendo presencia ofensiva sin caer en trampas de volteo.",
+    "combo_steps": [
+      "1. Invoca monstruos que puedan revisar o destruir cartas Colocadas de forma segura.",
+      "2. Utiliza las cartas de soporte de 'Aliado de la Justicia' para contrarrestar monstruos adversarios (especialmente teniendo en cuenta que la mayoría de los Gusanos son de atributo LUZ).",
+      "3. Presiona con ataques directos o monstruos de mayor ATK una vez despejada la zona de monstruos del rival."
+    ],
+    "end_board": "Monstruos 'Aliado de la Justicia' posicionados en ataque con apoyo de cartas mágicas/trampas del arquetipo.",
+    "ideal_hand": [
+      "Buscador Aliado de la Justicia",
+      "Carta de apoyo o Magia de campo",
+      "Monstruo de refuerzo"
+    ]
+  }
+}

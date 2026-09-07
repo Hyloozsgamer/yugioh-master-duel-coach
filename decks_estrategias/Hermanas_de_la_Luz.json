@@ -1,0 +1,69 @@
+{
+  "is_deck_screen": true,
+  "is_loaner": false,
+  "screen_type": "SOLO_GATE / LOANER_DECK",
+  "deck_name": "Hermanas de la Luz",
+  "archetype": "Exohermana",
+  "total_cards_estimated": 40,
+  "loaner_tip": "El arquetipo Exohermana brilla cuando el rival interactúa con el Cementerio. Prioriza invocar a Exohermana Kaspitella para buscar tus magias de soporte y mantén a Exohermana Gispine en campo para activar efectos de Xyz rápidos durante el turno del oponente.",
+  "key_starters": [
+    "Exohermana Kaspitella",
+    "Exohermana Gispine"
+  ],
+  "tuners_or_extenders": [
+    "Vamos Juntos"
+  ],
+  "extra_deck_cards": [
+    "Exohermana Gispine",
+    "Exohermana Kaspitella",
+    "Número 64: Ronin Mapache de Arena"
+  ],
+  "support_spells_traps": [
+    "Vamos Juntos",
+    "F.A. Circuito de Gran Premio"
+  ],
+  "z_nodes": [
+    {
+      "node": 1,
+      "phase": "1. INICIO",
+      "card": "Exohermana Kaspitella",
+      "action": "Invocación Normal (Nivel 4)",
+      "ev": 98
+    },
+    {
+      "node": 2,
+      "phase": "2. EXTENSIÓN",
+      "card": "Vamos Juntos",
+      "action": "Invocación Especial de una Exohermana desde la mano",
+      "ev": 94
+    },
+    {
+      "node": 3,
+      "phase": "3. EXTRA DECK",
+      "card": "Exohermana Gispine",
+      "action": "Invocación Xyz (Rango 4)",
+      "ev": 96
+    },
+    {
+      "node": 4,
+      "phase": "4. REMATE",
+      "card": "Exohermana Gispine",
+      "action": "Efecto rápido para negar o banear desde cementerio",
+      "ev": 95
+    }
+  ],
+  "strategy": {
+    "win_condition": "Controlar el cementerio del oponente para activar las transformaciones de las Exohermanas en monstruos Xyz de Rango 4 que interrumpen jugadas.",
+    "combo_steps": [
+      "1. Invocar normalmente a Exohermana Kaspitella y usar su efecto para buscar una carta 'Exohermana'.",
+      "2. Activar 'Vamos Juntos' para invocar de forma especial a otra Exohermana desde la mano.",
+      "3. Superponer ambas Exohermanas de Nivel 4 para invocar a Exohermana Gispine o Kaspitella (Xyz).",
+      "4. Esperar a que el rival mueva cartas del cementerio para activar el efecto de transformación y ganar ventaja de campo."
+    ],
+    "end_board": "Exohermana Xyz con material, lista para transformarse en respuesta a efectos del rival.",
+    "ideal_hand": [
+      "Exohermana Kaspitella",
+      "Vamos Juntos"
+    ]
+  }
+}

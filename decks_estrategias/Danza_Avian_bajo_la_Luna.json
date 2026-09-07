@@ -1,0 +1,68 @@
+{
+  "is_deck_screen": true,
+  "is_loaner": true,
+  "screen_type": "SOLO_GATE",
+  "deck_name": "Danza Avian bajo la Luna",
+  "archetype": "Lunaluz / Lyrilusc",
+  "total_cards_estimated": 40,
+  "loaner_tip": "Aprovecha las Invocaciones por Fusión y Xyz para abrumar los recursos del rival en el Modo Solo.",
+  "key_starters": [
+    "Lunaluz Danza Escarlata",
+    "Lunaluz Conejo Bailarín"
+  ],
+  "tuners_or_extenders": [
+    "Lyrilusc - Enano Ensamblaje",
+    "Lyrilusc - Recitador Estornino"
+  ],
+  "extra_deck_cards": [
+    "Lunaluz Pantera Bailarina",
+    "Lyrilusc - Ensamblaje de Ruinas"
+  ],
+  "support_spells_traps": [
+    "Perfume de Lunaluz"
+  ],
+  "z_nodes": [
+    {
+      "node": 1,
+      "phase": "1. INICIO",
+      "card": "Lunaluz Danza Escarlata",
+      "action": "Invocación Normal del buscador del arquetipo",
+      "ev": 98
+    },
+    {
+      "node": 2,
+      "phase": "2. EXTENSIÓN",
+      "card": "Lyrilusc - Enano Ensamblaje",
+      "action": "Invocación Especial para preparar material Xyz",
+      "ev": 94
+    },
+    {
+      "node": 3,
+      "phase": "3. EXTRA DECK",
+      "card": "Lunaluz Pantera Bailarina",
+      "action": "Invocación por Fusión para limpiar monstruos del rival",
+      "ev": 96
+    },
+    {
+      "node": 4,
+      "phase": "4. REMATE",
+      "card": "Lyrilusc - Recitador Estornino",
+      "action": "Control de campo y ataque letal",
+      "ev": 95
+    }
+  ],
+  "strategy": {
+    "win_condition": "Establecer múltiples ataques con monstruos de Fusión y Xyz para superar los puntos de vida del oponente en un solo turno.",
+    "combo_steps": [
+      "1. Activa Perfume de Lunaluz para buscar un monstruo Lunaluz clave en tu baraja.",
+      "2. Realiza la Invocación Normal de Lunaluz Danza Escarlata para activar su efecto de posicionamiento.",
+      "3. Invoca de Modo Especial a Lyrilusc - Enano Ensamblaje desde la mano para extender jugadas.",
+      "4. Utiliza los materiales en campo para invocar a Lunaluz Pantera Bailarina y presionar el ataque."
+    ],
+    "end_board": "Lunaluz Pantera Bailarina en posición de ataque con soporte de cartas de mano o Xyz protectores.",
+    "ideal_hand": [
+      "Perfume de Lunaluz",
+      "Lunaluz Danza Escarlata"
+    ]
+  }
+}

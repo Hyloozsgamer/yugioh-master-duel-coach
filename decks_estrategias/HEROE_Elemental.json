@@ -1,0 +1,70 @@
+{
+  "is_deck_screen": true,
+  "is_loaner": true,
+  "screen_type": "SOLO_GATE",
+  "deck_name": "HEROE Elemental",
+  "archetype": "HEROE",
+  "total_cards_estimated": 40,
+  "loaner_tip": "Utiliza a HÉROE Elemental Stratos para buscar tus piezas de Fusión y asegura la salida de tus monstruos de Fusión principales usando Polimerización o Fusión Milagrosa.",
+  "key_starters": [
+    "HÉROE Elemental Stratos",
+    "Felis, Mago de la Luz"
+  ],
+  "tuners_or_extenders": [
+    "Un Héroe Vivos"
+  ],
+  "extra_deck_cards": [
+    "HÉROE Elemental Amanecer",
+    "HÉROE Elemental Neos Amanecer",
+    "HÉROE Elemental Sol Sólido"
+  ],
+  "support_spells_traps": [
+    "Polimerización",
+    "Fusión Milagrosa"
+  ],
+  "z_nodes": [
+    {
+      "node": 1,
+      "phase": "1. INICIO",
+      "card": "HÉROE Elemental Stratos",
+      "action": "Invocación Normal y efecto para buscar monstruo HÉROE",
+      "ev": 98
+    },
+    {
+      "node": 2,
+      "phase": "2. EXTENSIÓN",
+      "card": "Un Héroe Vivos",
+      "action": "Invocación Especial de un HÉROE de Nivel 4 o menor pagando LP",
+      "ev": 94
+    },
+    {
+      "node": 3,
+      "phase": "3. EXTRA DECK",
+      "card": "Polimerización",
+      "action": "Invocación por Fusión de HÉROE Elemental Amanecer o Sol Sólido",
+      "ev": 96
+    },
+    {
+      "node": 4,
+      "phase": "4. REMATE",
+      "card": "HÉROE Elemental Amanecer",
+      "action": "Ataque masivo y destrucción de cartas con soporte de Fusión Milagrosa",
+      "ev": 95
+    }
+  ],
+  "strategy": {
+    "win_condition": "Establecer un campo ofensivo fuerte con HÉROE Elemental Amanecer y presionar al rival con múltiples ataques y efectos de destrucción.",
+    "combo_steps": [
+      "1. Activa 'Un Héroe Vivos' pagando la mitad de tus LP para invocar de modo especial a 'HÉROE Elemental Stratos' desde el Deck.",
+      "2. Usa el efecto al entrar de 'HÉROE Elemental Stratos' para añadir otro monstruo HÉROE clave a tu mano.",
+      "3. Activa la carta mágica 'Polimerización' para fusionar los materiales en tu mano o campo y traer a 'HÉROE Elemental Amanecer'.",
+      "4. Utiliza los efectos de 'HÉROE Elemental Amanecer' para buscar 'Fusión Milagrosa' y preparar el golpe final."
+    ],
+    "end_board": "HÉROE Elemental Amanecer en el campo principal con cartas en mano listas para una segunda oleada con Fusión Milagrosa.",
+    "ideal_hand": [
+      "HÉROE Elemental Stratos",
+      "Polimerización",
+      "Un Héroe Vivos"
+    ]
+  }
+}

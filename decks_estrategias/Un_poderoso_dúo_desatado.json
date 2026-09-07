@@ -1,0 +1,44 @@
+{
+  "is_deck_screen": true,
+  "is_loaner": true,
+  "screen_type": "LOANER_DECK",
+  "deck_name": "¿Un poderoso dúo desatado!?",
+  "archetype": "Live☆Twin / Evil★Twin / PSY-Frame",
+  "total_cards_estimated": 40,
+  "loaner_tip": "Aprovecha la capacidad de las Live☆Twin para invocar rápidamente desde el Deck y realizar Invocaciones por Enlace en el turno del adversario usando a I:P Enmascarada y W:P Baile Elegante para interrumpir las jugadas del rival.",
+  "key_starters": [
+    "Live☆Twin Ki-sikil",
+    "Live☆Twin Lil-la",
+    "Mecanismo Armazón-PSÍ Gamma"
+  ],
+  "main_deck_cards": [
+    "Live☆Twin Ki-sikil",
+    "Live☆Twin Lil-la",
+    "Mecanismo Armazón-PSÍ Gamma",
+    "Conductor de Armazón-PSÍ",
+    "W:P Baile Elegante"
+  ],
+  "extra_deck_cards": [
+    "Evil★Twin Ki-sikil",
+    "Evil★Twin Lil-la",
+    "I:P Enmascarada",
+    "Evil★Twin Principal Ki-sikil & Lil-la"
+  ],
+  "strategy": {
+    "win_condition": "Generar ventaja de cartas ciclando las Evil★Twin en campo y cementerio, mientras interrumpes las jugadas del rival con I:P Enmascarada y W:P Baile Elegante en su turno.",
+    "combo_steps": [
+      "1. Invoca Normal a 'Live☆Twin Ki-sikil' (o Lil-la).",
+      "2. Activa su efecto para Invocar de Modo Especial a la otra contraparte ('Live☆Twin Lil-la') desde tu Deck.",
+      "3. Utiliza a una de ellas para Invocar por Enlace a 'Evil★Twin Ki-sikil' (o Lil-la).",
+      "4. Usa el efecto del monstruo de Enlace para revivir a la otra gema desde el cementerio y robar una carta si controlas a su pareja.",
+      "5. Deja lista a 'I:P Enmascarada' o el arquetipo en el campo junto a cartas de interrupción para el turno del oponente."
+    ],
+    "end_board": "Evil★Twin Ki-sikil o Lil-la en el campo principal, con I:P Enmascarada y W:P Baile Elegante listas para interrumpir y desatar el combo defensivo durante el turno rival.",
+    "ideal_hand": [
+      "Live☆Twin Ki-sikil",
+      "Live☆Twin Lil-la",
+      "Mecanismo Armazón-PSÍ Gamma",
+      "W:P Baile Elegante"
+    ]
+  }
+}

@@ -1,0 +1,71 @@
+{
+  "is_deck_screen": true,
+  "is_loaner": true,
+  "screen_type": "SOLO_GATE / LOANER_DECK",
+  "deck_name": "Héroes Transfigurados",
+  "archetype": "HÉROE (E-HERO / D-HERO / Evil HERO)",
+  "total_cards_estimated": 40,
+  "loaner_tip": "Prioriza la búsqueda de 'Súper Polimerización' para romper campos rivales usando sus propios monstruos como material, especialmente contra mazos que abusan de un solo atributo.",
+  "key_starters": [
+    "HÉROE Elemental Stratos",
+    "Faris HÉROE Elemental"
+  ],
+  "tuners_or_extenders": [
+    "Aumento HÉROE Elemental",
+    "HÉROE Elemental Solid Soldier"
+  ],
+  "extra_deck_cards": [
+    "HÉROE Elemental Sunrise",
+    "HÉROE Elemental Absolute Zero",
+    "HÉROE Malvado Malicious Bane"
+  ],
+  "support_spells_traps": [
+    "Súper Polimerización",
+    "Fusión de Destino"
+  ],
+  "z_nodes": [
+    {
+      "node": 1,
+      "phase": "1. INICIO",
+      "card": "Faris HÉROE Elemental",
+      "action": "Descartar HÉROE para Invocación Especial y colocar Aumento",
+      "ev": 98
+    },
+    {
+      "node": 2,
+      "phase": "2. EXTENSIÓN",
+      "card": "Aumento HÉROE Elemental",
+      "action": "Sacrificar Faris para invocar a Vyon desde el Deck",
+      "ev": 94
+    },
+    {
+      "node": 3,
+      "phase": "3. EXTRA DECK",
+      "card": "HÉROE Elemental Sunrise",
+      "action": "Invocación por Fusión para buscar Milagro de Fusión",
+      "ev": 96
+    },
+    {
+      "node": 4,
+      "phase": "4. REMATE",
+      "card": "HÉROE Malvado Malicious Bane",
+      "action": "Destrucción masiva de monstruos rivales con menor ATK",
+      "ev": 95
+    }
+  ],
+  "strategy": {
+    "win_condition": "Establecer un campo de control con 'HÉROE Elemental Sunrise' y 'HÉROE Malvado Malicious Bane' para limpiar la mesa y atacar directamente.",
+    "combo_steps": [
+      "1. Invocar 'Faris HÉROE Elemental' descartando un HÉROE, luego activar su efecto para colocar 'Aumento HÉROE Elemental' en la zona de Magia/Trampa.",
+      "2. Activar 'Aumento HÉROE Elemental' sacrificando a Faris para invocar a 'HÉROE Elemental Vyon' desde el Deck.",
+      "3. Usar el efecto de Vyon para enviar 'HÉROE Elemental Shadow Mist' al cementerio y buscar 'Polimerización' o 'Fusión de Destino'.",
+      "4. Fusionar para invocar a 'HÉROE Elemental Sunrise' y usar su efecto para añadir 'Milagro de Fusión' a la mano para un segundo jefe de Extra Deck."
+    ],
+    "end_board": "HÉROE Elemental Sunrise + HÉROE Malvado Malicious Bane + Súper Polimerización seteada para interrupción.",
+    "ideal_hand": [
+      "Faris HÉROE Elemental",
+      "Súper Polimerización",
+      "HÉROE Elemental Stratos"
+    ]
+  }
+}

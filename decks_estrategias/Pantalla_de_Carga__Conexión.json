@@ -1,0 +1,57 @@
+{
+  "is_deck_screen": true,
+  "is_loaner": false,
+  "screen_type": "SOLO_GATE / LOANER_DECK",
+  "deck_name": "Pantalla de Carga / Conexión",
+  "archetype": "N/A",
+  "total_cards_estimated": 40,
+  "loaner_tip": "La imagen proporcionada corresponde a la pantalla de carga de 'Conectando' de Master Duel. No es posible visualizar el Deck de Préstamo en este estado. Por favor, proporciona una captura de pantalla de la lista de cartas del Deck para un análisis táctico preciso.",
+  "key_starters": [],
+  "tuners_or_extenders": [],
+  "extra_deck_cards": [],
+  "support_spells_traps": [],
+  "z_nodes": [
+    {
+      "node": 1,
+      "phase": "1. INICIO",
+      "card": "N/A",
+      "action": "Esperar a que finalice la carga",
+      "ev": 0
+    },
+    {
+      "node": 2,
+      "phase": "2. EXTENSIÓN",
+      "card": "N/A",
+      "action": "Verificar conexión a internet",
+      "ev": 0
+    },
+    {
+      "node": 3,
+      "phase": "3. EXTRA DECK",
+      "card": "N/A",
+      "action": "Acceder al menú de edición de Deck",
+      "ev": 0
+    },
+    {
+      "node": 4,
+      "phase": "4. REMATE",
+      "card": "N/A",
+      "action": "Capturar la lista de cartas para análisis",
+      "ev": 0
+    }
+  ],
+  "strategy": {
+    "win_condition": "Establecer una conexión estable para acceder al juego.",
+    "combo_steps": [
+      "1. Esperar a que el servidor responda.",
+      "2. Navegar al menú de 'Solo' o 'Deck'.",
+      "3. Abrir la pantalla de visualización de cartas del Deck de Préstamo.",
+      "4. Tomar una captura clara de la lista de cartas para que pueda realizar la estrategia."
+    ],
+    "end_board": "Menú principal o pantalla de selección de Deck.",
+    "ideal_hand": [
+      "Conexión a Internet estable",
+      "Paciencia"
+    ]
+  }
+}

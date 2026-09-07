@@ -1,0 +1,70 @@
+{
+  "is_deck_screen": true,
+  "is_loaner": false,
+  "screen_type": "SOLO_GATE / LOANER_DECK",
+  "deck_name": "Paquete de Selección: Espectros Traviesos / Dragón de Piedra Radiante",
+  "archetype": "Springans / Therion",
+  "total_cards_estimated": 40,
+  "loaner_tip": "Utiliza a Springans Kitt para enviar cartas Springans al Cementerio y activar sus efectos de recursión. Prioriza invocar a Therion 'King' Regulus (si está disponible en tu pool) usando a Springans Kitt como material en cementerio.",
+  "key_starters": [
+    "Springans Kitt",
+    "Springans Branga"
+  ],
+  "tuners_or_extenders": [
+    "Scapeghost"
+  ],
+  "extra_deck_cards": [
+    "Dragolich Kuntza",
+    "Doro del Alma Maliciosa"
+  ],
+  "support_spells_traps": [
+    "Cuentos con Gola",
+    "Therion en Pie!"
+  ],
+  "z_nodes": [
+    {
+      "node": 1,
+      "phase": "1. INICIO",
+      "card": "Springans Kitt",
+      "action": "Invocación Normal para buscar soporte Springans",
+      "ev": 98
+    },
+    {
+      "node": 2,
+      "phase": "2. EXTENSIÓN",
+      "card": "Springans Branga",
+      "action": "Invocación Especial desde la mano si controlas un monstruo Springans",
+      "ev": 94
+    },
+    {
+      "node": 3,
+      "phase": "3. EXTRA DECK",
+      "card": "Doro del Alma Maliciosa",
+      "action": "Invocación Xyz usando materiales de Nivel 4",
+      "ev": 96
+    },
+    {
+      "node": 4,
+      "phase": "4. REMATE",
+      "card": "Therion en Pie!",
+      "action": "Activación de trampa para recuperar recursos o interrumpir",
+      "ev": 95
+    }
+  ],
+  "strategy": {
+    "win_condition": "Establecer control de campo mediante la recursión de los Springans y la protección de los monstruos Therion.",
+    "combo_steps": [
+      "1. Invocar normalmente a Springans Kitt para añadir una carta 'Springans' del Deck a la mano.",
+      "2. Invocar especialmente a Springans Branga desde la mano para preparar materiales Xyz de Rango 4.",
+      "3. Activar Cuentos con Gola para potenciar tus monstruos o facilitar la rotación de cartas en el campo.",
+      "4. Utilizar a Scapeghost en el turno del oponente para generar fichas y proteger tus puntos de vida o preparar una Sincronía."
+    ],
+    "end_board": "Campo con Springans Kitt y Branga en posición de defensa, con Therion en Pie! colocada para interrupción.",
+    "ideal_hand": [
+      "Springans Kitt",
+      "Springans Branga",
+      "Cuentos con Gola",
+      "Therion en Pie!"
+    ]
+  }
+}

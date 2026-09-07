@@ -1,0 +1,68 @@
+{
+  "is_deck_screen": true,
+  "is_loaner": true,
+  "screen_type": "SOLO_GATE / LOANER_DECK",
+  "deck_name": "Legado del Dragón Taquiónico",
+  "archetype": "Ojos Galácticos / Taquión",
+  "total_cards_estimated": 40,
+  "loaner_tip": "Prioriza invocar a Primario Taquiónico de Ojos Galácticos para buscar Vórtice Espaciotemporal; esta trampa es tu mejor interrupción para limpiar el campo del rival.",
+  "key_starters": [
+    "Primario Taquiónico de Ojos Galácticos",
+    "Dragón de Ojos Galácticos"
+  ],
+  "tuners_or_extenders": [
+    "Primario Taquiónico de Ojos Galácticos"
+  ],
+  "extra_deck_cards": [
+    "Dragón Taquiónico de Ojos Galácticos",
+    "Número 107: Dragón Taquiónico de Ojos Galácticos"
+  ],
+  "support_spells_traps": [
+    "Vórtice Espaciotemporal"
+  ],
+  "z_nodes": [
+    {
+      "node": 1,
+      "phase": "1. INICIO",
+      "card": "Primario Taquiónico de Ojos Galácticos",
+      "action": "Invocación Especial (Efecto Rápido)",
+      "ev": 98
+    },
+    {
+      "node": 2,
+      "phase": "2. EXTENSIÓN",
+      "card": "Primario Taquiónico de Ojos Galácticos",
+      "action": "Efecto: Buscar Vórtice Espaciotemporal",
+      "ev": 94
+    },
+    {
+      "node": 3,
+      "phase": "3. EXTRA DECK",
+      "card": "Número 107: Dragón Taquiónico de Ojos Galácticos",
+      "action": "Invocación Xyz (Nivel 8 + Nivel 8)",
+      "ev": 96
+    },
+    {
+      "node": 4,
+      "phase": "4. REMATE",
+      "card": "Vórtice Espaciotemporal",
+      "action": "Activación de Trampa para barajar cartas rivales",
+      "ev": 95
+    }
+  ],
+  "strategy": {
+    "win_condition": "Establecer un campo con Número 107 y la trampa Vórtice Espaciotemporal para negar efectos y eliminar recursos del oponente.",
+    "combo_steps": [
+      "1. Invocar de modo especial a Primario Taquiónico de Ojos Galácticos desde la mano si controlas un Monstruo Xyz Dragón.",
+      "2. Usar el efecto de Primario Taquiónico para añadir Vórtice Espaciotemporal desde el Deck a la mano.",
+      "3. Colocar Vórtice Espaciotemporal y esperar al turno del rival.",
+      "4. Activar Vórtice Espaciotemporal en respuesta a una jugada clave del rival para barajar sus cartas al Deck."
+    ],
+    "end_board": "Número 107: Dragón Taquiónico de Ojos Galácticos con Vórtice Espaciotemporal colocada.",
+    "ideal_hand": [
+      "Primario Taquiónico de Ojos Galácticos",
+      "Dragón de Ojos Galácticos",
+      "Vórtice Espaciotemporal"
+    ]
+  }
+}

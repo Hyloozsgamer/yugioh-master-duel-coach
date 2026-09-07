@@ -1,0 +1,66 @@
+{
+  "is_deck_screen": true,
+  "is_loaner": false,
+  "screen_type": "SOLO_GATE / LOANER_DECK",
+  "deck_name": "Fuegos del Infinito",
+  "archetype": "Exodia / Milenario",
+  "total_cards_estimated": 40,
+  "loaner_tip": "Estás en la pantalla de Sobre Secreto comprando un sobre de 'Fuegos del Infinito'. Aprovecha tu intento gratis para conseguir cartas clave del arquetipo Milenario y Exodia.",
+  "key_starters": [
+    "El Anj Milenario",
+    "E! Imparable Exodia Encarnado"
+  ],
+  "tuners_or_extenders": [
+    "Sarcófago Milenario"
+  ],
+  "extra_deck_cards": [
+    "Monstruos de Sincronía / Xyz genéricos"
+  ],
+  "support_spells_traps": [
+    "Juicio Solemne"
+  ],
+  "z_nodes": [
+    {
+      "node": 1,
+      "phase": "1. INICIO",
+      "card": "Sarcófago Milenario",
+      "action": "Activar la carta mágica para buscar tus piezas o monstruos Milenarios.",
+      "ev": 98
+    },
+    {
+      "node": 2,
+      "phase": "2. EXTENSIÓN",
+      "card": "El Anj Milenario",
+      "action": "Invocación Especial desde la mano usando el efecto del Sarcófago.",
+      "ev": 94
+    },
+    {
+      "node": 3,
+      "phase": "3. EXTRA DECK",
+      "card": "E! Imparable Exodia Encarnado",
+      "action": "Preparar la condición de victoria especial o jugadas de rango alto.",
+      "ev": 96
+    },
+    {
+      "node": 4,
+      "phase": "4. REMATE",
+      "card": "Juicio Solemne",
+      "action": "Negar la jugada principal del rival y asegurar el control del tablero.",
+      "ev": 95
+    }
+  ],
+  "strategy": {
+    "win_condition": "Estabilizar el campo utilizando las cartas Milenarias para buscar y desplegar a Exodia Encarnado o abrumar al rival con recursos continuos.",
+    "combo_steps": [
+      "1. Activa Sarcófago Milenario para buscar 'El Anj Milenario' u otra pieza esencial en tu deck.",
+      "2. Invoca de manera especial a 'El Anj Milenario' gracias a su efecto continuo o el soporte del Sarcófago.",
+      "3. Utiliza los monstruos en campo para cumplir los requisitos de invocación o defensa necesarios.",
+      "4. Despliega a 'E! Imparable Exodia Encarnado' para sellar la victoria con su inmensa presencia ofensiva y defensiva."
+    ],
+    "end_board": "Sarcófago Milenario activo en zona de hechizos/trampas, 'El Anj Milenario' protegiendo tus puntos de vida o facilitando jugadas, y cartas de interrupción bocabajo.",
+    "ideal_hand": [
+      "Sarcófago Milenario",
+      "El Anj Milenario"
+    ]
+  }
+}

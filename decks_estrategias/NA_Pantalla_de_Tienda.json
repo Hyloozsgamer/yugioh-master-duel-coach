@@ -1,0 +1,69 @@
+{
+  "is_deck_screen": true,
+  "is_loaner": false,
+  "screen_type": "TIENDA / ACCESORIOS",
+  "deck_name": "N/A (Pantalla de Tienda)",
+  "archetype": "HÉROE Elemental",
+  "total_cards_estimated": 0,
+  "loaner_tip": "Esta pantalla corresponde a la tienda de accesorios. Para acceder a un Deck de Préstamo, dirígete al modo 'Solo' y selecciona una Puerta (Gate) activa.",
+  "key_starters": [
+    "HÉROE Elemental Stratos",
+    "Faris HÉROE Elemental"
+  ],
+  "tuners_or_extenders": [
+    "Aumento HÉROE Elemental"
+  ],
+  "extra_deck_cards": [
+    "HÉROE Elemental Sunrise",
+    "HÉROE Elemental Malicious Bane"
+  ],
+  "support_spells_traps": [
+    "Fusión de Destino",
+    "Máscara de Cambio"
+  ],
+  "z_nodes": [
+    {
+      "node": 1,
+      "phase": "1. INICIO",
+      "card": "HÉROE Elemental Stratos",
+      "action": "Invocación Normal para buscar HÉROE Elemental Faris",
+      "ev": 98
+    },
+    {
+      "node": 2,
+      "phase": "2. EXTENSIÓN",
+      "card": "Faris HÉROE Elemental",
+      "action": "Descartar carta para Invocación Especial y colocar Aumento",
+      "ev": 94
+    },
+    {
+      "node": 3,
+      "phase": "3. EXTRA DECK",
+      "card": "HÉROE Elemental Sunrise",
+      "action": "Invocación por Fusión para buscar Milagro de Fusión",
+      "ev": 96
+    },
+    {
+      "node": 4,
+      "phase": "4. REMATE",
+      "card": "HÉROE Elemental Malicious Bane",
+      "action": "Destrucción masiva de monstruos del rival",
+      "ev": 95
+    }
+  ],
+  "strategy": {
+    "win_condition": "Establecer un campo de control con HÉROE Elemental Malicious Bane y usar Máscara de Cambio para invocar a HÉROE Enmascarado Oscuridad.",
+    "combo_steps": [
+      "1. Invocar a HÉROE Elemental Stratos para añadir a la mano a Faris HÉROE Elemental.",
+      "2. Activar el efecto de Faris HÉROE Elemental descartando una carta para invocarlo y colocar Aumento HÉROE Elemental en la zona de Magias/Trampas.",
+      "3. Sacrificar a Faris para invocar a Aumento HÉROE Elemental y traer a HÉROE Elemental Shadow Mist del Deck.",
+      "4. Usar a Shadow Mist para buscar Fusión de Destino y proceder a la Invocación por Fusión de los monstruos jefe."
+    ],
+    "end_board": "HÉROE Elemental Malicious Bane + HÉROE Enmascarado Oscuridad + Fusión de Destino en cementerio.",
+    "ideal_hand": [
+      "Faris HÉROE Elemental",
+      "Fusión de Destino",
+      "Máscara de Cambio"
+    ]
+  }
+}

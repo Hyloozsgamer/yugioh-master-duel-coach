@@ -1,0 +1,127 @@
+{
+  "match_id": "duel_1788726633",
+  "start_time": 1788726633.955735,
+  "turns": [],
+  "actions_executed": [
+    {
+      "timestamp": 1788726747.905461,
+      "turn": 1,
+      "phase": "BATTLE",
+      "chosen_action": {
+        "action_type": "ATTACK",
+        "card_name": "Ally Monsters",
+        "attacks_count": 6,
+        "monsters": [
+          1
+        ]
+      },
+      "verified": true
+    },
+    {
+      "timestamp": 1788726750.681616,
+      "turn": 1,
+      "phase": "END",
+      "chosen_action": {
+        "action_type": "PHASE_CHANGE",
+        "card_name": "",
+        "to_phase": "END",
+        "monsters": [
+          1
+        ]
+      },
+      "verified": true
+    },
+    {
+      "timestamp": 1788726759.8481545,
+      "turn": 1,
+      "phase": "MAIN1",
+      "chosen_action": {
+        "action_type": "CLICK",
+        "card_name": "",
+        "action": "CLICK",
+        "target": "Palace of the Elemental Lords",
+        "x": 0.53,
+        "y": 0.9,
+        "summary": "Activate Field Spell 'Palace of the Elemental Lords' first to search and buff stats before summoning."
+      },
+      "verified": true
+    },
+    {
+      "timestamp": 1788726767.2215197,
+      "turn": 1,
+      "phase": "MAIN1",
+      "chosen_action": {
+        "action_type": "CLICK",
+        "card_name": "",
+        "action": "CLICK",
+        "target": "Activate Effect (Palace of the Elemental Lords)",
+        "x": 0.49,
+        "y": 0.73,
+        "summary": "Activate Palace of the Elemental Lords to search and buff monsters before summoning."
+      },
+      "verified": true
+    },
+    {
+      "timestamp": 1788726774.960658,
+      "turn": 1,
+      "phase": "MAIN1",
+      "chosen_action": {
+        "action_type": "CLICK",
+        "card_name": "",
+        "action": "CLICK",
+        "target": "Activate Palace of the Elemental Lords",
+        "x": 0.5,
+        "y": 0.72,
+        "summary": "Activate Field/Search Spell 'Palace of the Elemental Lords' first to search key combo pieces before Normal Summoning."
+      },
+      "verified": true
+    },
+    {
+      "timestamp": 1788726777.41961,
+      "turn": 1,
+      "phase": "MAIN2",
+      "chosen_action": {
+        "action_type": "ACTIVATE_EFFECT",
+        "card_name": "Card Action",
+        "x": 0.23177083333333334,
+        "y": 0.6305555555555555,
+        "monsters": [
+          1
+        ]
+      },
+      "verified": true
+    },
+    {
+      "timestamp": 1788726814.7432814,
+      "turn": 1,
+      "phase": "END",
+      "chosen_action": {
+        "action_type": "PHASE_CHANGE",
+        "card_name": "",
+        "to_phase": "END",
+        "monsters": [
+          1
+        ]
+      },
+      "verified": true
+    },
+    {
+      "timestamp": 1788726860.4191096,
+      "turn": 1,
+      "phase": "MAIN1",
+      "chosen_action": {
+        "action_type": "CLICK",
+        "card_name": "",
+        "action": "CLICK",
+        "target": "Monster in hand",
+        "x": 0.46,
+        "y": 0.92,
+        "summary": "Select Level 4 monster in hand to Normal Summon during Main Phase 1."
+      },
+      "verified": true
+    }
+  ],
+  "result": "ABORTED",
+  "end_time": 1788726881.2114258,
+  "duration_sec": 247.26
+}

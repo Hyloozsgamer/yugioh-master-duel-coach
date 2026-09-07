@@ -1,0 +1,70 @@
+{
+  "is_deck_screen": true,
+  "is_loaner": true,
+  "screen_type": "SOLO_GATE / LOANER_DECK",
+  "deck_name": "Cataclismo Dracónico Ciber Dragón",
+  "archetype": "Ciber Dragón",
+  "total_cards_estimated": 40,
+  "loaner_tip": "Prioriza la Invocación Especial de Ciber Dragón para acceder a tus fusiones de contacto; no gastes tu Invocación Normal si no es para activar el efecto de búsqueda de Núcleo de Ciber Dragón.",
+  "key_starters": [
+    "Núcleo de Ciber Dragón",
+    "Ciber Dragón"
+  ],
+  "tuners_or_extenders": [
+    "Ciber Dragón Core",
+    "Ciber Dragón Drei"
+  ],
+  "extra_deck_cards": [
+    "Ciber Dragón Final",
+    "Ciber Dragón Gemelo"
+  ],
+  "support_spells_traps": [
+    "Sobrecarga de Fusión",
+    "Ciber Emergencia"
+  ],
+  "z_nodes": [
+    {
+      "node": 1,
+      "phase": "1. INICIO",
+      "card": "Núcleo de Ciber Dragón",
+      "action": "Invocación Normal para buscar Ciber Emergencia",
+      "ev": 98
+    },
+    {
+      "node": 2,
+      "phase": "2. EXTENSIÓN",
+      "card": "Ciber Emergencia",
+      "action": "Añadir Ciber Dragón a la mano e invocarlo",
+      "ev": 94
+    },
+    {
+      "node": 3,
+      "phase": "3. EXTRA DECK",
+      "card": "Ciber Dragón Gemelo",
+      "action": "Invocación por Fusión usando Ciber Dragones",
+      "ev": 96
+    },
+    {
+      "node": 4,
+      "phase": "4. REMATE",
+      "card": "Ciber Dragón Final",
+      "action": "Ataque directo con perforación de defensa",
+      "ev": 95
+    }
+  ],
+  "strategy": {
+    "win_condition": "Establecer un campo de alta potencia ofensiva mediante Fusiones de Contacto para limpiar el campo del rival y atacar directamente.",
+    "combo_steps": [
+      "1. Invocar Núcleo de Ciber Dragón para buscar Ciber Emergencia.",
+      "2. Activar Ciber Emergencia para añadir Ciber Dragón a la mano.",
+      "3. Invocar Ciber Dragón (Especial si el rival controla monstruos) o usar Núcleo como material.",
+      "4. Activar Sobrecarga de Fusión para invocar Ciber Dragón Final usando los materiales del cementerio."
+    ],
+    "end_board": "Ciber Dragón Final con soporte de cartas de trampa para proteger la fase de batalla.",
+    "ideal_hand": [
+      "Núcleo de Ciber Dragón",
+      "Ciber Emergencia",
+      "Sobrecarga de Fusión"
+    ]
+  }
+}

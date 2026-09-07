@@ -1,0 +1,46 @@
+{
+  "version": 2.0,
+  "summary_stats": {
+    "total_duels": 0,
+    "wins": 0,
+    "losses": 0,
+    "win_rate": 0.0
+  },
+  "winning_patterns": [],
+  "mistakes_to_avoid": [],
+  "active_tactical_rules": [
+    "Always transition to Battle Phase on Turn 2+ if player controls attack-ready monsters.",
+    "Normal Summon the highest playable ATK monster in Main Phase 1.",
+    "Do not activate optional effects that discard unless having immediate combo followup."
+  ],
+  "recent_matches": [
+    {
+      "timestamp": 1788698197.5703068,
+      "match_id": "duel_1788698174",
+      "issue": "Verification Failure",
+      "count": 4,
+      "recommendation": "Increase UI delay between click and verify step for complex animations"
+    },
+    {
+      "timestamp": 1788698259.1780581,
+      "match_id": "duel_1788698228",
+      "issue": "Verification Failure",
+      "count": 5,
+      "recommendation": "Increase UI delay between click and verify step for complex animations"
+    },
+    {
+      "timestamp": 1788698278.6992252,
+      "match_id": "duel_1788698270",
+      "issue": "Verification Failure",
+      "count": 1,
+      "recommendation": "Increase UI delay between click and verify step for complex animations"
+    },
+    {
+      "timestamp": 1788698383.4595706,
+      "match_id": "duel_1788698356",
+      "issue": "Verification Failure",
+      "count": 6,
+      "recommendation": "Increase UI delay between click and verify step for complex animations"
+    }
+  ]
+}

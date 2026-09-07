@@ -1,0 +1,57 @@
+{
+  "is_deck_screen": true,
+  "is_loaner": false,
+  "screen_type": "SHOP_SCREEN",
+  "deck_name": "Pantalla de Tienda",
+  "archetype": "Ninguno",
+  "total_cards_estimated": 0,
+  "loaner_tip": "Estás en la Tienda del juego. Adquiere cartas, sobres o accesorios utilizando gemas o UR.",
+  "key_starters": [],
+  "tuners_or_extenders": [],
+  "extra_deck_cards": [],
+  "support_spells_traps": [],
+  "z_nodes": [
+    {
+      "node": 1,
+      "phase": "1. INICIO",
+      "card": "Gemas",
+      "action": "Revisar saldo actual de gemas",
+      "ev": 99
+    },
+    {
+      "node": 2,
+      "phase": "2. SELECCIÓN",
+      "card": "Lote de celebración del WCS 2026",
+      "action": "Inspeccionar sobres y ofertas disponibles",
+      "ev": 95
+    },
+    {
+      "node": 3,
+      "phase": "3. COMPRA",
+      "card": "1 sobre",
+      "action": "Canjear gemas por sobres de cartas",
+      "ev": 96
+    },
+    {
+      "node": 4,
+      "phase": "4. REMATE",
+      "card": "Accesorios",
+      "action": "Gestionar tableros, protectores y avatares",
+      "ev": 90
+    }
+  ],
+  "strategy": {
+    "win_condition": "Gestionar eficientemente tus recursos y gemas para construir un Deck competitivo.",
+    "combo_steps": [
+      "1. Analiza los sobres secretos disponibles como 'Ciber Dragones Perlados'.",
+      "2. Selecciona el arquetipo que deseas construir.",
+      "3. Invierte tus gemas de manera inteligente en los lotes recomendados.",
+      "4. Dirígete a la edición de Decks para armar tu estrategia."
+    ],
+    "end_board": "Nuevas cartas añadidas a tu colección y listas para ser usadas.",
+    "ideal_hand": [
+      "Gemas",
+      "Sobres"
+    ]
+  }
+}

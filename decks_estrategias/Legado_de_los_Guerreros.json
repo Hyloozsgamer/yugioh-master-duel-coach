@@ -1,0 +1,70 @@
+{
+  "is_deck_screen": true,
+  "is_loaner": true,
+  "screen_type": "SOLO_GATE / LOANER_DECK",
+  "deck_name": "Legado de los Guerreros",
+  "archetype": "Guerrero / Sincronía",
+  "total_cards_estimated": 40,
+  "loaner_tip": "La IA en este nivel suele jugar de forma pasiva. Prioriza la Invocación por Sincronía rápida para limpiar el campo antes de que la IA establezca defensas de trampa.",
+  "key_starters": [
+    "Guerrero de la Velocidad",
+    "Guerrero de Escudo"
+  ],
+  "tuners_or_extenders": [
+    "Guerrero de la Basura"
+  ],
+  "extra_deck_cards": [
+    "Guerrero de Polvo Estelar",
+    "Guerrero de la Chatarra"
+  ],
+  "support_spells_traps": [
+    "Refuerzo del Ejército",
+    "Agujero Oscuro"
+  ],
+  "z_nodes": [
+    {
+      "node": 1,
+      "phase": "1. INICIO",
+      "card": "Guerrero de la Velocidad",
+      "action": "Invocación Normal (Nivel 2)",
+      "ev": 98
+    },
+    {
+      "node": 2,
+      "phase": "2. EXTENSIÓN",
+      "card": "Guerrero de la Basura",
+      "action": "Invocación Especial (Cantante Nivel 3)",
+      "ev": 94
+    },
+    {
+      "node": 3,
+      "phase": "3. EXTRA DECK",
+      "card": "Guerrero de la Chatarra",
+      "action": "Invocación por Sincronía (Nivel 5)",
+      "ev": 96
+    },
+    {
+      "node": 4,
+      "phase": "4. REMATE",
+      "card": "Agujero Oscuro",
+      "action": "Limpieza de campo para ataque directo",
+      "ev": 95
+    }
+  ],
+  "strategy": {
+    "win_condition": "Establecer un monstruo de Sincronía de alto nivel rápidamente para superar los puntos de ATK de los monstruos de la IA.",
+    "combo_steps": [
+      "1. Invocar de forma normal a Guerrero de la Velocidad (Nivel 2).",
+      "2. Invocar de forma especial a Guerrero de la Basura (Cantante Nivel 3) si las condiciones lo permiten.",
+      "3. Realizar la Invocación por Sincronía de Guerrero de la Chatarra (Nivel 5) usando ambos monstruos.",
+      "4. Usar Agujero Oscuro para despejar cualquier amenaza en el campo rival antes de declarar el ataque final."
+    ],
+    "end_board": "Guerrero de la Chatarra en posición de ataque con una carta de trampa de soporte colocada.",
+    "ideal_hand": [
+      "Guerrero de la Velocidad",
+      "Guerrero de la Basura",
+      "Refuerzo del Ejército",
+      "Agujero Oscuro"
+    ]
+  }
+}

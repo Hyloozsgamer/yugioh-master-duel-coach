@@ -1,0 +1,69 @@
+{
+  "is_deck_screen": true,
+  "is_loaner": true,
+  "screen_type": "SOLO_GATE / LOANER_DECK",
+  "deck_name": "Voces sin Voz (Voiceless Voice)",
+  "archetype": "Voces sin Voz",
+  "total_cards_estimated": 40,
+  "loaner_tip": "Prioriza siempre la búsqueda de 'Lo, las Oraciones de la Voz sin Voz' para establecer tu motor de rituales. Usa sus efectos en el turno del oponente para invocar a 'Skull Guardian, Protector de la Voz sin Voz' y obtener una negación gratuita.",
+  "key_starters": [
+    "Lo, las Oraciones de la Voz sin Voz",
+    "Oraciones de la Voz sin Voz"
+  ],
+  "tuners_or_extenders": [
+    "Diviner of the Herald"
+  ],
+  "extra_deck_cards": [
+    "Skull Guardian, Protector de la Voz sin Voz",
+    "Saffira, Reina de los Dragones"
+  ],
+  "support_spells_traps": [
+    "Oraciones de la Voz sin Voz",
+    "Barrera de la Voz sin Voz"
+  ],
+  "z_nodes": [
+    {
+      "node": 1,
+      "phase": "1. INICIO",
+      "card": "Lo, las Oraciones de la Voz sin Voz",
+      "action": "Invocación Normal para buscar Oraciones de la Voz sin Voz",
+      "ev": 98
+    },
+    {
+      "node": 2,
+      "phase": "2. EXTENSIÓN",
+      "card": "Diviner of the Herald",
+      "action": "Invocación Normal/Especial para enviar un Heraldo al GY",
+      "ev": 94
+    },
+    {
+      "node": 3,
+      "phase": "3. EXTRA DECK",
+      "card": "Skull Guardian, Protector de la Voz sin Voz",
+      "action": "Invocación Ritual usando Oraciones de la Voz sin Voz",
+      "ev": 96
+    },
+    {
+      "node": 4,
+      "phase": "4. REMATE",
+      "card": "Barrera de la Voz sin Voz",
+      "action": "Activación de protección y control de campo",
+      "ev": 95
+    }
+  ],
+  "strategy": {
+    "win_condition": "Establecer un campo con 'Skull Guardian, Protector de la Voz sin Voz' para negar efectos de cartas y mantener la ventaja de recursos mediante 'Lo'.",
+    "combo_steps": [
+      "1. Invoca a 'Lo, las Oraciones de la Voz sin Voz' para añadir 'Oraciones de la Voz sin Voz' a tu mano.",
+      "2. Activa 'Oraciones de la Voz sin Voz' para invocar por Ritual a 'Skull Guardian, Protector de la Voz sin Voz' usando monstruos de tu mano o campo.",
+      "3. Usa el efecto de 'Lo' en el cementerio para invocarla de vuelta si un monstruo Ritual es invocado.",
+      "4. Activa 'Barrera de la Voz sin Voz' para proteger a tus monstruos Ritual de ser seleccionados por efectos del oponente."
+    ],
+    "end_board": "Skull Guardian, Protector de la Voz sin Voz (Negación) + Lo, las Oraciones de la Voz sin Voz (Recurso) + Barrera de la Voz sin Voz (Protección).",
+    "ideal_hand": [
+      "Lo, las Oraciones de la Voz sin Voz",
+      "Oraciones de la Voz sin Voz",
+      "Diviner of the Herald"
+    ]
+  }
+}

@@ -1,0 +1,68 @@
+{
+  "is_deck_screen": true,
+  "is_loaner": true,
+  "screen_type": "SOLO_GATE / LOANER_DECK",
+  "deck_name": "Laberinto Infernal sin Escapatoria",
+  "archetype": "Guardián de la Puerta / Dios Egipcio",
+  "total_cards_estimated": 40,
+  "loaner_tip": "Prioriza invocar a los componentes del Guardián de la Puerta para acceder a sus fusiones modernas; no dependas exclusivamente de Ra, úsalo como rematador cuando el campo esté despejado.",
+  "key_starters": [
+    "Guardián de la Puerta del Trueno",
+    "Guardián de la Puerta del Viento"
+  ],
+  "tuners_or_extenders": [
+    "Guardián de la Puerta del Agua"
+  ],
+  "extra_deck_cards": [
+    "Guardián de la Puerta del Trueno y Viento",
+    "Guardián de la Puerta del Viento y Agua"
+  ],
+  "support_spells_traps": [
+    "El Hombre con la Máscara"
+  ],
+  "z_nodes": [
+    {
+      "node": 1,
+      "phase": "1. INICIO",
+      "card": "Guardián de la Puerta del Trueno",
+      "action": "Invocación Normal para buscar piezas de fusión",
+      "ev": 98
+    },
+    {
+      "node": 2,
+      "phase": "2. EXTENSIÓN",
+      "card": "Guardián de la Puerta del Agua",
+      "action": "Invocación Especial desde la mano por efecto",
+      "ev": 94
+    },
+    {
+      "node": 3,
+      "phase": "3. EXTRA DECK",
+      "card": "Guardián de la Puerta del Trueno y Viento",
+      "action": "Invocación por Fusión de contacto",
+      "ev": 96
+    },
+    {
+      "node": 4,
+      "phase": "4. REMATE",
+      "card": "El Dragón Alado de Ra",
+      "action": "Invocación por Sacrificio para limpiar campo",
+      "ev": 95
+    }
+  ],
+  "strategy": {
+    "win_condition": "Establecer una fusión de 'Guardián de la Puerta' para negar efectos y controlar el ritmo, finalizando con el daño masivo de Ra.",
+    "combo_steps": [
+      "1. Invocar a 'Guardián de la Puerta del Trueno' para añadir piezas faltantes del arquetipo a la mano.",
+      "2. Utilizar los efectos de los Guardianes para invocarse especialmente desde la mano o cementerio.",
+      "3. Fusionar los componentes en el Extra Deck para obtener a 'Guardián de la Puerta del Trueno y Viento' o 'Guardián de la Puerta del Viento y Agua'.",
+      "4. Sacrificar los monstruos en campo para invocar a 'El Dragón Alado de Ra' y atacar directamente para ganar."
+    ],
+    "end_board": "Guardián de la Puerta del Trueno y Viento (Negación) + El Dragón Alado de Ra (Presión ofensiva).",
+    "ideal_hand": [
+      "Guardián de la Puerta del Trueno",
+      "Guardián de la Puerta del Viento",
+      "El Hombre con la Máscara"
+    ]
+  }
+}

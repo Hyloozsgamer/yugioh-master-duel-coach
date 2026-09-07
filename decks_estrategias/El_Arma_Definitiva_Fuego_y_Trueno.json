@@ -1,0 +1,69 @@
+{
+  "is_deck_screen": true,
+  "is_loaner": false,
+  "screen_type": "SOLO_GATE / LOANER_DECK",
+  "deck_name": "El Arma Definitiva: Fuego y Trueno",
+  "archetype": "Ryzeal",
+  "total_cards_estimated": 40,
+  "loaner_tip": "El arquetipo Ryzeal se basa en la Invocación Xyz de Rango 4. Prioriza siempre tener dos monstruos de Nivel 4 en campo para acceder a tus jefes que interrumpen jugadas.",
+  "key_starters": [
+    "Ryzeal Ice",
+    "Ryzeal Node"
+  ],
+  "tuners_or_extenders": [
+    "Ryzeal Duodrive",
+    "Ryzeal Plug-in"
+  ],
+  "extra_deck_cards": [
+    "Detonador Ryzeal",
+    "Armas Dobles Ryzeal"
+  ],
+  "support_spells_traps": [
+    "Ryzeal Plug-in"
+  ],
+  "z_nodes": [
+    {
+      "node": 1,
+      "phase": "1. INICIO",
+      "card": "Ryzeal Ice",
+      "action": "Invocación Normal para buscar otro Ryzeal",
+      "ev": 98
+    },
+    {
+      "node": 2,
+      "phase": "2. EXTENSIÓN",
+      "card": "Ryzeal Node",
+      "action": "Invocación Especial desde la mano",
+      "ev": 94
+    },
+    {
+      "node": 3,
+      "phase": "3. EXTRA DECK",
+      "card": "Detonador Ryzeal",
+      "action": "Invocación Xyz de Rango 4",
+      "ev": 96
+    },
+    {
+      "node": 4,
+      "phase": "4. REMATE",
+      "card": "Armas Dobles Ryzeal",
+      "action": "Efecto de interrupción/negación en turno rival",
+      "ev": 95
+    }
+  ],
+  "strategy": {
+    "win_condition": "Establecer un campo con Detonador Ryzeal y Armas Dobles Ryzeal para controlar los efectos del oponente mediante la eliminación de materiales Xyz.",
+    "combo_steps": [
+      "1. Invoca normalmente a Ryzeal Ice para añadir un monstruo Ryzeal de Nivel 4 a tu mano.",
+      "2. Invoca de forma especial a Ryzeal Node desde tu mano gracias a su efecto de extensión.",
+      "3. Superpone ambos monstruos de Nivel 4 para invocar a Detonador Ryzeal desde el Extra Deck.",
+      "4. Usa el efecto de Detonador Ryzeal para buscar o preparar el campo para la llegada de Armas Dobles Ryzeal."
+    ],
+    "end_board": "Detonador Ryzeal con materiales y Armas Dobles Ryzeal para disrupción rápida.",
+    "ideal_hand": [
+      "Ryzeal Ice",
+      "Ryzeal Node",
+      "Ryzeal Plug-in"
+    ]
+  }
+}

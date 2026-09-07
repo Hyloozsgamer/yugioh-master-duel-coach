@@ -1,0 +1,66 @@
+{
+  "is_deck_screen": true,
+  "is_loaner": false,
+  "screen_type": "SOLO_GATE / LOANER_DECK",
+  "deck_name": "Paquete de Selección: Guerreros Magnéticos y Dinosaurios",
+  "archetype": "Magnet Warrior / Dinosaur",
+  "total_cards_estimated": 40,
+  "loaner_tip": "Prioriza la invocación de Guerreros Magnéticos para acceder a sus formas de mayor nivel mediante tributo o efectos de intercambio en el cementerio.",
+  "key_starters": [
+    "Dinoluchador",
+    "Guerrero Magnético Alfa Beta Gamma"
+  ],
+  "tuners_or_extenders": [
+    "Lancero Talkback"
+  ],
+  "extra_deck_cards": [
+    "Lancero Talkback"
+  ],
+  "support_spells_traps": [
+    "Fuerza Magnética"
+  ],
+  "z_nodes": [
+    {
+      "node": 1,
+      "phase": "1. INICIO",
+      "card": "Dinoluchador",
+      "action": "Invocación Normal para presión ofensiva",
+      "ev": 98
+    },
+    {
+      "node": 2,
+      "phase": "2. EXTENSIÓN",
+      "card": "Guerrero Magnético Alfa Beta Gamma",
+      "action": "Invocación Especial para preparar tributo",
+      "ev": 94
+    },
+    {
+      "node": 3,
+      "phase": "3. EXTRA DECK",
+      "card": "Lancero Talkback",
+      "action": "Invocación por Enlace para soporte de campo",
+      "ev": 96
+    },
+    {
+      "node": 4,
+      "phase": "4. REMATE",
+      "card": "Fuerza Magnética",
+      "action": "Activación de trampa para redirigir ataques",
+      "ev": 95
+    }
+  ],
+  "strategy": {
+    "win_condition": "Controlar el campo mediante la redirección de ataques con 'Fuerza Magnética' mientras se acumulan recursos de tipo Roca/Tierra.",
+    "combo_steps": [
+      "1. Invocar a 'Dinoluchador' para establecer presencia en el campo.",
+      "2. Invocar a 'Guerrero Magnético Alfa Beta Gamma' para preparar la sinergia del arquetipo.",
+      "3. Utilizar a 'Lancero Talkback' como extensor de enlace para proteger a tus monstruos principales.",
+      "4. Activar 'Fuerza Magnética' durante la fase de batalla del oponente para forzar ataques hacia tus monstruos con mayor defensa."
+    ],
+    "end_board": "Campo con un Guerrero Magnético en posición de defensa y 'Fuerza Magnética' colocada boca abajo.",
+    "ideal_hand": [
+      "Dinoluchador",
+      "Fuerza Magnética"
+    ]
+  }
+}

@@ -1,0 +1,58 @@
+{
+  "is_deck_screen": true,
+  "is_loaner": false,
+  "screen_type": "SHOP_SCREEN",
+  "deck_name": "Pantalla de Tienda - Kaiser en el Escenario",
+  "archetype": "Ciber Dragón / Varios",
+  "total_cards_estimated": 0,
+  "loaner_tip": "Estás en la Tienda del juego, no en una pantalla de Deck de préstamo o Modo Solo. Navega hacia el Modo Solo para probar barajas.",
+  "key_starters": [
+    "Ciber Dragón"
+  ],
+  "tuners_or_extenders": [],
+  "extra_deck_cards": [
+    "Ciber Dragón Infinito"
+  ],
+  "support_spells_traps": [],
+  "z_nodes": [
+    {
+      "node": 1,
+      "phase": "1. INICIO",
+      "card": "Ciber Dragón",
+      "action": "Seleccionar menú de Tienda o Modo Solo",
+      "ev": 50
+    },
+    {
+      "node": 2,
+      "phase": "2. EXTENSIÓN",
+      "card": "Ciber Dragón Infinito",
+      "action": "Navegar a la puerta del Modo Solo",
+      "ev": 50
+    },
+    {
+      "node": 3,
+      "phase": "3. EXTRA DECK",
+      "card": "Ciber Dragón Infinito",
+      "action": "Seleccionar el Deck de Préstamo",
+      "ev": 50
+    },
+    {
+      "node": 4,
+      "phase": "4. REMATE",
+      "card": "Ciber Dragón",
+      "action": "Iniciar el Duelo",
+      "ev": 50
+    }
+  ],
+  "strategy": {
+    "win_condition": "Navegar desde la tienda hasta una pantalla de selección de Deck en el Modo Solo para activar el análisis táctico.",
+    "combo_steps": [
+      "1. Haz clic en el menú principal o de Modo Solo.",
+      "2. Selecciona la puerta correspondiente al evento o historia.",
+      "3. Elige el Deck de Préstamo (Loaner Deck).",
+      "4. Vuelve a capturar la pantalla cuando estés viendo las cartas del deck."
+    ],
+    "end_board": "Menú de juego principal con acceso al tablero de duelo.",
+    "ideal_hand": []
+  }
+}

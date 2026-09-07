@@ -1,0 +1,69 @@
+{
+  "is_deck_screen": true,
+  "is_loaner": true,
+  "screen_type": "SOLO_GATE / LOANER_DECK",
+  "deck_name": "Infierno Radiante",
+  "archetype": "Tenpai",
+  "total_cards_estimated": 40,
+  "loaner_tip": "La estrategia Tenpai brilla en la Battle Phase. No fuerces jugadas en tu Main Phase 1; invoca a tus monstruos Tenpai, entra en la Battle Phase y utiliza sus efectos de Sincronía rápida para encadenar ataques masivos.",
+  "key_starters": [
+    "Pai Tenpai",
+    "Chundra Tenpai"
+  ],
+  "tuners_or_extenders": [
+    "Baidra Tenpai"
+  ],
+  "extra_deck_cards": [
+    "Trident Dragion",
+    "Dragón de la Rosa Negra",
+    "Dragón de la Rosa Sangrienta"
+  ],
+  "support_spells_traps": [
+    "Sangen Sangen"
+  ],
+  "z_nodes": [
+    {
+      "node": 1,
+      "phase": "1. INICIO",
+      "card": "Pai Tenpai",
+      "action": "Invocación Normal (Nivel 3, Cantante)",
+      "ev": 98
+    },
+    {
+      "node": 2,
+      "phase": "2. EXTENSIÓN",
+      "card": "Chundra Tenpai",
+      "action": "Invocación Especial desde la mano",
+      "ev": 94
+    },
+    {
+      "node": 3,
+      "phase": "3. EXTRA DECK",
+      "card": "Dragón de la Rosa Negra",
+      "action": "Sincronía (Nivel 7) para limpiar campo",
+      "ev": 96
+    },
+    {
+      "node": 4,
+      "phase": "4. REMATE",
+      "card": "Trident Dragion",
+      "action": "Invocación por Sincronía y ataque múltiple",
+      "ev": 95
+    }
+  ],
+  "strategy": {
+    "win_condition": "Acumular daño masivo durante la Battle Phase mediante la invocación de Sincronía rápida de los monstruos Tenpai.",
+    "combo_steps": [
+      "1. Invoca de forma normal a Pai Tenpai (Nivel 3 Cantante).",
+      "2. Invoca de forma especial a Chundra Tenpai (Nivel 4) desde tu mano si controlas un monstruo Dragón de FUEGO.",
+      "3. Entra en la Battle Phase y utiliza el efecto de los Tenpai para realizar una Invocación por Sincronía rápida.",
+      "4. Sincroniza para invocar a Trident Dragion, destruye cartas propias si es necesario para ganar ataques adicionales y finalizar el duelo."
+    ],
+    "end_board": "Trident Dragion con capacidad de realizar 3 ataques y Sangen Sangen en campo para proteger tus Dragones de efectos.",
+    "ideal_hand": [
+      "Pai Tenpai",
+      "Chundra Tenpai",
+      "Sangen Sangen"
+    ]
+  }
+}

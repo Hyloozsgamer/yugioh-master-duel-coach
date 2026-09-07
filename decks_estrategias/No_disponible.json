@@ -1,0 +1,53 @@
+{
+  "is_deck_screen": true,
+  "is_loaner": false,
+  "screen_type": "UNKNOWN",
+  "deck_name": "No disponible",
+  "archetype": "No disponible",
+  "total_cards_estimated": 0,
+  "loaner_tip": "La imagen proporcionada muestra una consola de comandos superpuesta (HUD) y no una pantalla de selección o deck de préstamo de Yu-Gi-Oh! Master Duel. Por favor, proporciona una captura de pantalla válida del juego para analizar el deck.",
+  "key_starters": [],
+  "tuners_or_extenders": [],
+  "extra_deck_cards": [],
+  "support_spells_traps": [],
+  "z_nodes": [
+    {
+      "node": 1,
+      "phase": "1. INICIO",
+      "card": "N/A",
+      "action": "Pantalla no detectada",
+      "ev": 0
+    },
+    {
+      "node": 2,
+      "phase": "2. EXTENSIÓN",
+      "card": "N/A",
+      "action": "Pantalla no detectada",
+      "ev": 0
+    },
+    {
+      "node": 3,
+      "phase": "3. EXTRA DECK",
+      "card": "N/A",
+      "action": "Pantalla no detectada",
+      "ev": 0
+    },
+    {
+      "node": 4,
+      "phase": "4. REMATE",
+      "card": "N/A",
+      "action": "Pantalla no detectada",
+      "ev": 0
+    }
+  ],
+  "strategy": {
+    "win_condition": "Sube una imagen clara del deck de préstamo en el Modo Solo de Master Duel para recibir un análisis táctico preciso.",
+    "combo_steps": [
+      "1. Captura la pantalla correcta del juego.",
+      "2. Asegúrate de que se vean las cartas del Deck Principal y Extra Deck.",
+      "3. Vuelve a enviar la imagen al sistema."
+    ],
+    "end_board": "Esperando imagen válida.",
+    "ideal_hand": []
+  }
+}

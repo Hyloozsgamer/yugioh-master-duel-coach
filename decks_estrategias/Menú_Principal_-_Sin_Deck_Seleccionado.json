@@ -1,0 +1,64 @@
+{
+  "is_deck_screen": true,
+  "is_loaner": false,
+  "screen_type": "SOLO_GATE",
+  "deck_name": "Menú Principal - Sin Deck Seleccionado",
+  "archetype": "General",
+  "total_cards_estimated": 40,
+  "loaner_tip": "Estás en el menú principal. Entra al modo 'SOLO' para probar los Decks de Préstamo o selecciona 'DECK' para editar tus cartas antes de lanzarte a Duelo por Rango.",
+  "key_starters": [
+    "N/A"
+  ],
+  "tuners_or_extenders": [
+    "N/A"
+  ],
+  "extra_deck_cards": [
+    "N/A"
+  ],
+  "support_spells_traps": [
+    "N/A"
+  ],
+  "z_nodes": [
+    {
+      "node": 1,
+      "phase": "1. INICIO",
+      "card": "Menú Principal",
+      "action": "Haz clic en la opción 'SOLO' o 'DECK' en el panel lateral izquierdo",
+      "ev": 99
+    },
+    {
+      "node": 2,
+      "phase": "2. EXTENSIÓN",
+      "card": "Selección de Puerta",
+      "action": "Elige la Puerta del Modo Solo y revisa el Deck de Préstamo",
+      "ev": 95
+    },
+    {
+      "node": 3,
+      "phase": "3. EXTRA DECK",
+      "card": "Inspección de Cartas",
+      "action": "Examina los monstruos del Extra Deck y los buscadores principales",
+      "ev": 96
+    },
+    {
+      "node": 4,
+      "phase": "4. REMATE",
+      "card": "Duelo",
+      "action": "Inicia el combate aplicando la secuencia de nodos óptima",
+      "ev": 97
+    }
+  ],
+  "strategy": {
+    "win_condition": "Navegar hacia el modo de juego deseado y preparar tu estrategia de arquetipo.",
+    "combo_steps": [
+      "1. Selecciona 'SOLO' para practicar contra la IA con Decks de Préstamo.",
+      "2. O selecciona 'DECK' para configurar tu baraja competitiva.",
+      "3. Entra en el duelo y aplica las Invocaciones Normales y Especiales según tu mano inicial.",
+      "4. Despliega los monstruos del Extra Deck para asegurar la victoria."
+    ],
+    "end_board": "Interfaz principal navegada con éxito hacia el tablero de duelos.",
+    "ideal_hand": [
+      "N/A"
+    ]
+  }
+}

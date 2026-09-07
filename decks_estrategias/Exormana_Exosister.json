@@ -1,0 +1,70 @@
+{
+  "is_deck_screen": true,
+  "is_loaner": false,
+  "screen_type": "SOLO_GATE",
+  "deck_name": "Exormana (Exosister)",
+  "archetype": "Exosister",
+  "total_cards_estimated": 40,
+  "loaner_tip": "La IA en esta puerta suele abusar del Cementerio. Prioriza invocar a 'Exosister Martha' o 'Exosister Elis' para acceder rápidamente a 'Exosister Mikailis' y desterrar cartas clave del rival antes de que las usen.",
+  "key_starters": [
+    "Exosister Martha",
+    "Exosister Elis"
+  ],
+  "tuners_or_extenders": [
+    "Exosister Stella",
+    "Exosister Irene"
+  ],
+  "extra_deck_cards": [
+    "Exosister Mikailis",
+    "Exosister Kaspitell"
+  ],
+  "support_spells_traps": [
+    "Exosister Vadis",
+    "Pax de las Exosister"
+  ],
+  "z_nodes": [
+    {
+      "node": 1,
+      "phase": "1. INICIO",
+      "card": "Exosister Martha",
+      "action": "Invocación Especial desde la mano (Efecto)",
+      "ev": 98
+    },
+    {
+      "node": 2,
+      "phase": "2. EXTENSIÓN",
+      "card": "Exosister Elis",
+      "action": "Invocación Especial por efecto de Martha",
+      "ev": 94
+    },
+    {
+      "node": 3,
+      "phase": "3. EXTRA DECK",
+      "card": "Exosister Kaspitell",
+      "action": "Invocación Xyz (Nivel 4 + Nivel 4)",
+      "ev": 96
+    },
+    {
+      "node": 4,
+      "phase": "4. REMATE",
+      "card": "Exosister Mikailis",
+      "action": "Invocación Xyz sobre Kaspitell para desterrar",
+      "ev": 95
+    }
+  ],
+  "strategy": {
+    "win_condition": "Controlar el cementerio del oponente mediante la invocación rápida de Xyz Exosister que activan efectos de destierro.",
+    "combo_steps": [
+      "1. Invocar a 'Exosister Martha' para invocar a 'Exosister Elis' desde el Deck.",
+      "2. Superponer ambas para invocar a 'Exosister Kaspitell' y buscar otra Exosister.",
+      "3. Usar el efecto de 'Exosister Kaspitell' para añadir 'Exosister Vadis' a la mano.",
+      "4. Colocar 'Exosister Vadis' para invocar 2 Exosister adicionales en el turno del rival y realizar una Invocación Xyz sorpresa."
+    ],
+    "end_board": "Exosister Mikailis con material y Exosister Vadis colocada para interrupción.",
+    "ideal_hand": [
+      "Exosister Martha",
+      "Pax de las Exosister",
+      "Exosister Vadis"
+    ]
+  }
+}

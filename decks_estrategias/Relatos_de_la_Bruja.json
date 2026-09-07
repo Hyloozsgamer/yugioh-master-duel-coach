@@ -1,0 +1,67 @@
+{
+  "is_deck_screen": true,
+  "is_loaner": true,
+  "screen_type": "SOLO_GATE",
+  "deck_name": "Relatos de la Bruja",
+  "archetype": "Diabell / Bosque Blanco",
+  "total_cards_estimated": 40,
+  "loaner_tip": "Aprovecha los efectos de los monstruos del Bosque Blanco y Diabellze para generar interrupciones rápidas y control de campo en el turno del rival.",
+  "key_starters": [
+    "Diabell, Reina del Bosque Blanco",
+    "Diabellze la Guarda del Pecado Original"
+  ],
+  "tuners_or_extenders": [
+    "Diabell, Reina del Bosque Blanco"
+  ],
+  "extra_deck_cards": [
+    "Diabell, Reina del Bosque Blanco"
+  ],
+  "support_spells_traps": [
+    "Cuentos del Bosque Blanco",
+    "Diabellze la Guarda del Pecado Original"
+  ],
+  "z_nodes": [
+    {
+      "node": 1,
+      "phase": "1. INICIO",
+      "card": "Diabellze la Guarda del Pecado Original",
+      "action": "Invocación Normal o Especial para buscar recursos",
+      "ev": 98
+    },
+    {
+      "node": 2,
+      "phase": "2. EXTENSIÓN",
+      "card": "Cuentos del Bosque Blanco",
+      "action": "Activación de Magia de campo/continua para extender jugadas",
+      "ev": 94
+    },
+    {
+      "node": 3,
+      "phase": "3. EXTRA DECK",
+      "card": "Diabell, Reina del Bosque Blanco",
+      "action": "Invocación por Sincronía o uso desde el Extra Deck",
+      "ev": 96
+    },
+    {
+      "node": 4,
+      "phase": "4. REMATE",
+      "card": "Diabellze la Guarda del Pecado Original",
+      "action": "Control de mesa y presión ofensiva",
+      "ev": 95
+    }
+  ],
+  "strategy": {
+    "win_condition": "Establecer control mediante las interrupciones del arquetipo Bosque Blanco y Diabellze para desbaratar las jugadas del rival.",
+    "combo_steps": [
+      "1. Activa 'Cuentos del Bosque Blanco' para preparar tus recursos en mano o cementerio.",
+      "2. Invoca a 'Diabellze la Guarda del Pecado Original' para limitar las jugadas del rival.",
+      "3. Despliega a 'Diabell, Reina del Bosque Blanco' utilizando efectos de extensión.",
+      "4. Posiciona tus cartas de arquetipo para asegurar el control del duelo."
+    ],
+    "end_board": "Diabellze en campo con soporte de cartas de arquetipo y magias listas para interrumpir.",
+    "ideal_hand": [
+      "Diabellze la Guarda del Pecado Original",
+      "Cuentos del Bosque Blanco"
+    ]
+  }
+}

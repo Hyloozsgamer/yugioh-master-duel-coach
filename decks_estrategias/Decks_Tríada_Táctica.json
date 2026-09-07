@@ -1,0 +1,70 @@
+{
+  "is_deck_screen": true,
+  "is_loaner": true,
+  "screen_type": "SOLO_GATE / LOANER_DECK",
+  "deck_name": "Decks Tríada Táctica",
+  "archetype": "Sincronía / Xyz / Enlace (Mixto)",
+  "total_cards_estimated": 40,
+  "loaner_tip": "Este deck es un tutorial de mecánicas. Prioriza la Invocación por Sincronía para limpiar el campo de la IA, ya que sus monstruos suelen tener poca defensa ante ataques directos de alto nivel.",
+  "key_starters": [
+    "Guerrero de la Velocidad",
+    "Caballero de la Espada de la Luz"
+  ],
+  "tuners_or_extenders": [
+    "Guerrero de la Velocidad",
+    "Sincrón de Basura"
+  ],
+  "extra_deck_cards": [
+    "Guerrero de Polvo de Estrellas",
+    "Número 39: Utopía"
+  ],
+  "support_spells_traps": [
+    "Agujero Oscuro",
+    "Tifón del Espacio Místico"
+  ],
+  "z_nodes": [
+    {
+      "node": 1,
+      "phase": "1. INICIO",
+      "card": "Guerrero de la Velocidad",
+      "action": "Invocación Normal para preparar nivel",
+      "ev": 98
+    },
+    {
+      "node": 2,
+      "phase": "2. EXTENSIÓN",
+      "card": "Sincrón de Basura",
+      "action": "Invocación Especial desde cementerio",
+      "ev": 94
+    },
+    {
+      "node": 3,
+      "phase": "3. EXTRA DECK",
+      "card": "Guerrero de Polvo de Estrellas",
+      "action": "Invocación por Sincronía (Nivel 8)",
+      "ev": 96
+    },
+    {
+      "node": 4,
+      "phase": "4. REMATE",
+      "card": "Agujero Oscuro",
+      "action": "Limpieza de campo para ataque directo",
+      "ev": 95
+    }
+  ],
+  "strategy": {
+    "win_condition": "Establecer un monstruo de Sincronía de alto nivel (Nivel 8) para superar los puntos de ataque de la IA y controlar el campo.",
+    "combo_steps": [
+      "1. Invocar de forma normal a 'Guerrero de la Velocidad' para tener presencia en campo.",
+      "2. Invocar a 'Sincrón de Basura' y activar su efecto para traer un monstruo de nivel bajo del cementerio.",
+      "3. Realizar la Invocación por Sincronía usando ambos para traer a 'Guerrero de Polvo de Estrellas'.",
+      "4. Usar 'Agujero Oscuro' si la IA tiene defensas, seguido de un ataque directo con el monstruo jefe."
+    ],
+    "end_board": "Guerrero de Polvo de Estrellas en posición de ataque con una carta de trampa de soporte colocada.",
+    "ideal_hand": [
+      "Sincrón de Basura",
+      "Guerrero de la Velocidad",
+      "Agujero Oscuro"
+    ]
+  }
+}

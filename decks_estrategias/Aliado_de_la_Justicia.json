@@ -1,0 +1,69 @@
+{
+  "is_deck_screen": true,
+  "is_loaner": true,
+  "screen_type": "SOLO_GATE / LOANER_DECK",
+  "deck_name": "Aliado de la Justicia",
+  "archetype": "Aliado de la Justicia",
+  "total_cards_estimated": 40,
+  "loaner_tip": "Prioriza siempre la invocación de 'Aliado de la Justicia Catastor'. Su efecto destruye automáticamente a cualquier monstruo que no sea de ATRIBUTO OSCURIDAD antes del cálculo de daño, lo cual es devastador contra la IA en este escenario.",
+  "key_starters": [
+    "Aliado de la Justicia Ruso",
+    "Aliado de la Justicia Buscapasos"
+  ],
+  "tuners_or_extenders": [
+    "Aliado de la Justicia Buscapasos"
+  ],
+  "extra_deck_cards": [
+    "Aliado de la Justicia Catastor",
+    "Guerrero Colosal"
+  ],
+  "support_spells_traps": [
+    "Raigeki",
+    "Tifón del Espacio Místico"
+  ],
+  "z_nodes": [
+    {
+      "node": 1,
+      "phase": "1. INICIO",
+      "card": "Aliado de la Justicia Ruso",
+      "action": "Invocación Normal (Nivel 4)",
+      "ev": 98
+    },
+    {
+      "node": 2,
+      "phase": "2. EXTENSIÓN",
+      "card": "Aliado de la Justicia Buscapasos",
+      "action": "Invocación Especial (Cantante Nivel 1)",
+      "ev": 94
+    },
+    {
+      "node": 3,
+      "phase": "3. EXTRA DECK",
+      "card": "Aliado de la Justicia Catastor",
+      "action": "Invocación por Sincronía (Nivel 5)",
+      "ev": 96
+    },
+    {
+      "node": 4,
+      "phase": "4. REMATE",
+      "card": "Raigeki",
+      "action": "Limpieza de campo para ataque directo",
+      "ev": 95
+    }
+  ],
+  "strategy": {
+    "win_condition": "Controlar el campo mediante la eliminación de monstruos no OSCURIDAD usando el efecto de Catastor y limpiar amenazas con hechizos de soporte.",
+    "combo_steps": [
+      "1. Invoca de forma normal a 'Aliado de la Justicia Ruso' (Nivel 4).",
+      "2. Invoca de forma especial o normal a 'Aliado de la Justicia Buscapasos' (Cantante Nivel 1).",
+      "3. Realiza la Invocación por Sincronía usando ambos para traer a 'Aliado de la Justicia Catastor' (Nivel 5).",
+      "4. Usa 'Raigeki' para destruir todos los monstruos del rival y atacar directamente con 'Aliado de la Justicia Catastor'."
+    ],
+    "end_board": "Aliado de la Justicia Catastor en posición de ataque con 'Tifón del Espacio Místico' colocado para negar magias/trampas molestas.",
+    "ideal_hand": [
+      "Aliado de la Justicia Ruso",
+      "Aliado de la Justicia Buscapasos",
+      "Raigeki"
+    ]
+  }
+}

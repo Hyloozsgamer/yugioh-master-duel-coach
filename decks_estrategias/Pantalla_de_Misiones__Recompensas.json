@@ -1,0 +1,65 @@
+{
+  "is_deck_screen": true,
+  "is_loaner": false,
+  "screen_type": "SOLO_GATE",
+  "deck_name": "Pantalla de Misiones / Recompensas",
+  "archetype": "General",
+  "total_cards_estimated": 40,
+  "loaner_tip": "Estás en la pantalla de reclamación de recompensas de misiones. Haz clic en 'ACEPTAR' para reclamar tus Gemas y continúa hacia la siguiente puerta del Modo Solo o configuración de tu Deck.",
+  "key_starters": [
+    "Gemas x250"
+  ],
+  "tuners_or_extenders": [
+    "Recompensa de Misión"
+  ],
+  "extra_deck_cards": [
+    "N/A"
+  ],
+  "support_spells_traps": [
+    "N/A"
+  ],
+  "z_nodes": [
+    {
+      "node": 1,
+      "phase": "1. INICIO",
+      "card": "Gemas x250",
+      "action": "Reclamar objetos obtenidos en misiones del Modo Solo",
+      "ev": 100
+    },
+    {
+      "node": 2,
+      "phase": "2. EXTENSIÓN",
+      "card": "Botón ACEPTAR",
+      "action": "Confirmar la obtención de recursos en la interfaz",
+      "ev": 100
+    },
+    {
+      "node": 3,
+      "phase": "3. EXTRA DECK",
+      "card": "Navegación del Menú",
+      "action": "Regresar a la selección de Puertas o edición de Deck",
+      "ev": 100
+    },
+    {
+      "node": 4,
+      "phase": "4. REMATE",
+      "card": "Tienda / Deck Builder",
+      "action": "Utilizar las gemas para armar o mejorar tu baraja competitiva",
+      "ev": 100
+    }
+  ],
+  "strategy": {
+    "win_condition": "Gestionar tus recursos y gemas sabiamente para completar más puertas del Modo Solo o construir un arquetipo sólido.",
+    "combo_steps": [
+      "1. Haz clic en el botón 'ACEPTAR' para añadir las gemas a tu inventario.",
+      "2. Revisa las misiones pendientes en la barra lateral izquierda para más recompensas.",
+      "3. Dirígete al menú principal o constructor de decks para preparar tu siguiente estrategia.",
+      "4. Entra al siguiente duelo del Modo Solo con un deck optimizado."
+    ],
+    "end_board": "Inventario actualizado con nuevas gemas listas para gastar.",
+    "ideal_hand": [
+      "Gemas x250",
+      "Misión Completada"
+    ]
+  }
+}

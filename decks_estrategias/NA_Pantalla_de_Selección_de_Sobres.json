@@ -1,0 +1,70 @@
+{
+  "is_deck_screen": true,
+  "is_loaner": false,
+  "screen_type": "SOLO_GATE / LOANER_DECK",
+  "deck_name": "N/A (Pantalla de Selección de Sobres)",
+  "archetype": "N/A",
+  "total_cards_estimated": 0,
+  "loaner_tip": "La imagen proporcionada corresponde a la tienda de sobres secretos y no a un deck de préstamo. Para obtener un deck competitivo, prioriza abrir sobres de arquetipos meta como 'Surgidos de la Destrucción' (Branded/Despia) para obtener cartas de alto impacto.",
+  "key_starters": [
+    "Aluber el Bufón de la Desesperación",
+    "Branded Fusion"
+  ],
+  "tuners_or_extenders": [
+    "Tragedia Despia"
+  ],
+  "extra_deck_cards": [
+    "Dragón de la Fusión del Veneno Hambriento",
+    "Quimera, el Rey de las Bestias Míticas"
+  ],
+  "support_spells_traps": [
+    "Fusión Marcada"
+  ],
+  "z_nodes": [
+    {
+      "node": 1,
+      "phase": "1. INICIO",
+      "card": "Aluber el Bufón de la Desesperación",
+      "action": "Invocación Normal para buscar Fusión Marcada",
+      "ev": 98
+    },
+    {
+      "node": 2,
+      "phase": "2. EXTENSIÓN",
+      "card": "Fusión Marcada",
+      "action": "Activar para enviar Albaz y Tragedia al cementerio",
+      "ev": 94
+    },
+    {
+      "node": 3,
+      "phase": "3. EXTRA DECK",
+      "card": "Lubellion el Dragón Abrasador",
+      "action": "Invocación por Fusión usando materiales del cementerio",
+      "ev": 96
+    },
+    {
+      "node": 4,
+      "phase": "4. REMATE",
+      "card": "Espejo del Dragón de Hielo",
+      "action": "Invocación de Jefe para control de campo",
+      "ev": 95
+    }
+  ],
+  "strategy": {
+    "win_condition": "Establecer un campo de control mediante la invocación de fusiones poderosas que nieguen efectos o eliminen recursos del oponente.",
+    "combo_steps": [
+      "1. Invocar a Aluber el Bufón de la Desesperación para añadir Fusión Marcada a la mano.",
+      "2. Activar Fusión Marcada enviando a Caído de Albaz y Tragedia Despia al cementerio.",
+      "3. Invocar a Lubellion el Dragón Abrasador y usar su efecto para reciclar materiales.",
+      "4. Invocar a un monstruo jefe como Espejo del Dragón de Hielo para interrumpir las jugadas del rival."
+    ],
+    "end_board": "Lubellion el Dragón Abrasador + Espejo del Dragón de Hielo + 1 carta de interrupción en mano.",
+    "ideal_hand": [
+      "Aluber el Bufón de la Desesperación",
+      "Fusión Marcada",
+      "Ceniza Errante",
+      "Impermanencia Infinita",
+      "Estrategia de Despia"
+    ]
+  }
+}

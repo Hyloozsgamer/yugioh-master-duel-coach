@@ -1,0 +1,56 @@
+{
+  "is_deck_screen": true,
+  "is_loaner": false,
+  "screen_type": "SOLO_GATE / LOANER_DECK",
+  "deck_name": "No disponible (Pantalla de carga)",
+  "archetype": "N/A",
+  "total_cards_estimated": 40,
+  "loaner_tip": "La imagen proporcionada muestra una pantalla de carga ('CONNECTING'). Por favor, accede al menú de edición de Deck o a la pantalla de selección de Deck de Préstamo para que pueda analizar las cartas específicas y ofrecerte la estrategia ganadora.",
+  "key_starters": [],
+  "tuners_or_extenders": [],
+  "extra_deck_cards": [],
+  "support_spells_traps": [],
+  "z_nodes": [
+    {
+      "node": 1,
+      "phase": "1. INICIO",
+      "card": "N/A",
+      "action": "Esperando carga de datos",
+      "ev": 0
+    },
+    {
+      "node": 2,
+      "phase": "2. EXTENSIÓN",
+      "card": "N/A",
+      "action": "Esperando carga de datos",
+      "ev": 0
+    },
+    {
+      "node": 3,
+      "phase": "3. EXTRA DECK",
+      "card": "N/A",
+      "action": "Esperando carga de datos",
+      "ev": 0
+    },
+    {
+      "node": 4,
+      "phase": "4. REMATE",
+      "card": "N/A",
+      "action": "Esperando carga de datos",
+      "ev": 0
+    }
+  ],
+  "strategy": {
+    "win_condition": "Establecer conexión con el servidor para visualizar el Deck.",
+    "combo_steps": [
+      "1. Esperar a que la pantalla de carga finalice.",
+      "2. Navegar hacia el menú de 'Deck' o 'Solo'.",
+      "3. Capturar la pantalla donde se vean las cartas del Deck de Préstamo.",
+      "4. Volver a solicitar el análisis con la nueva imagen."
+    ],
+    "end_board": "Conexión establecida.",
+    "ideal_hand": [
+      "N/A"
+    ]
+  }
+}

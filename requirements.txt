@@ -1,0 +1,6 @@
+google-genai
+pillow
+opencv-python
+pyautogui
+pygetwindow
+python-dotenv

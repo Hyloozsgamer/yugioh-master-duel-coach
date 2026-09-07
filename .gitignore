@@ -1,0 +1,39 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*.class
+
+# Environments
+.venv/
+venv/
+env/
+ENV/
+
+# Private credentials and secrets (NUNCA SUBIR A GITHUB)
+.env
+gemini_key.txt
+*.key
+coach_config.json
+
+# Logs and crash dumps
+*.log
+coach_crash.log
+
+# Caches and runtime image captures
+cache_images/
+hand_crop.png
+temp_*.png
+debug_*.png
+test_*.png
+scratch/
+
+# Large scraper dumps (>100MB exceeds GitHub limits)
+individual/
+
+# IDE / OS files
+.idea/
+.vscode/
+*.swp
+*.swo
+Thumbs.db
+.DS_Store

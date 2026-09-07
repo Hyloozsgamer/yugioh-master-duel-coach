@@ -1,0 +1,65 @@
+{
+  "is_deck_screen": true,
+  "is_loaner": true,
+  "screen_type": "SOLO_GATE",
+  "deck_name": "Pantalla de Carga de Duelo Solo",
+  "archetype": "Desconocido",
+  "total_cards_estimated": 40,
+  "loaner_tip": "Esperando a que termine la animación de carga para ver la lista de cartas del Deck de Préstamo o la mesa de juego.",
+  "key_starters": [
+    "Cargando Deck Principal"
+  ],
+  "tuners_or_extenders": [
+    "Cargando Cantante"
+  ],
+  "extra_deck_cards": [
+    "Cargando Extra Deck"
+  ],
+  "support_spells_traps": [
+    "Cargando Soporte"
+  ],
+  "z_nodes": [
+    {
+      "node": 1,
+      "phase": "1. INICIO",
+      "card": "Pantalla de Carga",
+      "action": "Esperando transición de pantalla",
+      "ev": 98
+    },
+    {
+      "node": 2,
+      "phase": "2. EXTENSIÓN",
+      "card": "Pantalla de Carga",
+      "action": "Esperando transición de pantalla",
+      "ev": 94
+    },
+    {
+      "node": 3,
+      "phase": "3. EXTRA DECK",
+      "card": "Pantalla de Carga",
+      "action": "Esperando transición de pantalla",
+      "ev": 96
+    },
+    {
+      "node": 4,
+      "phase": "4. REMATE",
+      "card": "Pantalla de Carga",
+      "action": "Esperando transición de pantalla",
+      "ev": 95
+    }
+  ],
+  "strategy": {
+    "win_condition": "Avanzar a la pantalla de selección de Deck o al inicio del Duelo para poder visualizar las cartas exactas.",
+    "combo_steps": [
+      "1. Esperar a que se complete la animación del Modo Solo.",
+      "2. Visualizar la cuadrícula del Deck de Préstamo.",
+      "3. Analizar los starters y monstruos del arquetipo.",
+      "4. Ejecutar el combo óptimo según las cartas mostradas."
+    ],
+    "end_board": "Tablero listo para el Duelo.",
+    "ideal_hand": [
+      "Carta de Préstamo 1",
+      "Carta de Préstamo 2"
+    ]
+  }
+}

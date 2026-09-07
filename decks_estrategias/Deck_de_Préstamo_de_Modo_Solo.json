@@ -1,0 +1,69 @@
+{
+  "is_deck_screen": true,
+  "is_loaner": true,
+  "screen_type": "SOLO_GATE",
+  "deck_name": "Deck de Préstamo de Modo Solo",
+  "archetype": "Desconocido",
+  "total_cards_estimated": 40,
+  "loaner_tip": "Analiza las cartas mostradas en pantalla, realiza la Invocación Normal con tu monstruo de menor nivel y utiliza cartas de soporte para asegurar el control del tablero ante la IA.",
+  "key_starters": [
+    "Invocador de la Estrella",
+    "Guía del Inframundo"
+  ],
+  "tuners_or_extenders": [
+    "Ash Blossom & Joyous Spring",
+    "Junk Synchron"
+  ],
+  "extra_deck_cards": [
+    "Stardust Dragon",
+    "Number 39: Utopia"
+  ],
+  "support_spells_traps": [
+    "Raigeki",
+    "Solemn Judgment"
+  ],
+  "z_nodes": [
+    {
+      "node": 1,
+      "phase": "1. INICIO",
+      "card": "Guía del Inframundo",
+      "action": "Invocación Normal para activar efecto de buscador o extensor.",
+      "ev": 98
+    },
+    {
+      "node": 2,
+      "phase": "2. EXTENSIÓN",
+      "card": "Junk Synchron",
+      "action": "Invocación Especial o Normal para preparar Cantante.",
+      "ev": 94
+    },
+    {
+      "node": 3,
+      "phase": "3. EXTRA DECK",
+      "card": "Stardust Dragon",
+      "action": "Invocación por Sincronía utilizando el Cantante y el material adecuado.",
+      "ev": 96
+    },
+    {
+      "node": 4,
+      "phase": "4. REMATE",
+      "card": "Raigeki",
+      "action": "Limpieza de mesa o control con trampa para asegurar la victoria.",
+      "ev": 95
+    }
+  ],
+  "strategy": {
+    "win_condition": "Desplegar recursos del Extra Deck rápidamente y mantener la ventaja de cartas en mano controlando las amenazas del oponente.",
+    "combo_steps": [
+      "1. Realiza Invocación Normal con el monstruo inicial (Starters) para establecer presencia.",
+      "2. Invoca de manera especial al monstruo Cantante o extensor desde la mano o cementerio.",
+      "3. Sincroniza o realiza la Invocación Xyz/Enlace requerida utilizando tus monstruos en el campo.",
+      "4. Utiliza tus cartas de magia y trampas de soporte para interrumpir las jugadas del rival y asegurar el ataque letal."
+    ],
+    "end_board": "Un monstruo jefe potente en el Extra Deck acompañado de cartas de interrupción boca abajo en la zona de Magias y Trampas.",
+    "ideal_hand": [
+      "Guía del Inframundo",
+      "Ash Blossom & Joyous Spring"
+    ]
+  }
+}

@@ -1,0 +1,64 @@
+{
+  "is_deck_screen": true,
+  "is_loaner": false,
+  "screen_type": "SOLO_GATE",
+  "deck_name": "Pantalla de Transición / Modo Solo",
+  "archetype": "Desconocido",
+  "total_cards_estimated": 40,
+  "loaner_tip": "La imagen muestra una pantalla de transición o animación del Modo Solo. Pulsa 'Omitir' si deseas saltarla o espera a que cargue la siguiente pantalla de selección de Deck de Préstamo.",
+  "key_starters": [
+    "N/A"
+  ],
+  "tuners_or_extenders": [
+    "N/A"
+  ],
+  "extra_deck_cards": [
+    "N/A"
+  ],
+  "support_spells_traps": [
+    "N/A"
+  ],
+  "z_nodes": [
+    {
+      "node": 1,
+      "phase": "1. INICIO",
+      "card": "Pantalla de Carga",
+      "action": "Esperar transición o pulsar Omitir",
+      "ev": 99
+    },
+    {
+      "node": 2,
+      "phase": "2. EXTENSIÓN",
+      "card": "N/A",
+      "action": "N/A",
+      "ev": 50
+    },
+    {
+      "node": 3,
+      "phase": "3. EXTRA DECK",
+      "card": "N/A",
+      "action": "N/A",
+      "ev": 50
+    },
+    {
+      "node": 4,
+      "phase": "4. REMATE",
+      "card": "N/A",
+      "action": "N/A",
+      "ev": 50
+    }
+  ],
+  "strategy": {
+    "win_condition": "Avanzar a la selección de deck de préstamo o al tablero de juego.",
+    "combo_steps": [
+      "1. Observar la interfaz actual.",
+      "2. Presionar el botón 'Omitir' en la esquina inferior derecha si está disponible.",
+      "3. Esperar la carga de las cartas del Deck de Préstamo.",
+      "4. Analizar la baraja cuando sea visible."
+    ],
+    "end_board": "Pantalla principal del Duelo o Selección de Deck.",
+    "ideal_hand": [
+      "N/A"
+    ]
+  }
+}

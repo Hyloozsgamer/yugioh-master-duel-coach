@@ -1,0 +1,69 @@
+{
+  "is_deck_screen": true,
+  "is_loaner": false,
+  "screen_type": "SOLO_GATE / LOANER_DECK",
+  "deck_name": "Pantalla de Misiones del Sistema",
+  "archetype": "Gestión de Misiones",
+  "total_cards_estimated": 40,
+  "loaner_tip": "Estás en el menú de Misiones. Haz clic en 'Recibir todo' para reclamar tus gemas acumuladas antes de entrar a un Duelo del Modo Solo.",
+  "key_starters": [
+    "Todas las misiones",
+    "Misiones de Duelo"
+  ],
+  "tuners_or_extenders": [
+    "Diarias",
+    "Inicio de sesión"
+  ],
+  "extra_deck_cards": [
+    "DUEL LIVE",
+    "Permanentes"
+  ],
+  "support_spells_traps": [
+    "Notas importantes",
+    "Descubrimiento"
+  ],
+  "z_nodes": [
+    {
+      "node": 1,
+      "phase": "1. INICIO",
+      "card": "Todas las misiones",
+      "action": "Revisar las misiones disponibles y progreso actual",
+      "ev": 98
+    },
+    {
+      "node": 2,
+      "phase": "2. EXTENSIÓN",
+      "card": "Misiones de Duelo",
+      "action": "Completar duelos para avanzar en las barras de progreso",
+      "ev": 94
+    },
+    {
+      "node": 3,
+      "phase": "3. EXTRA DECK",
+      "card": "Descubrimiento",
+      "action": "Reclamar recompensas de gemas acumuladas",
+      "ev": 96
+    },
+    {
+      "node": 4,
+      "phase": "4. REMATE",
+      "card": "Notas importantes",
+      "action": "Presionar el botón inferior 'Recibir todo'",
+      "ev": 95
+    }
+  ],
+  "strategy": {
+    "win_condition": "Maximizar la obtención de Gemas gratuitas completando los objetivos diarios y permanentes del juego.",
+    "combo_steps": [
+      "1. Navega a la pestaña 'Misiones' desde el menú principal del juego.",
+      "2. Revisa las misiones completadas que muestran progreso de 3000/3000 o similar.",
+      "3. Haz clic en el botón 'Recibir todo' situado en la esquina inferior derecha para recolectar todas las gemas.",
+      "4. Dirígete a la tienda a gastar tus gemas recién adquiridas en sobres o estructuras."
+    ],
+    "end_board": "Billetera de gemas llena y misiones reiniciadas para el siguiente ciclo diario.",
+    "ideal_hand": [
+      "Todas las misiones",
+      "Recibir todo"
+    ]
+  }
+}

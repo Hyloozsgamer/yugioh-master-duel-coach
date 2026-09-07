@@ -1,0 +1,72 @@
+{
+  "is_deck_screen": true,
+  "is_loaner": false,
+  "screen_type": "SHOP_SECRET_PACKS",
+  "deck_name": "Ilusiones Electrónicas (Dark Magician / Illusion)",
+  "archetype": "Mago Oscuro / Ilusión",
+  "total_cards_estimated": 40,
+  "loaner_tip": "Al abrir el sobre 'Ilusiones Electrónicas', prioriza obtener 'Mago Oscuro' y sus soportes de búsqueda como 'Círculo de Magia Oscura' para controlar el campo mediante destierros rápidos.",
+  "key_starters": [
+    "Mago Oscuro",
+    "Aprendiz de Maga de la Ilusión"
+  ],
+  "tuners_or_extenders": [
+    "Maga de la Ilusión",
+    "Varita del Mago"
+  ],
+  "extra_deck_cards": [
+    "Mago Oscuro el Caballero Dragón",
+    "Ebon, Mago de la Ilusión"
+  ],
+  "support_spells_traps": [
+    "Círculo de Magia Oscura",
+    "Navegación de Magos"
+  ],
+  "z_nodes": [
+    {
+      "node": 1,
+      "phase": "1. INICIO",
+      "card": "Varita del Mago",
+      "action": "Invocación Normal para buscar Círculo de Magia Oscura",
+      "ev": 98
+    },
+    {
+      "node": 2,
+      "phase": "2. EXTENSIÓN",
+      "card": "Aprendiz de Maga de la Ilusión",
+      "action": "Invocación Especial descartando una carta",
+      "ev": 94
+    },
+    {
+      "node": 3,
+      "phase": "3. EXTRA DECK",
+      "card": "Ebon, Mago de la Ilusión",
+      "action": "Invocación Xyz (Rango 7) usando dos Nivel 7",
+      "ev": 96
+    },
+    {
+      "node": 4,
+      "phase": "4. REMATE",
+      "card": "Círculo de Magia Oscura",
+      "action": "Destierro de carta del rival al invocar Mago Oscuro",
+      "ev": 95
+    }
+  ],
+  "strategy": {
+    "win_condition": "Establecer un control de campo mediante la interacción constante entre 'Círculo de Magia Oscura' y la invocación de 'Mago Oscuro' en el turno del oponente.",
+    "combo_steps": [
+      "1. Invocar 'Varita del Mago' para añadir 'Círculo de Magia Oscura' a la mano.",
+      "2. Activar 'Círculo de Magia Oscura' para mirar las 3 cartas superiores y añadir un soporte de 'Mago Oscuro'.",
+      "3. Invocar 'Aprendiz de Maga de la Ilusión' mediante su efecto de descarte para preparar el material de Rango 7.",
+      "4. Usar 'Navegación de Magos' en el turno del rival para invocar 'Mago Oscuro' y activar el efecto de destierro de 'Círculo de Magia Oscura'."
+    ],
+    "end_board": "Círculo de Magia Oscura activo, Mago Oscuro en campo y Navegación de Magos en cementerio para negar efectos.",
+    "ideal_hand": [
+      "Mago Oscuro",
+      "Varita del Mago",
+      "Círculo de Magia Oscura",
+      "Navegación de Magos",
+      "Aprendiz de Maga de la Ilusión"
+    ]
+  }
+}

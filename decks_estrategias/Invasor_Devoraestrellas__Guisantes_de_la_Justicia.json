@@ -1,0 +1,69 @@
+{
+  "is_deck_screen": true,
+  "is_loaner": true,
+  "screen_type": "SOLO_GATE",
+  "deck_name": "Invasor Devoraestrellas / Guisantes de la Justicia",
+  "archetype": "Guerrero Defensor / Sincronía",
+  "total_cards_estimated": 40,
+  "loaner_tip": "Aprovecha la presencia de monstruos de Nivel 3 en el campo para desplegar tus Sincronías de inmediato usando las cartas en mano.",
+  "key_starters": [
+    "Guerrero Defensor",
+    "Insecto de Invasión de la Justicia"
+  ],
+  "tuners_or_extenders": [
+    "Guerrero Defensor",
+    "Insecto de Invasión de la Justicia"
+  ],
+  "extra_deck_cards": [
+    "Dragón Sincrónico de Polvo de Estrellas",
+    "Guerrero Colosal"
+  ],
+  "support_spells_traps": [
+    "Portal Dimensional"
+  ],
+  "z_nodes": [
+    {
+      "node": 1,
+      "phase": "1. INICIO",
+      "card": "Guerrero Defensor",
+      "action": "Invocación Normal en Posición de Ataque",
+      "ev": 98
+    },
+    {
+      "node": 2,
+      "phase": "2. EXTENSIÓN",
+      "card": "Insecto de Invasión de la Justicia",
+      "action": "Invocación Especial desde la mano o uso del efecto",
+      "ev": 94
+    },
+    {
+      "node": 3,
+      "phase": "3. EXTRA DECK",
+      "card": "Dragón Sincrónico de Polvo de Estrellas",
+      "action": "Invocación por Sincronía combinando Nivel 3 + Nivel 5",
+      "ev": 96
+    },
+    {
+      "node": 4,
+      "phase": "4. REMATE",
+      "card": "Portal Dimensional",
+      "action": "Activar Magia de campo/soporte para control",
+      "ev": 95
+    }
+  ],
+  "strategy": {
+    "win_condition": "Estabilizar el campo con monstruos de Sincronía de alto impacto y denegar las jugadas del arquetipo Invasor del oponente.",
+    "combo_steps": [
+      "1. Realiza la Invocación Normal de Guerrero Defensor (Nivel 3) en tu zona de monstruos.",
+      "2. Invoca de modo especial a Insecto de Invasión de la Justicia (Nivel 3) para preparar la Sincronía.",
+      "3. Utiliza los materiales en campo para Invocar por Sincronía a un monstruo de mayor nivel desde el Extra Deck.",
+      "4. Activa cartas de apoyo como Portal Dimensional para asegurar la victoria en la Fase de Batalla."
+    ],
+    "end_board": "Dragón Sincrónico de Polvo de Estrellas en el campo con Portal Dimensional activo.",
+    "ideal_hand": [
+      "Guerrero Defensor",
+      "Insecto de Invasión de la Justicia",
+      "Portal Dimensional"
+    ]
+  }
+}

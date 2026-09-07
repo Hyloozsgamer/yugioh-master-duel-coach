@@ -1,0 +1,69 @@
+{
+  "is_deck_screen": true,
+  "is_loaner": true,
+  "screen_type": "SOLO_GATE / LOANER_DECK",
+  "deck_name": "Mayakashi de la Cripta",
+  "archetype": "Mayakashi",
+  "total_cards_estimated": 40,
+  "loaner_tip": "La estrategia Mayakashi se basa en una cadena de Sincronía. No intentes invocar a Gashadokuro de inmediato; usa a Dakki, la Mayakashi Graciosa para escalar desde los niveles bajos hasta los jefes de nivel alto.",
+  "key_starters": [
+    "Dakki, la Mayakashi Graciosa",
+    "Hajun, la Mayakashi Alada"
+  ],
+  "tuners_or_extenders": [
+    "Dakki, la Mayakashi Graciosa"
+  ],
+  "extra_deck_cards": [
+    "Gashadokuro, el Mayakashi Esquelético",
+    "Yoko, la Mayakashi de la Gracia",
+    "Tsuchigumo, el Mayakashi Venenoso"
+  ],
+  "support_spells_traps": [
+    "Regreso de los Mayakashi",
+    "Mayakashi de Invierno"
+  ],
+  "z_nodes": [
+    {
+      "node": 1,
+      "phase": "1. INICIO",
+      "card": "Hajun, la Mayakashi Alada",
+      "action": "Invocación Normal para invocar a Dakki desde el Deck",
+      "ev": 98
+    },
+    {
+      "node": 2,
+      "phase": "2. EXTENSIÓN",
+      "card": "Dakki, la Mayakashi Graciosa",
+      "action": "Invocación por Sincronía de nivel bajo (Oboro-Guruma)",
+      "ev": 94
+    },
+    {
+      "node": 3,
+      "phase": "3. EXTRA DECK",
+      "card": "Gashadokuro, el Mayakashi Esquelético",
+      "action": "Escalada de Sincronía hasta el nivel 11",
+      "ev": 96
+    },
+    {
+      "node": 4,
+      "phase": "4. REMATE",
+      "card": "Gashadokuro, el Mayakashi Esquelético",
+      "action": "Ataque directo o protección por efecto de cementerio",
+      "ev": 95
+    }
+  ],
+  "strategy": {
+    "win_condition": "Realizar la escalera de Sincronía completa para llenar el cementerio y usar los efectos de resurrección de los Mayakashi para controlar el campo.",
+    "combo_steps": [
+      "1. Invoca a Hajun, la Mayakashi Alada y usa su efecto para invocar a Dakki, la Mayakashi Graciosa desde el Deck.",
+      "2. Sincroniza a ambos para invocar a Oboro-Guruma, el Mayakashi de la Rueda (Nivel 3).",
+      "3. El efecto de Dakki se activa en el cementerio al invocar un Mayakashi, regresándola al campo.",
+      "4. Continúa la escalera sincronizando Dakki con los monstruos de nivel superior hasta llegar a Gashadokuro, el Mayakashi Esquelético (Nivel 11)."
+    ],
+    "end_board": "Gashadokuro, el Mayakashi Esquelético con protección contra efectos y recursos en cementerio para revivir en el turno del oponente.",
+    "ideal_hand": [
+      "Hajun, la Mayakashi Alada",
+      "Regreso de los Mayakashi"
+    ]
+  }
+}

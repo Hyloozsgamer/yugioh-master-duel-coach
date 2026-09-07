@@ -1,0 +1,63 @@
+{
+  "is_deck_screen": true,
+  "is_loaner": false,
+  "screen_type": "SOLO_GATE",
+  "deck_name": "Pantalla de Carga / Transición",
+  "archetype": "Desconocido",
+  "total_cards_estimated": 40,
+  "loaner_tip": "Estás en una pantalla de transición o carga del Modo Solo. Espera a que termine de cargar para ver el tablero o la selección de Deck de Préstamo.",
+  "key_starters": [
+    "Esperando selección"
+  ],
+  "tuners_or_extenders": [
+    "Esperando selección"
+  ],
+  "extra_deck_cards": [
+    "Esperando selección"
+  ],
+  "support_spells_traps": [
+    "Esperando selección"
+  ],
+  "z_nodes": [
+    {
+      "node": 1,
+      "phase": "1. INICIO",
+      "card": "Pantalla de Carga",
+      "action": "Esperar transición del juego",
+      "ev": 99
+    },
+    {
+      "node": 2,
+      "phase": "2. EXTENSIÓN",
+      "card": "Ninguna",
+      "action": "Ninguna",
+      "ev": 99
+    },
+    {
+      "node": 3,
+      "phase": "3. EXTRA DECK",
+      "card": "Ninguna",
+      "action": "Ninguna",
+      "ev": 99
+    },
+    {
+      "node": 4,
+      "phase": "4. REMATE",
+      "card": "Ninguna",
+      "action": "Ninguna",
+      "ev": 99
+    }
+  ],
+  "strategy": {
+    "win_condition": "Avanzar a la pantalla de selección de Deck o al inicio del Duelo.",
+    "combo_steps": [
+      "1. Espera a que la animación de carga termine.",
+      "2. Selecciona tu Deck de Préstamo cuando aparezca en pantalla.",
+      "3. Analiza la mano inicial para comenzar tu jugada."
+    ],
+    "end_board": "Tablero principal del Modo Solo.",
+    "ideal_hand": [
+      "Ninguna"
+    ]
+  }
+}

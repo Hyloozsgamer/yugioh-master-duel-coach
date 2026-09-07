@@ -1,0 +1,65 @@
+{
+  "is_deck_screen": true,
+  "is_loaner": true,
+  "screen_type": "SOLO_GATE",
+  "deck_name": "Deck de Préstamo Genérico",
+  "archetype": "Desconocido",
+  "total_cards_estimated": 40,
+  "loaner_tip": "La imagen proporcionada no muestra el deck de préstamo o está vacía/corrupta. Analiza las cartas al abrir la pantalla de deck en el juego.",
+  "key_starters": [
+    "Carta Inicial Desconocida"
+  ],
+  "tuners_or_extenders": [
+    "Cantante Desconocido"
+  ],
+  "extra_deck_cards": [
+    "Monstruo de Sincronía / Enlace Desconocido"
+  ],
+  "support_spells_traps": [
+    "Magia / Trampa Desconocida"
+  ],
+  "z_nodes": [
+    {
+      "node": 1,
+      "phase": "1. INICIO",
+      "card": "Carta Inicial Desconocida",
+      "action": "Invocación Normal",
+      "ev": 50
+    },
+    {
+      "node": 2,
+      "phase": "2. EXTENSIÓN",
+      "card": "Cantante Desconocido",
+      "action": "Invocación Especial",
+      "ev": 50
+    },
+    {
+      "node": 3,
+      "phase": "3. EXTRA DECK",
+      "card": "Monstruo Extra Desconocido",
+      "action": "Invocación Extra Deck",
+      "ev": 50
+    },
+    {
+      "node": 4,
+      "phase": "4. REMATE",
+      "card": "Monstruo Jefe Desconocido",
+      "action": "Control y ataque",
+      "ev": 50
+    }
+  ],
+  "strategy": {
+    "win_condition": "Establecer presencia en el campo y superar los puntos de vida del rival utilizando las mecánicas propias de la baraja.",
+    "combo_steps": [
+      "1. Realizar Invocación Normal con un monstruo de nivel bajo.",
+      "2. Invocar de manera especial monstruos de soporte o Cantantes.",
+      "3. Utilizar los materiales para Invocar desde el Extra Deck.",
+      "4. Posicionar cartas boca abajo y declarar la fase de batalla."
+    ],
+    "end_board": "Monstruo jefe en posición de ataque con interrupciones de cartas mágicas o de trampa.",
+    "ideal_hand": [
+      "Carta Inicial 1",
+      "Extensor 1"
+    ]
+  }
+}

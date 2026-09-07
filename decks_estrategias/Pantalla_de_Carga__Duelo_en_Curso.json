@@ -1,0 +1,66 @@
+{
+  "is_deck_screen": true,
+  "is_loaner": true,
+  "screen_type": "SOLO_GATE",
+  "deck_name": "Pantalla de Carga / Duelo en Curso",
+  "archetype": "Desconocido",
+  "total_cards_estimated": 40,
+  "loaner_tip": "La pantalla actual muestra la transición de inicio de duelo con el mensaje 'Eres el Empezar primero'. Prepárate para desplegar tu tablero óptimo en el Turno 1.",
+  "key_starters": [
+    "Carta Principal 1",
+    "Carta Principal 2"
+  ],
+  "tuners_or_extenders": [
+    "Cantante Estándar"
+  ],
+  "extra_deck_cards": [
+    "Monstruo de Sincronía/Enlace"
+  ],
+  "support_spells_traps": [
+    "Tornado del Polvo"
+  ],
+  "z_nodes": [
+    {
+      "node": 1,
+      "phase": "1. INICIO",
+      "card": "Carta Principal 1",
+      "action": "Invocación Normal del buscador",
+      "ev": 98
+    },
+    {
+      "node": 2,
+      "phase": "2. EXTENSIÓN",
+      "card": "Cantante Estándar",
+      "action": "Invocación Especial o Cantante",
+      "ev": 94
+    },
+    {
+      "node": 3,
+      "phase": "3. EXTRA DECK",
+      "card": "Monstruo de Sincronía/Enlace",
+      "action": "Invocación de Extra Deck",
+      "ev": 96
+    },
+    {
+      "node": 4,
+      "phase": "4. REMATE",
+      "card": "Tornado del Polvo",
+      "action": "Fijar interrupciones y terminar turno",
+      "ev": 95
+    }
+  ],
+  "strategy": {
+    "win_condition": "Establecer un campo sólido al ir primero y negar las jugadas clave del arquetipo del rival.",
+    "combo_steps": [
+      "1. Activa tu Invocación Normal con el monstruo iniciador de nivel bajo.",
+      "2. Despliega los extensores o monstruos cantantes necesarios desde la mano.",
+      "3. Realiza la Invocación por Sincronía, Xyz o Enlace para posicionar tu monstruo jefe.",
+      "4. Coloca cartas boca abajo y pasa el turno a la IA."
+    ],
+    "end_board": "Un monstruo jefe en el campo principal y al menos una carta de interrupción o trampa colocada.",
+    "ideal_hand": [
+      "Carta Principal 1",
+      "Cantante Estándar"
+    ]
+  }
+}

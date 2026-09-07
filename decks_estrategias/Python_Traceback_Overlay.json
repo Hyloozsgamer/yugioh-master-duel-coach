@@ -1,0 +1,66 @@
+{
+  "is_deck_screen": true,
+  "is_loaner": false,
+  "screen_type": "ERROR_LOG",
+  "deck_name": "Python Traceback Overlay",
+  "archetype": "Tkinter Debug",
+  "total_cards_estimated": 0,
+  "loaner_tip": "El HUD superpuesto de Python ha lanzado un error de atributo ('_apply_big_photo'). Revisa el script en 'coach_live_overlay.py' línea 961 para asegurarte de definir el método faltante en la clase LiveCoachOverlay.",
+  "key_starters": [
+    "Error de Sintaxis",
+    "Excepción Tkinter"
+  ],
+  "tuners_or_extenders": [
+    "Función Lambda"
+  ],
+  "extra_deck_cards": [
+    "Depurador de Python"
+  ],
+  "support_spells_traps": [
+    "Control de Excepciones"
+  ],
+  "z_nodes": [
+    {
+      "node": 1,
+      "phase": "1. INICIO",
+      "card": "Python 3.11",
+      "action": "Ejecución de script principal",
+      "ev": 0
+    },
+    {
+      "node": 2,
+      "phase": "2. EXTENSIÓN",
+      "card": "Tkinter callback",
+      "action": "Llamada asíncrona tras.after",
+      "ev": 0
+    },
+    {
+      "node": 3,
+      "phase": "3. EXTRA DECK",
+      "card": "LiveCoachOverlay",
+      "action": "Fallo por atributo no encontrado",
+      "ev": 0
+    },
+    {
+      "node": 4,
+      "phase": "4. REMATE",
+      "card": "Traceback",
+      "action": "Depurar código fuente en Python",
+      "ev": 0
+    }
+  ],
+  "strategy": {
+    "win_condition": "Resolver el error de programación en el entorno de desarrollo para restaurar el HUD del juego.",
+    "combo_steps": [
+      "1. Abrir el archivo 'coach_live_overlay.py' en el entorno de desarrollo.",
+      "2. Localizar la línea 961 y el método faltante '_apply_big_photo'.",
+      "3. Implementar el método correspondiente en la clase LiveCoachOverlay.",
+      "4. Reiniciar la aplicación de Python para reanudar el overlay de Master Duel."
+    ],
+    "end_board": "Consola de Python limpia sin excepciones y ventana HUD operativa.",
+    "ideal_hand": [
+      "Editor de Código",
+      "Documentación de Tkinter"
+    ]
+  }
+}

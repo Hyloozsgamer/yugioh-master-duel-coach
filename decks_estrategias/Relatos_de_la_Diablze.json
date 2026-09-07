@@ -1,0 +1,69 @@
+{
+  "is_deck_screen": true,
+  "is_loaner": true,
+  "screen_type": "SOLO_GATE / LOANER_DECK",
+  "deck_name": "Relatos de la Diablze",
+  "archetype": "Diabellstar / Pecado Original",
+  "total_cards_estimated": 40,
+  "loaner_tip": "Aprovecha el motor de Diabellstar la Guarda del Pecado Original para buscar tus cartas de 'Pecado Original' y desplegar un campo sólido con interrupciones y monstruos de nivel alto.",
+  "key_starters": [
+    "Diabellstar la Guarda del Pecado Original",
+    "Ilusión del Caos"
+  ],
+  "tuners_or_extenders": [
+    "Ash Blossom & Joyous Spring",
+    "Efector FANTASMA"
+  ],
+  "extra_deck_cards": [
+    "Dragón de Polvo de Estrellas",
+    "Señor de la Soledad"
+  ],
+  "support_spells_traps": [
+    "Original Sinful Spoils - Snake-Eye",
+    "Sinful Spoils of Subversion - Snake-Eye"
+  ],
+  "z_nodes": [
+    {
+      "node": 1,
+      "phase": "1. INICIO",
+      "card": "Diabellstar la Guarda del Pecado Original",
+      "action": "Invocación Especial mandando una carta de tu mano al Cementerio para buscar.",
+      "ev": 98
+    },
+    {
+      "node": 2,
+      "phase": "2. EXTENSIÓN",
+      "card": "Original Sinful Spoils - Snake-Eye",
+      "action": "Activa la magia para colocar un monstruo desde tu Deck.",
+      "ev": 94
+    },
+    {
+      "node": 3,
+      "phase": "3. EXTRA DECK",
+      "card": "Dragón de Polvo de Estrellas",
+      "action": "Invocación por Sincronía utilizando tus monstruos disponibles.",
+      "ev": 96
+    },
+    {
+      "node": 4,
+      "phase": "4. REMATE",
+      "card": "Sinful Spoils of Subversion - Snake-Eye",
+      "action": "Envía una carta del rival a su mano o niega efectos críticos.",
+      "ev": 95
+    }
+  ],
+  "strategy": {
+    "win_condition": "Establecer control de mesa utilizando los buscadores del arquetipo Pecado Original y restringir las jugadas del rival con interrupciones de monstruos y magias.",
+    "combo_steps": [
+      "1. Activa o Invoca a Diabellstar la Guarda del Pecado Original mandando una carta al Cementerio.",
+      "2. Usa su efecto para colocar 'Original Sinful Spoils - Snake-Eye' directamente desde tu Deck.",
+      "3. Activa la magia para invocar o buscar un extensor clave y preparar tus jugadas de Extra Deck.",
+      "4. Posiciona tus monstruos de interrupción y protege tus recursos clave para asegurar el turno del oponente."
+    ],
+    "end_board": "Diabellstar en el campo, una magia/trampa de Pecado Original lista para interrumpir y al menos un monstruo de sincronía o enlace de nivel alto protector.",
+    "ideal_hand": [
+      "Diabellstar la Guarda del Pecado Original",
+      "Original Sinful Spoils - Snake-Eye"
+    ]
+  }
+}

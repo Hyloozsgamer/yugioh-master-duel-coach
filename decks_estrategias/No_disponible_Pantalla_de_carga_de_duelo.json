@@ -1,0 +1,54 @@
+{
+  "is_deck_screen": true,
+  "is_loaner": false,
+  "screen_type": "SOLO_GATE / LOANER_DECK",
+  "deck_name": "No disponible (Pantalla de carga de duelo)",
+  "archetype": "Desconocido",
+  "total_cards_estimated": 40,
+  "loaner_tip": "La imagen proporcionada corresponde a una pantalla de carga de transición de duelo y no muestra el contenido del Deck. Por favor, proporciona una captura de pantalla de la lista de cartas (Deck Edit o pantalla de selección de préstamo) para realizar el análisis estratégico.",
+  "key_starters": [],
+  "tuners_or_extenders": [],
+  "extra_deck_cards": [],
+  "support_spells_traps": [],
+  "z_nodes": [
+    {
+      "node": 1,
+      "phase": "1. INICIO",
+      "card": "N/A",
+      "action": "Esperando captura de Deck",
+      "ev": 0
+    },
+    {
+      "node": 2,
+      "phase": "2. EXTENSIÓN",
+      "card": "N/A",
+      "action": "Esperando captura de Deck",
+      "ev": 0
+    },
+    {
+      "node": 3,
+      "phase": "3. EXTRA DECK",
+      "card": "N/A",
+      "action": "Esperando captura de Deck",
+      "ev": 0
+    },
+    {
+      "node": 4,
+      "phase": "4. REMATE",
+      "card": "N/A",
+      "action": "Esperando captura de Deck",
+      "ev": 0
+    }
+  ],
+  "strategy": {
+    "win_condition": "Analizar la composición del deck una vez sea visible.",
+    "combo_steps": [
+      "1. Proporciona una imagen donde se vea el listado de cartas del Deck.",
+      "2. Identificaré los motores de búsqueda y los jefes del Extra Deck.",
+      "3. Diseñaré la ruta óptima de combo basada en los recursos disponibles.",
+      "4. Ejecutaré la estrategia de control contra la IA."
+    ],
+    "end_board": "Pendiente de análisis.",
+    "ideal_hand": []
+  }
+}

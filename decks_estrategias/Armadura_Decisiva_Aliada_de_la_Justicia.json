@@ -1,0 +1,34 @@
+{
+  "is_deck_screen": true,
+  "is_loaner": true,
+  "screen_type": "LOANER_DECK",
+  "deck_name": "Armadura Decisiva Aliada de la Justicia",
+  "archetype": "Aliado de la Justicia (Ally of Justice)",
+  "total_cards_estimated": 40,
+  "loaner_tip": "Este arquetipo está diseñado específicamente para combatir monstruos de LUZ. Asegúrate de aprovechar los efectos de control y destrucción que se activan contra rivales de atributo LUZ.",
+  "key_starters": [
+    "Armadura Decisiva Aliada de la Justicia",
+    "Cantantes del arquetipo"
+  ],
+  "main_deck_cards": [
+    "Monstruos Aliado de la Justicia",
+    "Cartas de Apoyo Sincronía"
+  ],
+  "extra_deck_cards": [
+    "Armadura Decisiva Aliada de la Justicia",
+    "Otros monstruos de Sincronía"
+  ],
+  "strategy": {
+    "win_condition": "Superar al rival aprovechando los efectos devastadores contra monstruos de LUZ y cerrando la partida con monstruos de Sincronía de alto ataque como Armadura Decisiva.",
+    "combo_steps": [
+      "1. Invoca monstruos Cantantes y no Cantantes necesarios para la Sincronía.",
+      "2. Realiza la Invocación por Sincronía de Armadura Decisiva Aliada de la Justicia.",
+      "3. Utiliza los efectos contra monstruos de LUZ para limpiar el campo o la mano del rival y asegurar la ofensiva."
+    ],
+    "end_board": "Armadura Decisiva Aliada de la Justicia en el campo con control de las cartas del adversario.",
+    "ideal_hand": [
+      "Cantante",
+      "Monstruo no Cantante"
+    ]
+  }
+}

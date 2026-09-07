@@ -1,0 +1,64 @@
+{
+  "is_deck_screen": true,
+  "is_loaner": false,
+  "screen_type": "SOLO_GATE / LOANER_DECK",
+  "deck_name": "Pantalla en Blanco / Carga",
+  "archetype": "Desconocido",
+  "total_cards_estimated": 40,
+  "loaner_tip": "La imagen proporcionada no muestra contenido de cartas ni un Deck de Préstamo legible. Asegúrate de capturar la pantalla cuando las cartas del deck estén completamente cargadas.",
+  "key_starters": [
+    "Carga pendiente"
+  ],
+  "tuners_or_extenders": [
+    "Carga pendiente"
+  ],
+  "extra_deck_cards": [
+    "Carga pendiente"
+  ],
+  "support_spells_traps": [
+    "Carga pendiente"
+  ],
+  "z_nodes": [
+    {
+      "node": 1,
+      "phase": "1. INICIO",
+      "card": "Carga pendiente",
+      "action": "Esperar renderizado de pantalla",
+      "ev": 50
+    },
+    {
+      "node": 2,
+      "phase": "2. EXTENSIÓN",
+      "card": "Carga pendiente",
+      "action": "Verificar conexión o interfaz",
+      "ev": 50
+    },
+    {
+      "node": 3,
+      "phase": "3. EXTRA DECK",
+      "card": "Carga pendiente",
+      "action": "Inspeccionar cuadrícula de cartas",
+      "ev": 50
+    },
+    {
+      "node": 4,
+      "phase": "4. REMATE",
+      "card": "Carga pendiente",
+      "action": "Ejecutar estrategia al cargar",
+      "ev": 50
+    }
+  ],
+  "strategy": {
+    "win_condition": "Capturar la pantalla correcta con las cartas del Deck de Préstamo visibles para analizar el arquetipo.",
+    "combo_steps": [
+      "1. Abrir la sección del Deck de Préstamo en el Modo Solo.",
+      "2. Esperar a que carguen todas las miniaturas de las cartas en pantalla.",
+      "3. Tomar una nueva captura con los nombres de las cartas legibles.",
+      "4. Consultar de nuevo al Head Coach para recibir la guía táctica exacta."
+    ],
+    "end_board": "Pantalla de juego cargada correctamente con los arquetipos visibles.",
+    "ideal_hand": [
+      "Captura nítida"
+    ]
+  }
+}

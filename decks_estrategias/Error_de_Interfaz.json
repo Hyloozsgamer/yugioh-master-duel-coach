@@ -1,0 +1,57 @@
+{
+  "is_deck_screen": true,
+  "is_loaner": false,
+  "screen_type": "ERROR",
+  "deck_name": "Error de Interfaz",
+  "archetype": "Python Traceback",
+  "total_cards_estimated": 0,
+  "loaner_tip": "La imagen proporcionada muestra una consola de depuración con un error de Python ('AttributeError: 'dict' object has no attribute '_apply_big_photo''). No hay ninguna carta de Yu-Gi-Oh! o pantalla de Master Duel visible. Por favor, asegúrate de capturar la pantalla correcta del juego.",
+  "key_starters": [],
+  "tuners_or_extenders": [],
+  "extra_deck_cards": [],
+  "support_spells_traps": [],
+  "z_nodes": [
+    {
+      "node": 1,
+      "phase": "1. INICIO",
+      "card": "Ninguna",
+      "action": "Revisar consola de Python",
+      "ev": 0
+    },
+    {
+      "node": 2,
+      "phase": "2. EXTENSIÓN",
+      "card": "Ninguna",
+      "action": "Corregir código de la overlay",
+      "ev": 0
+    },
+    {
+      "node": 3,
+      "phase": "3. EXTRA DECK",
+      "card": "Ninguna",
+      "action": "Reiniciar la aplicación",
+      "ev": 0
+    },
+    {
+      "node": 4,
+      "phase": "4. REMATE",
+      "card": "Ninguna",
+      "action": "Capturar el juego de nuevo",
+      "ev": 0
+    }
+  ],
+  "strategy": {
+    "win_condition": "Resolver el error técnico en la aplicación de overlay antes de intentar analizar el juego.",
+    "combo_steps": [
+      "1. Verificar el diccionario o objeto que causó el AttributeError en la línea 961.",
+      "2. Asegurarse de que el objeto de la carta contenga los métodos y atributos correctos de Tkinter.",
+      "3. Reiniciar el script de Python.",
+      "4. Volver a tomar la captura sobre la pantalla de Master Duel."
+    ],
+    "end_board": "Consola limpia sin errores y interfaz funcionando correctamente.",
+    "ideal_hand": [
+      "Código corregido",
+      "Captura de Master Duel"
+    ]
+  }
+}

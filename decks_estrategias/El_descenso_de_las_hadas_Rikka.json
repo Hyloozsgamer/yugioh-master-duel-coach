@@ -1,0 +1,70 @@
+{
+  "is_deck_screen": true,
+  "is_loaner": true,
+  "screen_type": "SOLO_GATE",
+  "deck_name": "El descenso de las hadas Rikka",
+  "archetype": "Rikka",
+  "total_cards_estimated": 40,
+  "loaner_tip": "Prioriza invocar a 'Rikka Petal' para buscar tus piezas de combo. Usa los efectos de tributo de tus monstruos Rikka para activar efectos de control y eliminar las amenazas del rival sin activar sus efectos de cementerio.",
+  "key_starters": [
+    "Pétalo Rikka",
+    "Prímula Rikka"
+  ],
+  "tuners_or_extenders": [
+    "Botón Rikka",
+    "Heléboro Rikka"
+  ],
+  "extra_deck_cards": [
+    "Lágrima Rikka",
+    "Kanzashi Rikka"
+  ],
+  "support_spells_traps": [
+    "Rikka Konkon",
+    "Rikka Tranquilidad"
+  ],
+  "z_nodes": [
+    {
+      "node": 1,
+      "phase": "1. INICIO",
+      "card": "Pétalo Rikka",
+      "action": "Invocación Normal para buscar 'Heléboro Rikka'",
+      "ev": 98
+    },
+    {
+      "node": 2,
+      "phase": "2. EXTENSIÓN",
+      "card": "Prímula Rikka",
+      "action": "Invocación Especial por efecto de tributo",
+      "ev": 94
+    },
+    {
+      "node": 3,
+      "phase": "3. EXTRA DECK",
+      "card": "Lágrima Rikka",
+      "action": "Invocación Xyz Rango 4",
+      "ev": 96
+    },
+    {
+      "node": 4,
+      "phase": "4. REMATE",
+      "card": "Rikka Konkon",
+      "action": "Tributar monstruo rival para control total",
+      "ev": 95
+    }
+  ],
+  "strategy": {
+    "win_condition": "Establecer un campo de control mediante el tributo de monstruos del oponente usando 'Rikka Konkon' y negar efectos con 'Heléboro Rikka'.",
+    "combo_steps": [
+      "1. Invocar a 'Pétalo Rikka' y usar su efecto para añadir 'Heléboro Rikka' a la mano.",
+      "2. Activar 'Rikka Konkon' para permitir tributar monstruos del rival como coste de efectos Rikka.",
+      "3. Invocar a 'Prímula Rikka' de forma especial para preparar la Invocación Xyz.",
+      "4. Invocar a 'Lágrima Rikka' y usar su efecto tributando un monstruo del rival para limpiar el campo."
+    ],
+    "end_board": "Lágrima Rikka con materiales, Rikka Konkon activa y Heléboro Rikka en mano para negar efectos.",
+    "ideal_hand": [
+      "Pétalo Rikka",
+      "Rikka Konkon",
+      "Prímula Rikka"
+    ]
+  }
+}

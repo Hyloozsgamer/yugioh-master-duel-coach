@@ -1,0 +1,42 @@
+{
+  "is_deck_screen": true,
+  "screen_type": "SOLO_GATE",
+  "deck_name": "Mensajera de Datos Clandestino",
+  "archetype": "Live☆Twin / Evil★Twin",
+  "total_cards_estimated": 40,
+  "key_starters": [
+    "Live☆Twin Ki-sikil",
+    "Live☆Twin Lil-la",
+    "Secret Adept (Cyanet Mining / Diagnóstico de red)"
+  ],
+  "main_deck_cards": [
+    "Live☆Twin Ki-sikil",
+    "Live☆Twin Lil-la",
+    "Live☆Twin Frost",
+    "Evil★Twin Ki-sikil-Lil-la",
+    "Cartas de interrupción y motores de consistencia"
+  ],
+  "extra_deck_cards": [
+    "Evil★Twin Ki-sikil",
+    "Evil★Twin Lil-la",
+    "Evil★Twin's Trouble Sunny",
+    "I:P Masquerena",
+    "Accesucode Talker"
+  ],
+  "strategy": {
+    "win_condition": "Generar ventaja de cartas mediante interrupciones en el turno del rival usando los efectos de los Evil★Twin en el Cementerio, y desatar un OTK rápido en el turno propio con Accesucode Talker o Trouble Sunny.",
+    "combo_steps": [
+      "1. Invoca Normal a 'Live☆Twin Ki-sikil' o 'Live☆Twin Lil-la'.",
+      "2. Activa su efecto para invocar de Modo Especial al otro miembro desde tu Deck.",
+      "3. Usa uno de ellos para Invocar por Enlace a 'Evil★Twin Ki-sikil' o 'Evil★Twin Lil-la'.",
+      "4. Activa el efecto del monstruo de Enlace para revivir al monstruo que usaste como material desde el cementerio.",
+      "5. Usa ambos monstruos para invocar a 'I:P Masquerena' o preparar jugadas de turno rival."
+    ],
+    "end_board": "I:P Masquerena + Evil★Twin en campo con Evil★Twin's Trouble Sunny preparado en el Extra Deck / Cementerio para interrumpir en el turno del adversario.",
+    "ideal_hand": [
+      "Live☆Twin Ki-sikil",
+      "Live☆Twin Lil-la",
+      "Cartas de Trampa o Motor de Consistencia"
+    ]
+  }
+}

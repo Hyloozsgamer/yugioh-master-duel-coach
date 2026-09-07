@@ -1,0 +1,69 @@
+{
+  "is_deck_screen": true,
+  "is_loaner": false,
+  "screen_type": "SOLO_GATE / LOANER_DECK",
+  "deck_name": "Leyenda de los Ojos Azules",
+  "archetype": "Ojos Azules",
+  "total_cards_estimated": 40,
+  "loaner_tip": "Prioriza activar 'Doncella de Blanco' para invocar al 'Dragón Blanco de Ojos Azules' desde el Deck. Usa 'Visión con Azules Ojos' para buscar tus magias de soporte y acelerar la salida de tus jefes.",
+  "key_starters": [
+    "Doncella de Blanco",
+    "Doncella de Azules Ojos"
+  ],
+  "tuners_or_extenders": [
+    "Doncella de Blanco"
+  ],
+  "extra_deck_cards": [
+    "Dragón Blanco de Ojos Azules (Base)",
+    "Dragón de Ojos Azules Alternativo (Potencial)"
+  ],
+  "support_spells_traps": [
+    "Visión con Azules Ojos",
+    "Fusión Definitiva"
+  ],
+  "z_nodes": [
+    {
+      "node": 1,
+      "phase": "1. INICIO",
+      "card": "Doncella de Blanco",
+      "action": "Invocación Normal (Nivel 1, Cantante)",
+      "ev": 98
+    },
+    {
+      "node": 2,
+      "phase": "2. EXTENSIÓN",
+      "card": "Visión con Azules Ojos",
+      "action": "Activar para buscar soporte o enviar al cementerio",
+      "ev": 94
+    },
+    {
+      "node": 3,
+      "phase": "3. EXTRA DECK",
+      "card": "Dragón Blanco de Ojos Azules",
+      "action": "Invocación Especial vía efecto de Doncella",
+      "ev": 96
+    },
+    {
+      "node": 4,
+      "phase": "4. REMATE",
+      "card": "Fusión Definitiva",
+      "action": "Invocación por Fusión de monstruo jefe de alto nivel",
+      "ev": 95
+    }
+  ],
+  "strategy": {
+    "win_condition": "Establecer un campo con Dragón Blanco de Ojos Azules y utilizar Fusión Definitiva para limpiar el campo rival y realizar un OTK.",
+    "combo_steps": [
+      "1. Invocar normalmente a 'Doncella de Blanco' (Nivel 1).",
+      "2. Activar 'Visión con Azules Ojos' para buscar una magia de soporte o preparar el cementerio.",
+      "3. Provocar el efecto de 'Doncella de Blanco' para invocar especialmente al 'Dragón Blanco de Ojos Azules' desde el Deck.",
+      "4. Activar 'Fusión Definitiva' usando los monstruos en campo/mano para invocar un monstruo de Fusión de Ojos Azules y destruir cartas del rival."
+    ],
+    "end_board": "Dragón Blanco de Ojos Azules en campo con Fusión Definitiva colocada para interrupción.",
+    "ideal_hand": [
+      "Doncella de Blanco",
+      "Visión con Azules Ojos",
+      "Fusión Definitiva"
+    ]
+  }
+}

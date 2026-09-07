@@ -1,0 +1,46 @@
+{
+  "is_deck_screen": true,
+  "is_loaner": true,
+  "screen_type": "SOLO_GATE",
+  "deck_name": "Mensajera de Datos Clandestino - Préstamo",
+  "archetype": "Live☆Twin / Evil★Twin",
+  "total_cards_estimated": 40,
+  "loaner_tip": "Presta atención a las columnas: el adversario se aprovecha de los efectos basados en columnas. Usa los Links de Live☆Twin/Evil★Twin para reciclar recursos y controlar el campo mediante interrupciones rápidas.",
+  "key_starters": [
+    "Live☆Twin Lil-la",
+    "Live☆Twin Ki-sikil",
+    "Secuestro de Datos"
+  ],
+  "main_deck_cards": [
+    "Live☆Twin Lil-la",
+    "Live☆Twin Ki-sikil",
+    "Live☆Twin Lil-la Treat",
+    "Live☆Twin Ki-sikil Frost",
+    "Señor de la Tormenta Ciberso",
+    "Micro Codificador"
+  ],
+  "extra_deck_cards": [
+    "Evil★Twin Ki-sikil",
+    "Evil★Twin Lil-la",
+    "Evil★Twin Principal Ki-sikil",
+    "Evil★Twin Principal Lil-la",
+    "I:P Enmascarada"
+  ],
+  "strategy": {
+    "win_condition": "Establecer la interacción de los arquetipos Evil★Twin para interrumpir en el turno del rival con destrucción de cartas y robo de cartas, superando las restricciones de columna del adversario.",
+    "combo_steps": [
+      "1. Invoca de Modo Normal a 'Live☆Twin Lil-la' o 'Live☆Twin Ki-sikil'.",
+      "2. Activa su efecto para invocar de Modo Especial al otro gemelo desde tu Deck.",
+      "3. Utiliza los dos monstruos para Invocar por Enlace a 'Evil★Twin Ki-sikil' o 'Evil★Twin Lil-la'.",
+      "4. Activa el efecto del monstruo de enlace para revivir al gemelo correspondiente desde el Cementerio.",
+      "5. Usa los materiales restantes o I:P Enmascarada para preparar interrupciones y protegerte de efectos destructivos."
+    ],
+    "end_board": "Evil★Twin Ki-sikil / Lil-la en el campo con la capacidad de revivirse mutuamente y activar efectos disruptivos durante el turno del adversario, además de I:P Enmascarada para jugadas de Enlace en el turno rival.",
+    "ideal_hand": [
+      "Live☆Twin Lil-la",
+      "Live☆Twin Ki-sikil",
+      "CbtG (Llamado por la Tumba)",
+      "Impermanencia Infinita"
+    ]
+  }
+}

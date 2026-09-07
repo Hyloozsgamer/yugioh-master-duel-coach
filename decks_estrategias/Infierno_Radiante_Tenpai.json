@@ -1,0 +1,67 @@
+{
+  "is_deck_screen": true,
+  "is_loaner": false,
+  "screen_type": "SOLO_GATE / LOANER_DECK",
+  "deck_name": "Infierno Radiante (Tenpai)",
+  "archetype": "Tenpai Dragón",
+  "total_cards_estimated": 40,
+  "loaner_tip": "La estrategia Tenpai se basa en realizar Invocaciones por Sincronía durante la Battle Phase. No fuerces jugadas en tu turno principal; mantén tus recursos para encadenar Sincronías durante el ataque del rival o para OTK en tu turno de batalla.",
+  "key_starters": [
+    "Pai Tenpai",
+    "Chundra Tenpai"
+  ],
+  "tuners_or_extenders": [
+    "Baidra Tenpai"
+  ],
+  "extra_deck_cards": [
+    "Trident Dragion",
+    "Dragón de la Rosa Sangrienta"
+  ],
+  "support_spells_traps": [
+    "Sangen Sangrin"
+  ],
+  "z_nodes": [
+    {
+      "node": 1,
+      "phase": "1. INICIO",
+      "card": "Pai Tenpai",
+      "action": "Invocación Normal para buscar otro Tenpai",
+      "ev": 98
+    },
+    {
+      "node": 2,
+      "phase": "2. EXTENSIÓN",
+      "card": "Sangen Sangrin",
+      "action": "Activar para buscar campo o monstruo Tenpai",
+      "ev": 94
+    },
+    {
+      "node": 3,
+      "phase": "3. EXTRA DECK",
+      "card": "Trident Dragion",
+      "action": "Invocación por Sincronía (Nivel 10)",
+      "ev": 96
+    },
+    {
+      "node": 4,
+      "phase": "4. REMATE",
+      "card": "Trident Dragion",
+      "action": "Destruir cartas propias para atacar 3 veces",
+      "ev": 95
+    }
+  ],
+  "strategy": {
+    "win_condition": "Acumular ataques múltiples con Trident Dragion durante la Battle Phase para un OTK masivo.",
+    "combo_steps": [
+      "1. Invocar Pai Tenpai (Nivel 1) para añadir Chundra Tenpai a la mano.",
+      "2. Activar Sangen Sangrin para buscar el campo o soporte necesario.",
+      "3. Durante la Battle Phase, usar los efectos de los Tenpai para invocar por Sincronía a Trident Dragion.",
+      "4. Usar el efecto de Trident Dragion destruyendo 2 cartas para ganar 2 ataques adicionales y cerrar el duelo."
+    ],
+    "end_board": "Trident Dragion con capacidad de 3 ataques directos.",
+    "ideal_hand": [
+      "Pai Tenpai",
+      "Sangen Sangrin"
+    ]
+  }
+}

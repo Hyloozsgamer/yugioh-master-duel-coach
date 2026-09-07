@@ -1,0 +1,65 @@
+{
+  "is_deck_screen": true,
+  "is_loaner": false,
+  "screen_type": "SHOP_SCREEN",
+  "deck_name": "Pantalla de Tienda / Selección de Lotes",
+  "archetype": "General",
+  "total_cards_estimated": 0,
+  "loaner_tip": "Estás en la Tienda del juego. Dirígete al Modo Solo (Puertas) para seleccionar un Deck de Préstamo y poder visualizar las cartas de la baraja correctamente.",
+  "key_starters": [
+    "N/A"
+  ],
+  "tuners_or_extenders": [
+    "N/A"
+  ],
+  "extra_deck_cards": [
+    "N/A"
+  ],
+  "support_spells_traps": [
+    "N/A"
+  ],
+  "z_nodes": [
+    {
+      "node": 1,
+      "phase": "1. INICIO",
+      "card": "Menú Principal",
+      "action": "Navegar hacia el Modo Solo",
+      "ev": 98
+    },
+    {
+      "node": 2,
+      "phase": "2. SELECCIÓN",
+      "card": "Puerta de Modo Solo",
+      "action": "Entrar en el duelo con Deck de Préstamo",
+      "ev": 94
+    },
+    {
+      "node": 3,
+      "phase": "3. INSPECCIÓN",
+      "card": "Deck de Préstamo",
+      "action": "Visualizar lista de cartas principal y extra",
+      "ev": 96
+    },
+    {
+      "node": 4,
+      "phase": "4. DUELO",
+      "card": "Tablero de Juego",
+      "action": "Iniciar el Duelo",
+      "ev": 95
+    }
+  ],
+  "strategy": {
+    "win_condition": "Navegar a la sección correcta de Modo Solo para que aparezca la interfaz de cartas de préstamo.",
+    "combo_steps": [
+      "1. Sal de la pantalla actual de Tienda haciendo clic en la esquina superior izquierda.",
+      "2. Entra en el menú de Modo Solo desde el menú principal.",
+      "3. Selecciona cualquier Puerta activa que contenga un Deck de Préstamo.",
+      "4. Pulsa en ver detalles del Deck para mostrar la cuadrícula de cartas requerida."
+    ],
+    "end_board": "Menú de Modo Solo abierto con lista de cartas visible.",
+    "ideal_hand": [
+      "Gemas",
+      "Entrada a Modo Solo"
+    ]
+  }
+}

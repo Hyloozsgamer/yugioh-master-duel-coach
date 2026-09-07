@@ -1,0 +1,70 @@
+{
+  "is_deck_screen": true,
+  "is_loaner": false,
+  "screen_type": "TIENDA / SOBRES_SECRETOS",
+  "deck_name": "Guerreros Magnéticos (Magnet Warriors)",
+  "archetype": "Magnet Warrior / Magna Guerrero",
+  "total_cards_estimated": 40,
+  "loaner_tip": "Prioriza invocar a 'Imperion Magnum, el Guerrero Magnético de Batalla' usando los efectos de los guerreros de nivel 3 para reciclar recursos y negar efectos clave del rival.",
+  "key_starters": [
+    "Guerrero Magnético Alfa",
+    "Guerrero Magnético Beta"
+  ],
+  "tuners_or_extenders": [
+    "Guerrero Magnético Gamma"
+  ],
+  "extra_deck_cards": [
+    "Imperion Magnum, el Guerrero Magnético de Batalla",
+    "Gorgónica Guardiana"
+  ],
+  "support_spells_traps": [
+    "Campo Magnético",
+    "Triunfo Magnético"
+  ],
+  "z_nodes": [
+    {
+      "node": 1,
+      "phase": "1. INICIO",
+      "card": "Guerrero Magnético Beta",
+      "action": "Invocación Normal para buscar a Alfa o Gamma",
+      "ev": 98
+    },
+    {
+      "node": 2,
+      "phase": "2. EXTENSIÓN",
+      "card": "Guerrero Magnético Gamma",
+      "action": "Invocación Especial de otro Guerrero Magnético desde la mano",
+      "ev": 94
+    },
+    {
+      "node": 3,
+      "phase": "3. EXTRA DECK",
+      "card": "Imperion Magnum, el Guerrero Magnético de Batalla",
+      "action": "Invocación por Fusión usando los 4 guerreros requeridos",
+      "ev": 96
+    },
+    {
+      "node": 4,
+      "phase": "4. REMATE",
+      "card": "Triunfo Magnético",
+      "action": "Invocación Especial de guerreros desde el Cementerio para OTK",
+      "ev": 95
+    }
+  ],
+  "strategy": {
+    "win_condition": "Establecer un control de campo mediante la negación de efectos de Imperion Magnum y la capacidad de reciclaje del arquetipo.",
+    "combo_steps": [
+      "1. Invocar a Guerrero Magnético Beta para añadir a tu mano a Guerrero Magnético Alfa o Gamma.",
+      "2. Usar el efecto de Guerrero Magnético Gamma para invocar especialmente a otro Guerrero Magnético desde la mano.",
+      "3. Utilizar Campo Magnético para recuperar guerreros del cementerio y preparar la fusión de Imperion Magnum.",
+      "4. Activar Triunfo Magnético en el turno del oponente para invocar a los guerreros de nivel 4 y realizar una Invocación por Fusión rápida."
+    ],
+    "end_board": "Imperion Magnum, el Guerrero Magnético de Batalla con Campo Magnético activo para protección.",
+    "ideal_hand": [
+      "Guerrero Magnético Beta",
+      "Guerrero Magnético Gamma",
+      "Campo Magnético",
+      "Triunfo Magnético"
+    ]
+  }
+}

@@ -1,0 +1,71 @@
+{
+  "is_deck_screen": true,
+  "is_loaner": false,
+  "screen_type": "SOLO_GATE / LOANER_DECK",
+  "deck_name": "Héroe Elemental (Estructura de Selección)",
+  "archetype": "HÉROE",
+  "total_cards_estimated": 40,
+  "loaner_tip": "Prioriza la invocación de Héroe Elemental Stratos para buscar a Héroe Elemental Liquid Soldier y generar ventaja de cartas inmediata.",
+  "key_starters": [
+    "Héroe Elemental Stratos",
+    "Héroe Elemental Liquid Soldier"
+  ],
+  "tuners_or_extenders": [
+    "Héroe Elemental Shadow Mist",
+    "Héroe Elemental Solid Soldier"
+  ],
+  "extra_deck_cards": [
+    "Héroe Elemental Sunrise",
+    "Héroe Elemental Absolute Zero"
+  ],
+  "support_spells_traps": [
+    "Cambio de Máscara",
+    "Polimerización"
+  ],
+  "z_nodes": [
+    {
+      "node": 1,
+      "phase": "1. INICIO",
+      "card": "Héroe Elemental Stratos",
+      "action": "Invocación Normal para buscar Héroe Elemental Shadow Mist",
+      "ev": 98
+    },
+    {
+      "node": 2,
+      "phase": "2. EXTENSIÓN",
+      "card": "Héroe Elemental Liquid Soldier",
+      "action": "Invocación Especial para activar efecto de robo",
+      "ev": 94
+    },
+    {
+      "node": 3,
+      "phase": "3. EXTRA DECK",
+      "card": "Héroe Elemental Sunrise",
+      "action": "Invocación por Fusión para buscar Milagro de Fusión",
+      "ev": 96
+    },
+    {
+      "node": 4,
+      "phase": "4. REMATE",
+      "card": "Cambio de Máscara",
+      "action": "Transformar en Héroe Enmascarado Dark Law para bloquear al rival",
+      "ev": 95
+    }
+  ],
+  "strategy": {
+    "win_condition": "Establecer a Héroe Enmascarado Dark Law para desterrar las cartas del oponente mientras mantienes presión con Héroe Elemental Sunrise.",
+    "combo_steps": [
+      "1. Invoca a Héroe Elemental Stratos para añadir a tu mano a Héroe Elemental Shadow Mist.",
+      "2. Invoca a Héroe Elemental Shadow Mist (vía efecto o invocación especial) para buscar Cambio de Máscara.",
+      "3. Usa Polimerización o el efecto de Héroe Elemental Liquid Soldier para invocar a Héroe Elemental Sunrise.",
+      "4. Activa Cambio de Máscara sobre un HÉROE de agua o tierra para invocar a Héroe Enmascarado Dark Law."
+    ],
+    "end_board": "Héroe Enmascarado Dark Law en campo junto a Héroe Elemental Sunrise y una carta de trampa de interrupción.",
+    "ideal_hand": [
+      "Héroe Elemental Stratos",
+      "Cambio de Máscara",
+      "Polimerización",
+      "Héroe Elemental Liquid Soldier"
+    ]
+  }
+}

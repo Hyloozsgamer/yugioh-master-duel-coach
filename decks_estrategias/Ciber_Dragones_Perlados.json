@@ -1,0 +1,70 @@
+{
+  "is_deck_screen": true,
+  "is_loaner": false,
+  "screen_type": "SOLO_GATE / LOANER_DECK",
+  "deck_name": "Ciber Dragones Perlados",
+  "archetype": "Ciber Dragón",
+  "total_cards_estimated": 40,
+  "loaner_tip": "Prioriza la invocación de Ciber Dragón del Infinito para negar efectos clave del rival. Usa Tormenta de Eslabón para limpiar el campo antes de atacar con el poder de perforación de los monstruos Ciber.",
+  "key_starters": [
+    "Ciber Dragón",
+    "Cuerpo Cibernético"
+  ],
+  "tuners_or_extenders": [
+    "Cuerpo Cibernético"
+  ],
+  "extra_deck_cards": [
+    "Dragón Megaflota Chimeratech",
+    "Ciber Dragón del Infinito"
+  ],
+  "support_spells_traps": [
+    "Tormenta de Eslabón",
+    "Quitar el Limitador"
+  ],
+  "z_nodes": [
+    {
+      "node": 1,
+      "phase": "1. INICIO",
+      "card": "Ciber Dragón",
+      "action": "Invocación Especial (si el rival controla monstruos)",
+      "ev": 98
+    },
+    {
+      "node": 2,
+      "phase": "2. EXTENSIÓN",
+      "card": "Cuerpo Cibernético",
+      "action": "Invocación Especial desde la mano",
+      "ev": 94
+    },
+    {
+      "node": 3,
+      "phase": "3. EXTRA DECK",
+      "card": "Ciber Dragón del Infinito",
+      "action": "Invocación Xyz (usando monstruos Nivel 5)",
+      "ev": 96
+    },
+    {
+      "node": 4,
+      "phase": "4. REMATE",
+      "card": "Quitar el Limitador",
+      "action": "Duplicar ATK para OTK",
+      "ev": 95
+    }
+  ],
+  "strategy": {
+    "win_condition": "Establecer un campo de control con Ciber Dragón del Infinito y finalizar con un ataque masivo potenciado por Quitar el Limitador.",
+    "combo_steps": [
+      "1. Invocar Ciber Dragón de forma especial si el rival controla monstruos.",
+      "2. Invocar Cuerpo Cibernético para tener dos monstruos de Nivel 5 en campo.",
+      "3. Invocar por Xyz a Ciber Dragón del Infinito usando los dos monstruos de Nivel 5.",
+      "4. Activar Quitar el Limitador durante la Battle Phase para duplicar el ATK de tus máquinas y asegurar el OTK."
+    ],
+    "end_board": "Ciber Dragón del Infinito con materiales para negar efectos y un campo despejado por Tormenta de Eslabón.",
+    "ideal_hand": [
+      "Ciber Dragón",
+      "Cuerpo Cibernético",
+      "Quitar el Limitador",
+      "Tormenta de Eslabón"
+    ]
+  }
+}

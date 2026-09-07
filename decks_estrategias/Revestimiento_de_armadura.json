@@ -1,0 +1,70 @@
+{
+  "is_deck_screen": true,
+  "is_loaner": true,
+  "screen_type": "SOLO_GATE / LOANER_DECK",
+  "deck_name": "Revestimiento de armadura",
+  "archetype": "Número / Tiburón",
+  "total_cards_estimated": 40,
+  "loaner_tip": "Prioriza invocar a 'Número 32: Draco Tiburón' primero para usar su efecto de negación y luego súbelo de rango a 'Número C32: Draco Tiburón LeVeiss' usando una carta mágica para obtener un atacante de 3100 ATK con daño de penetración.",
+  "key_starters": [
+    "Tiburón de Doble Aleta",
+    "Tiburón Martillo"
+  ],
+  "tuners_or_extenders": [
+    "Tiburón de Cadena",
+    "Tiburón de Lanzadera"
+  ],
+  "extra_deck_cards": [
+    "Número 32: Draco Tiburón",
+    "Número C32: Draco Tiburón LeVeiss"
+  ],
+  "support_spells_traps": [
+    "Revestimiento de Armadura",
+    "Capa de Armadura"
+  ],
+  "z_nodes": [
+    {
+      "node": 1,
+      "phase": "1. INICIO",
+      "card": "Tiburón de Doble Aleta",
+      "action": "Invocación Normal (Nivel 4)",
+      "ev": 98
+    },
+    {
+      "node": 2,
+      "phase": "2. EXTENSIÓN",
+      "card": "Tiburón Martillo",
+      "action": "Invocación Especial (Nivel 4)",
+      "ev": 94
+    },
+    {
+      "node": 3,
+      "phase": "3. EXTRA DECK",
+      "card": "Número 32: Draco Tiburón",
+      "action": "Invocación Xyz (Rango 4)",
+      "ev": 96
+    },
+    {
+      "node": 4,
+      "phase": "4. REMATE",
+      "card": "Número C32: Draco Tiburón LeVeiss",
+      "action": "Invocación Xyz de Rango Superior",
+      "ev": 95
+    }
+  ],
+  "strategy": {
+    "win_condition": "Controlar el campo negando efectos de monstruos rivales con el efecto rápido de Draco Tiburón LeVeiss y cerrar el juego con ataques de penetración.",
+    "combo_steps": [
+      "1. Invocar de forma normal a 'Tiburón de Doble Aleta' para invocar especialmente otro monstruo de AGUA de nivel 3 o 4 desde el cementerio.",
+      "2. Invocar especialmente a 'Tiburón Martillo' desde la mano para tener dos monstruos de nivel 4 en campo.",
+      "3. Realizar la Invocación Xyz de 'Número 32: Draco Tiburón' usando los dos monstruos de nivel 4.",
+      "4. Activar la carta mágica 'Revestimiento de Armadura' para invocar a 'Número C32: Draco Tiburón LeVeiss' sobre el 'Número 32' original, transfiriendo sus materiales."
+    ],
+    "end_board": "Número C32: Draco Tiburón LeVeiss con materiales Xyz disponibles para negar efectos y atacar en posición de defensa del rival.",
+    "ideal_hand": [
+      "Tiburón de Doble Aleta",
+      "Tiburón Martillo",
+      "Revestimiento de Armadura"
+    ]
+  }
+}

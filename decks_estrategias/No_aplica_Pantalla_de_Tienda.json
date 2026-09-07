@@ -1,0 +1,54 @@
+{
+  "is_deck_screen": true,
+  "is_loaner": false,
+  "screen_type": "TIENDA / SHOP",
+  "deck_name": "No aplica (Pantalla de Tienda)",
+  "archetype": "N/A",
+  "total_cards_estimated": 0,
+  "loaner_tip": "La imagen proporcionada corresponde a la pestaña de 'Tienda' de Master Duel, no a una pantalla de edición de Deck o Duelo de Modo Solo. Para obtener una guía táctica, por favor navega a un Deck de Préstamo dentro de una Puerta de Modo Solo y captura esa pantalla.",
+  "key_starters": [],
+  "tuners_or_extenders": [],
+  "extra_deck_cards": [],
+  "support_spells_traps": [],
+  "z_nodes": [
+    {
+      "node": 1,
+      "phase": "1. INICIO",
+      "card": "N/A",
+      "action": "Navegar a Modo Solo",
+      "ev": 0
+    },
+    {
+      "node": 2,
+      "phase": "2. EXTENSIÓN",
+      "card": "N/A",
+      "action": "Seleccionar Puerta",
+      "ev": 0
+    },
+    {
+      "node": 3,
+      "phase": "3. EXTRA DECK",
+      "card": "N/A",
+      "action": "Seleccionar Duelo con Deck de Préstamo",
+      "ev": 0
+    },
+    {
+      "node": 4,
+      "phase": "4. REMATE",
+      "card": "N/A",
+      "action": "Capturar pantalla del Deck",
+      "ev": 0
+    }
+  ],
+  "strategy": {
+    "win_condition": "Acceder a la pantalla de edición de Deck de Préstamo para analizar la estrategia.",
+    "combo_steps": [
+      "1. Salir de la pestaña de Tienda.",
+      "2. Entrar en el menú de 'Solo'.",
+      "3. Seleccionar una Puerta que contenga un Deck de Préstamo.",
+      "4. Abrir la pantalla de visualización del Deck para permitir el análisis táctico."
+    ],
+    "end_board": "Pantalla de Deck de Préstamo visible.",
+    "ideal_hand": []
+  }
+}

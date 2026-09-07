@@ -1,0 +1,71 @@
+{
+  "is_deck_screen": true,
+  "is_loaner": true,
+  "screen_type": "SOLO_GATE / LOANER_DECK",
+  "deck_name": "Héroe Elemental: El Legado",
+  "archetype": "Héroe Elemental",
+  "total_cards_estimated": 49,
+  "loaner_tip": "Prioriza buscar 'E - Llamada de Emergencia' para traer a tu mano a 'Héroe Elemental Neos' o 'Héroe Elemental Avian' según la fusión que necesites. No gastes tus recursos de fusión hasta tener una jugada que asegure el control de campo.",
+  "key_starters": [
+    "Héroe Elemental Avian",
+    "Héroe Elemental Burstinatrix"
+  ],
+  "tuners_or_extenders": [
+    "Héroe Elemental Neos"
+  ],
+  "extra_deck_cards": [
+    "Héroe Elemental Gaia",
+    "Héroe Elemental Gran Tornado",
+    "Héroe Elemental Nova Maestro"
+  ],
+  "support_spells_traps": [
+    "E - Llamada de Emergencia",
+    "Academia de Duelos"
+  ],
+  "z_nodes": [
+    {
+      "node": 1,
+      "phase": "1. INICIO",
+      "card": "Héroe Elemental Avian",
+      "action": "Invocación Normal (Nivel 3)",
+      "ev": 98
+    },
+    {
+      "node": 2,
+      "phase": "2. EXTENSIÓN",
+      "card": "E - Llamada de Emergencia",
+      "action": "Buscar Héroe Elemental Burstinatrix",
+      "ev": 94
+    },
+    {
+      "node": 3,
+      "phase": "3. EXTRA DECK",
+      "card": "Héroe Elemental Nova Maestro",
+      "action": "Invocación por Fusión (Avian + Burstinatrix)",
+      "ev": 96
+    },
+    {
+      "node": 4,
+      "phase": "4. REMATE",
+      "card": "Héroe Elemental Gaia",
+      "action": "Ataque directo tras reducir ATK del rival",
+      "ev": 95
+    }
+  ],
+  "strategy": {
+    "win_condition": "Establecer una ventaja de recursos mediante fusiones rápidas y utilizar el efecto de robo de 'Héroe Elemental Nova Maestro' para mantener la presión.",
+    "combo_steps": [
+      "1. Activa 'E - Llamada de Emergencia' para añadir un Héroe Elemental necesario a tu mano.",
+      "2. Invoca normalmente a un Héroe Elemental de nivel bajo (ej. Avian).",
+      "3. Utiliza una carta de Polimerización (o efecto de fusión) para combinar dos Héroes en el campo o mano.",
+      "4. Invoca por Fusión a 'Héroe Elemental Nova Maestro' para aprovechar su efecto de robo al destruir monstruos en batalla."
+    ],
+    "end_board": "Héroe Elemental Nova Maestro en posición de ataque con 'Academia de Duelos' activa para potenciar a tus Héroes.",
+    "ideal_hand": [
+      "E - Llamada de Emergencia",
+      "Héroe Elemental Avian",
+      "Polimerización",
+      "Héroe Elemental Burstinatrix"
+    ]
+  }
+}

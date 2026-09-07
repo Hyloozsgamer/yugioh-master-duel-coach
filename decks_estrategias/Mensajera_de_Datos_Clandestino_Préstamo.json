@@ -1,0 +1,42 @@
+{
+  "is_deck_screen": true,
+  "is_loaner": true,
+  "screen_type": "SOLO_GATE",
+  "deck_name": "Mensajera de Datos Clandestino (Préstamo)",
+  "archetype": "Ciberso / Enlace",
+  "total_cards_estimated": 40,
+  "loaner_tip": "Presta atención a las columnas: el adversario castiga jugar en la misma columna. Recuerda que si usas a 'I:P Enmascarada' como material de enlace, el monstruo resultante no puede ser destruido por efectos de cartas.",
+  "key_starters": [
+    "Micro Codificador",
+    "Cynet Mining",
+    "Calculadora de Conexiones"
+  ],
+  "main_deck_cards": [
+    "Micro Codificador",
+    "Cynet Mining",
+    "Calculadora de Conexiones",
+    "Latir Ciberso",
+    "Mundo Ciberso"
+  ],
+  "extra_deck_cards": [
+    "I:P Enmascarada",
+    "Transcode Talker",
+    "Codificador Hablador Transcodificador",
+    "Decodificador Hablador"
+  ],
+  "strategy": {
+    "win_condition": "Establecer una sólida presencia de monstruos Ciberso utilizando la mecánica de Enlace, protegiendo tus cartas clave y evitando las columnas atacadas por el rival.",
+    "combo_steps": [
+      "1. Activa 'Cynet Mining' descartando una carta para añadir un monstruo Ciberso clave (como 'Micro Codificador') a tu mano.",
+      "2. Invoca de Modo Normal tu monstruo inicial y úsalo para invocar un Monstruo de Enlace de menor rango.",
+      "3. Utiliza los efectos de búsqueda de cartas de hechizo/trampa 'Cynet' para recargar recursos en mano.",
+      "4. Emplea a 'I:P Enmascarada' en tu baraja o extra deck para asegurar jugadas disruptivas en el turno del adversario y proteger contra destrucción por efectos."
+    ],
+    "end_board": "Un Monstruo de Enlace robusto (como Codificador Hablador o Transcode) respaldado por I:P Enmascarada, evitando colocar cartas en la misma columna que el rival para minimizar castigos.",
+    "ideal_hand": [
+      "Cynet Mining",
+      "Micro Codificador",
+      "Monstruo Ciberso de Nivel 4 o menor"
+    ]
+  }
+}

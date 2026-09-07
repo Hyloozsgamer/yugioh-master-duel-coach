@@ -1,0 +1,69 @@
+{
+  "is_deck_screen": true,
+  "is_loaner": true,
+  "screen_type": "SOLO_GATE / LOANER_DECK",
+  "deck_name": "Ciclo de Vida y Muerte",
+  "archetype": "Regénesis / Zombi",
+  "total_cards_estimated": 40,
+  "loaner_tip": "Prioriza enviar monstruos Zombi al Cementerio para activar sus efectos de autorrenacimiento. La IA suele caer ante la ventaja de recursos infinita que genera el arquetipo Zombi.",
+  "key_starters": [
+    "Uni-zombi",
+    "Mezuki"
+  ],
+  "tuners_or_extenders": [
+    "Uni-zombi",
+    "Señor de la Horda Zombi"
+  ],
+  "extra_deck_cards": [
+    "Señor de la Horda Zombi",
+    "Dragonecro Alma de Dragón"
+  ],
+  "support_spells_traps": [
+    "Llamada de la Condenada"
+  ],
+  "z_nodes": [
+    {
+      "node": 1,
+      "phase": "1. INICIO",
+      "card": "Uni-zombi",
+      "action": "Invocación Normal, activa efecto para enviar Mezuki al Cementerio",
+      "ev": 98
+    },
+    {
+      "node": 2,
+      "phase": "2. EXTENSIÓN",
+      "card": "Mezuki",
+      "action": "Efecto en Cementerio: desterrar para Invocar Especial a un Zombi",
+      "ev": 94
+    },
+    {
+      "node": 3,
+      "phase": "3. EXTRA DECK",
+      "card": "Señor de la Horda Zombi",
+      "action": "Invocación por Sincronía usando Uni-zombi y el Zombi revivido",
+      "ev": 96
+    },
+    {
+      "node": 4,
+      "phase": "4. REMATE",
+      "card": "Dragonecro Alma de Dragón",
+      "action": "Control de campo mediante reducción de ATK y generación de fichas",
+      "ev": 95
+    }
+  ],
+  "strategy": {
+    "win_condition": "Establecer un bloqueo de cementerio y campo utilizando la sinergia de los monstruos Zombi para superar en recursos a la IA.",
+    "combo_steps": [
+      "1. Invocar a Uni-zombi y usar su efecto para enviar a Mezuki desde el Deck al Cementerio.",
+      "2. Usar el efecto de Mezuki en el Cementerio para Invocar Especial a un monstruo Zombi de nivel 4 o superior.",
+      "3. Sincronizar Uni-zombi (Cantante) con el monstruo revivido para invocar a Señor de la Horda Zombi.",
+      "4. Utilizar el efecto de Señor de la Horda Zombi para revivir monstruos constantemente y presionar con Dragonecro Alma de Dragón."
+    ],
+    "end_board": "Señor de la Horda Zombi en campo con recursos en Cementerio para revivir en el turno del oponente.",
+    "ideal_hand": [
+      "Uni-zombi",
+      "Mezuki",
+      "Llamada de la Condenada"
+    ]
+  }
+}

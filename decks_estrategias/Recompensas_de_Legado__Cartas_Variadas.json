@@ -1,0 +1,69 @@
+{
+  "is_deck_screen": true,
+  "is_loaner": false,
+  "screen_type": "SOLO_GATE",
+  "deck_name": "Recompensas de Legado / Cartas Variadas",
+  "archetype": "Genérico / Lote de Cartas",
+  "total_cards_estimated": 40,
+  "loaner_tip": "Estás visualizando la pantalla de cartas obtenidas en el Paquete de Legado. Revisa tus cartas para posibles incorporaciones a mazos casuales.",
+  "key_starters": [
+    "Tiburón Sirena",
+    "Ladin, Ingeniero de la Tribu de los Goblins"
+  ],
+  "tuners_or_extenders": [
+    "Carruaje de la Fortuna",
+    "Sombra de la Luna Luz"
+  ],
+  "extra_deck_cards": [
+    "Monstruo Sincronía Genérico",
+    "Monstruo Xyz Genérico"
+  ],
+  "support_spells_traps": [
+    "Baile Serenata en la Luna Luz",
+    "Liberación de Plumas Fantasma"
+  ],
+  "z_nodes": [
+    {
+      "node": 1,
+      "phase": "1. INICIO",
+      "card": "Tiburón Sirena",
+      "action": "Invocación Normal y efecto de buscador",
+      "ev": 85
+    },
+    {
+      "node": 2,
+      "phase": "2. EXTENSIÓN",
+      "card": "Ladin, Ingeniero de la Tribu de los Goblins",
+      "action": "Invocación Especial desde la mano",
+      "ev": 88
+    },
+    {
+      "node": 3,
+      "phase": "3. EXTRA DECK",
+      "card": "Monstruo Xyz Genérico",
+      "action": "Invocación Xyz usando dos monstruos de Nivel 4",
+      "ev": 90
+    },
+    {
+      "node": 4,
+      "phase": "4. REMATE",
+      "card": "Liberación de Plumas Fantasma",
+      "action": "Colocar trampa de interrupción y asegurar mesa",
+      "ev": 87
+    }
+  ],
+  "strategy": {
+    "win_condition": "Gestionar los recursos de monstruos de Nivel bajo para establecer presencia en el campo y controlar al rival con cartas de trampa.",
+    "combo_steps": [
+      "1. Invoca de Modo Normal a Tiburón Sirena para activar su efecto en la Main Phase.",
+      "2. Invoca de Modo Especial a Ladin, Ingeniero de la Tribu de los Goblins para mantener presencia.",
+      "3. Utiliza los monstruos en el campo para realizar una Invocación Xyz o Sincronía según convenga.",
+      "4. Coloca Baile Serenata en la Luna Luz o Liberación de Plumas Fantasma para interrumpir las jugadas del adversario en su turno."
+    ],
+    "end_board": "Un monstruo de Extra Deck en posición de ataque/defensa y 1 o 2 cartas de trampa boca abajo.",
+    "ideal_hand": [
+      "Tiburón Sirena",
+      "Ladin, Ingeniero de la Tribu de los Goblins"
+    ]
+  }
+}

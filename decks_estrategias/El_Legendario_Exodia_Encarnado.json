@@ -1,0 +1,67 @@
+{
+  "is_deck_screen": true,
+  "is_loaner": true,
+  "screen_type": "SOLO_GATE",
+  "deck_name": "El Legendario Exodia Encarnado",
+  "archetype": "Exodia",
+  "total_cards_estimated": 40,
+  "loaner_tip": "Utiliza efectos de robo masivo y cartas de excavación para reunir las piezas de Exodia en tu mano lo más rápido posible, o recurre a 'El Legendario Exodia Encarnado' para reciclar piezas desde el Cementerio durante la End Phase.",
+  "key_starters": [
+    "Brazo Izquierdo del Prohibido",
+    "Pierna Izquierda del Prohibido"
+  ],
+  "tuners_or_extenders": [
+    "Brazo Derecho del Prohibido",
+    "Pierna Derecha del Prohibido"
+  ],
+  "extra_deck_cards": [
+    "El Prohibido"
+  ],
+  "support_spells_traps": [
+    "Obligación de el Prohibido"
+  ],
+  "z_nodes": [
+    {
+      "node": 1,
+      "phase": "1. INICIO",
+      "card": "Brazo Izquierdo del Prohibido",
+      "action": "Colocar en mano / Mantener cartas de búsqueda o robo",
+      "ev": 98
+    },
+    {
+      "node": 2,
+      "phase": "2. EXTENSIÓN",
+      "card": "Obligación de el Prohibido",
+      "action": "Activar magia para buscar o acelerar el mazo",
+      "ev": 94
+    },
+    {
+      "node": 3,
+      "phase": "3. EXTRA DECK",
+      "card": "El Legendario Exodia Encarnado",
+      "action": "Invocación Especial sacrificando una pieza",
+      "ev": 96
+    },
+    {
+      "node": 4,
+      "phase": "4. REMATE",
+      "card": "El Prohibido",
+      "action": "Reunir las 5 piezas en mano para la victoria automática",
+      "ev": 95
+    }
+  ],
+  "strategy": {
+    "win_condition": "Obtener la victoria automática teniendo las 5 piezas de Exodia ('Cabeza del Prohibido', 'Brazo Izquierdo del Prohibido', 'Brazo Derecho del Prohibido', 'Pierna Izquierda del Prohibido', 'Pierna Derecha del Prohibido') simultáneamente en la mano.",
+    "combo_steps": [
+      "1. Activa cartas de robo y motor de consistencia en tu turno para vaciar el mazo rápidamente.",
+      "2. Protege tus piezas en mano de los efectos de descartar o interrupciones del oponente.",
+      "3. Si es necesario, Invoca de Modo Especial a 'El Legendario Exodia Encarnado' tributando un monstruo 'el Prohibido' para presionar el campo y reciclar recursos.",
+      "4. Completa la condición de victoria reuniendo las 5 piezas en la mano."
+    ],
+    "end_board": "El Legendario Exodia Encarnado en el campo con alto ataque y cartas de protección en mano.",
+    "ideal_hand": [
+      "Cabeza del Prohibido",
+      "Obligación de el Prohibido"
+    ]
+  }
+}
