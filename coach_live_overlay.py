@@ -3,9 +3,9 @@ Yu-Gi-Oh! MASTER DUEL — LIVE HUD COACH OVERLAY (1366x768)
 Coach en vivo: NEURONAL - JUGADA ÓPTIMA
 - Escaneo de Deck en Modo Solo / Confirmación de Baraja.
 - Guarda la baraja en decks_estrategias/<nombre>.json y su estrategia en .md.
-- Alerta visual inmediata: "✅ ¡Deck Analizado! 🎮 ¡Ya puedes darle a jugar!".
+- Alerta visual inmediata: "[OK] ¡Deck Analizado! [DUELO] ¡Ya puedes darle a jugar!".
 - Secuencia en Z de 4 pasos con cartas reales.
-- Acople manual [📌 Acoplar] y cero cartas inventadas.
+- Acople manual [[LOCK] Acoplar] y cero cartas inventadas.
 """
 
 import os
@@ -131,7 +131,7 @@ class LiveCoachOverlay:
 
         # Update static labels
         if hasattr(self, "title_lbl"):
-            self.title_lbl.config(text=f"⚡ {t('app_title', lang_code)}")
+            self.title_lbl.config(text=f"[ENERGIA] {t('app_title', lang_code)}")
         if hasattr(self, "live_badge"):
             self.live_badge.config(text=f"● {t('live_badge', lang_code)}")
         if hasattr(self, "hero_frame"):
@@ -141,7 +141,7 @@ class LiveCoachOverlay:
         if hasattr(self, "hand_frame"):
             self.hand_frame.config(text=f" {t('hand_title', lang_code)} ")
         if hasattr(self, "threat_title_lbl"):
-            self.threat_title_lbl.config(text=f"🛡️ {t('tactical_alert_title', lang_code)}")
+            self.threat_title_lbl.config(text=f"[ALERTA] {t('tactical_alert_title', lang_code)}")
         if hasattr(self, "scan_deck_btn"):
             self.scan_deck_btn.config(text=f"{t('scan_deck_btn', lang_code)}")
         if hasattr(self, "status_lbl"):
@@ -165,7 +165,7 @@ class LiveCoachOverlay:
 
         self.title_lbl = tk.Label(
             top_row,
-            text=f"⚡ {t('app_title', self.current_lang)}",
+            text=f"[ENERGIA] {t('app_title', self.current_lang)}",
             font=("Segoe UI", 8, "bold"),
             fg="#00F5FF",
             bg="#0A1124"
@@ -174,7 +174,7 @@ class LiveCoachOverlay:
 
         dock_btn = tk.Button(
             top_row,
-            text="📌",
+            text="[LOCK]",
             font=("Segoe UI", 7, "bold"),
             fg="#00F5FF",
             bg="#1E293B",
@@ -288,7 +288,7 @@ class LiveCoachOverlay:
 
         self.deck_title_lbl = tk.Label(
             self.deck_alert_frame,
-            text="📋 MODO SOLO: Selecciona tu mazo o pulsa Escanear [F5]:",
+            text="[ESTRATEGIA] MODO SOLO: Selecciona tu mazo o pulsa Escanear [F5]:",
             font=("Segoe UI", 8, "bold"),
             fg="#38BDF8",
             bg="#0E1E38",
@@ -328,7 +328,7 @@ class LiveCoachOverlay:
 
         self.deck_quick_btn = tk.Button(
             self.deck_action_row,
-            text="📋 Guía",
+            text="[ESTRATEGIA] Guía",
             font=("Segoe UI", 7, "bold"),
             fg="#040711",
             bg="#38BDF8",
@@ -352,11 +352,69 @@ class LiveCoachOverlay:
         self.deck_info_lbl.pack(anchor="w", pady=(2, 0))
 
         # =========================================================================
-        # SECCIÓN 1: ⭐ HERO CARD - JUGADA INMEDIATA (QUÉ JUGAR AHORA)
+        # SECCIÓN 0.5: [RADAR TÁCTICO DE TURNOS Y FASES] // PURE STRATEGY
+        # =========================================================================
+        self.turn_radar_frame = tk.Frame(
+            self.scroll_content,
+            bg="#060C1B",
+            highlightbackground="#0052FF",
+            highlightthickness=1,
+            padx=6,
+            pady=4
+        )
+        self.turn_radar_frame.pack(fill="x", padx=4, pady=(2, 3))
+
+        turn_header = tk.Frame(self.turn_radar_frame, bg="#060C1B")
+        turn_header.pack(fill="x", pady=(0, 2))
+
+        self.turn_state_lbl = tk.Label(
+            turn_header,
+            text="[TURNO 1: SETUP & CONTROL]",
+            font=("Segoe UI", 8, "bold"),
+            fg="#00F5FF",
+            bg="#060C1B"
+        )
+        self.turn_state_lbl.pack(side="left")
+
+        self.turn_tactical_lbl = tk.Label(
+            turn_header,
+            text="WIN EV: 92%",
+            font=("Segoe UI", 7, "bold"),
+            fg="#FACC15",
+            bg="#060C1B"
+        )
+        self.turn_tactical_lbl.pack(side="right")
+
+        # Ribbon interactivo con las 6 fases oficiales de Yu-Gi-Oh!
+        phase_bar = tk.Frame(self.turn_radar_frame, bg="#060C1B")
+        phase_bar.pack(fill="x", pady=(2, 0))
+
+        self.phase_btns = {}
+        phases = [("DP", "DRAW"), ("SP", "STANDBY"), ("M1", "MAIN 1"), ("BP", "BATTLE"), ("M2", "MAIN 2"), ("EP", "END")]
+        for p_code, p_full in phases:
+            lbl = tk.Label(
+                phase_bar,
+                text=p_code,
+                font=("Segoe UI", 7, "bold"),
+                fg="#64748B",
+                bg="#0D192E",
+                padx=5,
+                pady=1,
+                relief="flat",
+                cursor="hand2"
+            )
+            lbl.pack(side="left", expand=True, fill="x", padx=1)
+            lbl.bind("<Button-1>", lambda e, c=p_code, f=p_full: self._set_active_phase(c, f))
+            self.phase_btns[p_code] = lbl
+
+        self._set_active_phase("M1", "MAIN 1")
+
+        # =========================================================================
+        # SECCIÓN 1: [HERO] CARTA PRIORITARIA - JUGADA INMEDIATA (QUÉ JUGAR AHORA)
         # =========================================================================
         self.hero_frame = tk.LabelFrame(
             self.scroll_content,
-            text=" ⭐ JUGADA INMEDIATA (QUÉ JUGAR AHORA) ",
+            text=" [HERO] JUGADA INMEDIATA (QUÉ JUGAR AHORA) ",
             font=("Segoe UI", 8, "bold"),
             fg="#FACC15",
             bg="#080E21",
@@ -383,7 +441,7 @@ class LiveCoachOverlay:
 
         self.hero_action_badge = tk.Label(
             badge_row,
-            text="⚡ INVOCACIÓN NORMAL",
+            text="[ACCIÓN] INVOCACIÓN NORMAL",
             font=("Segoe UI", 7, "bold"),
             fg="#040711",
             bg="#00F5FF",
@@ -420,7 +478,7 @@ class LiveCoachOverlay:
 
         self.best_action_lbl = tk.Label(
             act_box,
-            text="👉 Inicia tu turno o abre tu mano para evaluar la mejor jugada.",
+            text="> Inicia tu turno o abre tu mano para evaluar la mejor jugada.",
             font=("Segoe UI", 8),
             fg="#E2E8F0",
             bg="#0B1220",
@@ -432,7 +490,7 @@ class LiveCoachOverlay:
         # Razón / Objetivo táctico
         self.hero_why_lbl = tk.Label(
             hero_details,
-            text="💡 Objetivo: Establecer presencia en campo.",
+            text="[OBJETIVO] Objetivo: Establecer presencia en campo.",
             font=("Segoe UI", 7, "italic"),
             fg="#38BDF8",
             bg="#080E21",
@@ -448,11 +506,11 @@ class LiveCoachOverlay:
         self.prob_bar["value"] = 85
 
         # =========================================================================
-        # SECCIÓN 2: ⚡ RUTA DEL COMBO (HOJA DE RUTA COMPACTA)
+        # SECCIÓN 2: [ENERGIA] RUTA DEL COMBO (HOJA DE RUTA COMPACTA)
         # =========================================================================
         self.route_frame = tk.LabelFrame(
             self.scroll_content,
-            text=" ⚡ RUTA DEL COMBO (HOJA DE RUTA) ",
+            text=" [ENERGIA] RUTA DEL COMBO (HOJA DE RUTA) ",
             font=("Segoe UI", 8, "bold"),
             fg="#00F5FF",
             bg="#070C1B",
@@ -485,14 +543,14 @@ class LiveCoachOverlay:
         self.route_summary_lbl.pack(fill="x", pady=(3, 0))
 
         # =========================================================================
-        # SECCIÓN 2.5: 🛡️ ALERTA TÁCTICA Y AMENAZAS
+        # SECCIÓN 2.5: [ALERTA] ALERTA TÁCTICA Y AMENAZAS
         # =========================================================================
         self.threat_frame = tk.Frame(self.scroll_content, bg="#1E170A", padx=8, pady=4, highlightbackground="#D97706", highlightthickness=1)
         self.threat_frame.pack(fill="x", padx=4, pady=2)
 
         self.threat_desc_lbl = tk.Label(
             self.threat_frame,
-            text="🛡️ Alerta Táctica: Evalúa el campo antes de atacar.",
+            text="[ALERTA] Alerta Táctica: Evalúa el campo antes de atacar.",
             font=("Segoe UI", 7, "bold"),
             fg="#FDE68A",
             bg="#1E170A",
@@ -505,7 +563,7 @@ class LiveCoachOverlay:
         # =========================================================================
         hand_frame = tk.LabelFrame(
             self.scroll_content,
-            text=" 🃏 CARTAS EN TU MANO (REALES) ",
+            text=" [MANO] CARTAS EN TU MANO (REALES) ",
             font=("Segoe UI", 8, "bold"),
             fg="#38BDF8",
             bg="#070C1B",
@@ -534,7 +592,7 @@ class LiveCoachOverlay:
         # =========================================================================
         opp_frame = tk.LabelFrame(
             self.scroll_content,
-            text=" ⚔️ CAMPO DEL OPONENTE ",
+            text=" [CAMPO] MONSTRUOS DEL OPONENTE ",
             font=("Segoe UI", 8, "bold"),
             fg="#EF4444",
             bg="#070C1B",
@@ -567,7 +625,7 @@ class LiveCoachOverlay:
         ).pack()
 
     def _manual_dock(self):
-        """Acopla la ventana manualmente cuando el usuario pulsa [📌 Acoplar]."""
+        """Acopla la ventana manualmente cuando el usuario pulsa [[LOCK] Acoplar]."""
         try:
             hwnd = self.brain._find_masterduel_hwnd()
             if hwnd:
@@ -589,7 +647,7 @@ class LiveCoachOverlay:
                     target_y = max(0, md_top)
                     target_h = min(768, max(650, md_h))
                     self.root.geometry(f"{self.width}x{target_h}+{target_x}+{target_y}")
-                    self.status_lbl.config(text="📌 Ventana acoplada junto a Master Duel", fg="#00F5FF")
+                    self.status_lbl.config(text="[LOCK] Ventana acoplada junto a Master Duel", fg="#00F5FF")
         except Exception:
             pass
 
@@ -643,7 +701,7 @@ class LiveCoachOverlay:
     def _show_current_deck_strategy(self):
         d_obj = self.current_deck_data or self.brain.active_deck
         if not d_obj:
-            self.status_lbl.config(text="⚠️ Selecciona o escanea un mazo primero", fg="#FEF08A")
+            self.status_lbl.config(text="[AVISO] Selecciona o escanea un mazo primero", fg="#FEF08A")
             return
         md_path = d_obj.get("saved_md_path")
         d_name = d_obj.get("deck_name", "Estrategia")
@@ -703,7 +761,7 @@ class LiveCoachOverlay:
 
         frame = self.brain.capture_game_screen()
         if frame is None:
-            self.status_lbl.config(text="⚠️ No se pudo capturar Master Duel. Enfoca el juego.", fg="#FEF08A")
+            self.status_lbl.config(text="[AVISO] No se pudo capturar Master Duel. Enfoca el juego.", fg="#FEF08A")
             return
 
         self.is_scanning_deck = True
@@ -832,7 +890,7 @@ class LiveCoachOverlay:
             elif s.startswith("- ") or s.startswith("* "):
                 txt.insert("end", "  * ", "bullet_point")
                 txt.insert("end", s[2:] + chr(10), "body_text")
-            elif s.startswith("💡"):
+            elif s.startswith("[OBJETIVO]"):
                 txt.insert("end", "  " + s + chr(10), "tip_box")
             else:
                 txt.insert("end", line + chr(10), "body_text")
@@ -856,7 +914,7 @@ class LiveCoachOverlay:
         self.deck_alert_frame.config(bg="#064E3B", highlightbackground="#10B981")
         is_loaner = data.get("is_loaner", True)
         tag = "DECK PRESTADO" if is_loaner else "DECK"
-        banner_msg = f"[{tag}: {d_name.upper()}]\n🎮 ¡Ya puedes darle a jugar!"
+        banner_msg = f"[{tag}: {d_name.upper()}]\n[DUELO] ¡Ya puedes darle a jugar!"
         self.deck_title_lbl.config(text=banner_msg, font=("Segoe UI", 9, "bold"), fg="#A7F3D0", bg="#064E3B")
 
         info_text = f"Starters: {starters} | Fin: {strat.get('end_board', '')[:45]}"
@@ -903,7 +961,7 @@ class LiveCoachOverlay:
         if combo_steps:
             self.route_summary_lbl.config(text="Cadena: " + " ➔ ".join(combo_steps[:4]))
         elif strat.get("win_condition"):
-            self.route_summary_lbl.config(text="🎯 " + strat.get("win_condition"))
+            self.route_summary_lbl.config(text="[WIN CON] " + strat.get("win_condition"))
         self._render_timeline()
 
         # Mostrar Starter en la vista previa grande
@@ -912,7 +970,7 @@ class LiveCoachOverlay:
         if combo_steps:
             self.route_summary_lbl.config(text="Cadena: " + " ➔ ".join(combo_steps[:4]))
         elif strat.get("win_condition"):
-            self.route_summary_lbl.config(text="🎯 " + strat.get("win_condition"))
+            self.route_summary_lbl.config(text="[WIN CON] " + strat.get("win_condition"))
 
     def _format_intuitive_card_name(self, card_name: str) -> str:
         if not card_name:
@@ -995,7 +1053,7 @@ class LiveCoachOverlay:
                     thumb_c.create_text(23, 32, text="[CARD]", font=("Segoe UI", 12))
                     self._load_z_image_async(passcode)
             else:
-                thumb_c.create_text(23, 32, text="⚡", font=("Segoe UI", 12))
+                thumb_c.create_text(23, 32, text="[ENERGIA]", font=("Segoe UI", 12))
 
             short_name = self._format_intuitive_card_name(card_name)
             if len(short_name) > 11:
@@ -1543,3 +1601,15 @@ def main():
 
 if __name__ == "__main__":
     main()
+
+    def _set_active_phase(self, active_code, active_name=None):
+        for code, lbl in getattr(self, "phase_btns", {}).items():
+            if code == active_code:
+                if code == "BP":
+                    lbl.config(fg="#FFFFFF", bg="#DC2626")
+                else:
+                    lbl.config(fg="#040711", bg="#00F5FF")
+            else:
+                lbl.config(fg="#64748B", bg="#0D192E")
+        if active_name and hasattr(self, "status_lbl"):
+            self.status_lbl.config(text=f"[FASE TÁCTICA: {active_name}]")

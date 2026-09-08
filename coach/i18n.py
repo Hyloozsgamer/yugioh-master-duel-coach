@@ -13,18 +13,18 @@ LANGUAGES = {
 
 TRANSLATIONS = {
     "scan_btn_hotkey": {
-        "ES": "🔍 ESCANEAR [F5]",
-        "EN": "🔍 SCAN [F5]",
-        "FR": "🔍 SCANNER [F5]",
-        "DE": "🔍 SCANNEN [F5]",
-        "IT": "🔍 SCANSIONA [F5]"
+        "ES": "[SCAN] ESCANEAR [F5]",
+        "EN": "[SCAN] SCAN [F5]",
+        "FR": "[SCAN] SCANNER [F5]",
+        "DE": "[SCAN] SCANNEN [F5]",
+        "IT": "[SCAN] SCANSIONA [F5]"
     },
     "active_deck_label": {
-        "ES": "🗂️ Mazo:",
-        "EN": "🗂️ Deck:",
-        "FR": "🗂️ Deck:",
-        "DE": "🗂️ Deck:",
-        "IT": "🗂️ Deck:"
+        "ES": "Mazo:",
+        "EN": "Deck:",
+        "FR": "Deck:",
+        "DE": "Deck:",
+        "IT": "Deck:"
     },
     "app_title": {
         "ES": "COACH TÁCTICO MASTER DUEL",
@@ -41,18 +41,18 @@ TRANSLATIONS = {
         "IT": "IN DIRETTA"
     },
     "dock_btn": {
-        "ES": "📌 Acoplar",
-        "EN": "📌 Dock",
-        "FR": "📌 Ancrer",
-        "DE": "📌 Andocken",
-        "IT": "📌 Blocca"
+        "ES": "[LOCK] Acoplar",
+        "EN": "[LOCK] Dock",
+        "FR": "[LOCK] Ancrer",
+        "DE": "[LOCK] Andocken",
+        "IT": "[LOCK] Blocca"
     },
     "scan_deck_btn": {
-        "ES": "📋 Escanear Deck",
-        "EN": "📋 Scan Deck",
-        "FR": "📋 Scanner le Deck",
-        "DE": "📋 Deck Scannen",
-        "IT": "📋 Scansiona Deck"
+        "ES": "[GUIA] Escanear Deck",
+        "EN": "[GUIA] Scan Deck",
+        "FR": "[GUIA] Scanner le Deck",
+        "DE": "[GUIA] Deck Scannen",
+        "IT": "[GUIA] Scansiona Deck"
     },
     "scanning_status": {
         "ES": "Escaneando Master Duel en tiempo real...",
@@ -83,11 +83,11 @@ TRANSLATIONS = {
         "IT": "Pronto a giocare! • Modalità Solo"
     },
     "guide_btn": {
-        "ES": "📋 Estrategia",
-        "EN": "📋 Strategy",
-        "FR": "📋 Stratégie",
-        "DE": "📋 Strategie",
-        "IT": "📋 Strategia"
+        "ES": "[GUIA] Estrategia",
+        "EN": "[GUIA] Strategy",
+        "FR": "[GUIA] Stratégie",
+        "DE": "[GUIA] Strategie",
+        "IT": "[GUIA] Strategia"
     },
     "hero_title": {
         "ES": "⭐ JUGADA RECOMENDADA (JUEGA AHORA)",
@@ -104,39 +104,39 @@ TRANSLATIONS = {
         "IT": "In attesa di rilevamento duello..."
     },
     "evaluating_hand": {
-        "ES": "👉 Inicia tu turno o abre tu mano para evaluar la mejor jugada.",
-        "EN": "👉 Start your turn or check your hand to evaluate the best play.",
-        "FR": "👉 Commencez votre tour ou ouvrez votre main pour évaluer le coup.",
-        "DE": "👉 Beginne deinen Spielzug, um den besten Zug zu ermitteln.",
-        "IT": "👉 Inizia il tuo turno o apri la mano per valutare la giocata."
+        "ES": "> Inicia tu turno o abre tu mano para evaluar la mejor jugada.",
+        "EN": "> Start your turn or check your hand to evaluate the best play.",
+        "FR": "> Commencez votre tour ou ouvrez votre main pour évaluer le coup.",
+        "DE": "> Beginne deinen Spielzug, um den besten Zug zu ermitteln.",
+        "IT": "> Inizia il tuo turno o apri la mano per valutare la giocata."
     },
     "default_objective": {
-        "ES": "💡 Objetivo: Establecer presencia en campo.",
-        "EN": "💡 Objective: Establish board presence.",
-        "FR": "💡 Objectif : Établir une présence sur le terrain.",
-        "DE": "💡 Ziel: Spielfeldpräsenz aufbauen.",
-        "IT": "💡 Obiettivo: Stabilire presenza sul terreno."
+        "ES": "[OBJETIVO] Objetivo: Establecer presencia en campo.",
+        "EN": "[OBJETIVO] Objective: Establish board presence.",
+        "FR": "[OBJETIVO] Objectif : Établir une présence sur le terrain.",
+        "DE": "[OBJETIVO] Ziel: Spielfeldpräsenz aufbauen.",
+        "IT": "[OBJETIVO] Obiettivo: Stabilire presenza sul terreno."
     },
     "combo_route_title": {
-        "ES": "⚡ RUTA DEL COMBO (PASO A PASO VISUAL)",
-        "EN": "⚡ COMBO ROUTE (VISUAL STEP-BY-STEP)",
-        "FR": "⚡ ROUTE DU COMBO (PAS À PAS VISUEL)",
-        "DE": "⚡ COMBO-ROUTE (VISUELL SCHRITT FÜR SCHRITT)",
-        "IT": "⚡ ROTTA DELLA COMBO (PASSO DOPO PASSO VISIVO)"
+        "ES": "RUTA DEL COMBO (PASO A PASO VISUAL)",
+        "EN": "COMBO ROUTE (VISUAL STEP-BY-STEP)",
+        "FR": "ROUTE DU COMBO (PAS À PAS VISUEL)",
+        "DE": "COMBO-ROUTE (VISUELL SCHRITT FÜR SCHRITT)",
+        "IT": "ROTTA DELLA COMBO (PASSO DOPO PASSO VISIVO)"
     },
     "combo_tip": {
-        "ES": "💡 Haz clic en cualquier carta de la ruta para ver su detalle.",
-        "EN": "💡 Click any card in the route to view its details.",
-        "FR": "💡 Cliquez sur n'importe quelle carte pour voir ses détails.",
-        "DE": "💡 Klicke auf eine Karte, um ihre Details anzuzeigen.",
-        "IT": "💡 Clicca su qualsiasi carta della rotta per vederne i dettagli."
+        "ES": "[OBJETIVO] Haz clic en cualquier carta de la ruta para ver su detalle.",
+        "EN": "[OBJETIVO] Click any card in the route to view its details.",
+        "FR": "[OBJETIVO] Cliquez sur n'importe quelle carte pour voir ses détails.",
+        "DE": "[OBJETIVO] Klicke auf eine Karte, um ihre Details anzuzeigen.",
+        "IT": "[OBJETIVO] Clicca su qualsiasi carta della rotta per vederne i dettagli."
     },
     "tactical_alert_title": {
-        "ES": "🛡️ ALERTA TÁCTICA DEL ADVERSARIO",
-        "EN": "🛡️ OPPONENT TACTICAL ALERT",
-        "FR": "🛡️ ALERTE TACTIQUE DE L'ADVERSAIRE",
-        "DE": "🛡️ TAKTISCHE GEGNER-WARNUNG",
-        "IT": "🛡️ AVVISO TATTICO DELL'AVVERSARIO"
+        "ES": "[ALERTA] ALERTA TÁCTICA DEL ADVERSARIO",
+        "EN": "[ALERTA] OPPONENT TACTICAL ALERT",
+        "FR": "[ALERTA] ALERTE TACTIQUE DE L'ADVERSAIRE",
+        "DE": "[ALERTA] TAKTISCHE GEGNER-WARNUNG",
+        "IT": "[ALERTA] AVVISO TATTICO DELL'AVVERSARIO"
     },
     "tactical_alert_default": {
         "ES": "• Evalúa el campo del rival antes de atacar a ciegas.",
@@ -146,11 +146,11 @@ TRANSLATIONS = {
         "IT": "• Valuta il terreno avversario prima di attaccare alla cieca."
     },
     "hand_title": {
-        "ES": "🃏 TU MANO (DETECCIÓN EN TIEMPO REAL)",
-        "EN": "🃏 YOUR HAND (REAL-TIME DETECTION)",
-        "FR": "🃏 VOTRE MAIN (DÉTECTION EN TEMPS RÉEL)",
-        "DE": "🃏 DEINE HAND (ECHTZEIT-ERKENNUNG)",
-        "IT": "🃏 LA TUA MANO (RILEVAMENTO IN TEMPO REALE)"
+        "ES": "[MANO] TU MANO (DETECCIÓN EN TIEMPO REAL)",
+        "EN": "[MANO] YOUR HAND (REAL-TIME DETECTION)",
+        "FR": "[MANO] VOTRE MAIN (DÉTECTION EN TEMPS RÉEL)",
+        "DE": "[MANO] DEINE HAND (ECHTZEIT-ERKENNUNG)",
+        "IT": "[MANO] LA TUA MANO (RILEVAMENTO IN TEMPO REALE)"
     },
     "hand_empty": {
         "ES": "Mano vacía o en transición de fase",
@@ -160,11 +160,11 @@ TRANSLATIONS = {
         "IT": "Mano vuota o transizione di fase"
     },
     "play_now_tag": {
-        "ES": "👉 JUGAR AHORA",
-        "EN": "👉 PLAY NOW",
-        "FR": "👉 JOUER",
-        "DE": "👉 JETZT SPIELEN",
-        "IT": "👉 GIOCA ORA"
+        "ES": "> JUGAR AHORA",
+        "EN": "> PLAY NOW",
+        "FR": "> JOUER",
+        "DE": "> JETZT SPIELEN",
+        "IT": "> GIOCA ORA"
     },
     "extension_tag": {
         "ES": "Extensión",
@@ -181,11 +181,11 @@ TRANSLATIONS = {
         "IT": "Conserva"
     },
     "close_btn": {
-        "ES": "✕ Cerrar",
-        "EN": "✕ Close",
-        "FR": "✕ Fermer",
-        "DE": "✕ Schließen",
-        "IT": "✕ Chiudi"
+        "ES": " Cerrar",
+        "EN": " Close",
+        "FR": " Fermer",
+        "DE": " Schließen",
+        "IT": " Chiudi"
     },
     "phase_start": {
         "ES": "1. INICIO",
