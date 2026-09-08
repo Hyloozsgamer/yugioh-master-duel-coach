@@ -32,6 +32,24 @@
 
 ---
 
+<h2 align="center">Holographic Tactical Radar // Animated Cards Showcase</h2>
+
+<p align="center">
+  <img src="assets/animated_cards/cyber_dragon.gif" width="22%" alt="Cyber Dragon Animated Holographic Card" />
+  <img src="assets/animated_cards/exosister_martha.gif" width="22%" alt="Exosister Martha Animated Holographic Card" />
+  <img src="assets/animated_cards/evil_twin_kisikil.gif" width="22%" alt="Evil Twin Ki-sikil Animated Holographic Card" />
+  <img src="assets/animated_cards/ash_blossom.gif" width="22%" alt="Ash Blossom Animated Holographic Card" />
+</p>
+
+<p align="center">
+  <code>[CIBER DRAGÓN: OTK STARTER]</code> • 
+  <code>[EXORMANA MARTA: 1-CARD COMBO]</code> • 
+  <code>[EVIL★GEMELA: LINK ENGINE]</code> • 
+  <code>[FLOR DE CENIZA: DISRUPT]</code>
+</p>
+
+---
+
 ## CAPÍTULO I: EL OJO DEL MILENIO (Características Tácticas)
 
 ```
@@ -53,7 +71,7 @@
 
 ### 3. Escáner de Mano en Tiempo Real (Visión por IA)
 - Detección inmediata de tu mano con bordes y distintivos oficiales:
-  - 🟠 **Monstruo de Efecto** | 🟢 **Mágica** | 🟣 **Trampa** | 🔵 **Ritual** | ⚪ **Sincronía** | ⚫ **Xyz** | 🔷 **Enlace**
+  - **[MONSTRUO EFECTO]** | **[MÁGICA]** | **[TRAMPA]** | **[RITUAL]** | **[SINCRONÍA]** | **[XYZ]** | **[ENLACE]**
 - Etiquetas tácticas dinámicas: `> JUGAR AHORA`, `Extensión`, `Guardar`.
 
 ### 4. Radar de Interrupciones Enemigas
