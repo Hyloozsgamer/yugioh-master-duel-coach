@@ -37,3 +37,6 @@ individual/
 *.swo
 Thumbs.db
 .DS_Store
+
+# Binary release packages
+*.zip
