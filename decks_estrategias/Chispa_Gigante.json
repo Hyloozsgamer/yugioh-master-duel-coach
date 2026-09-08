@@ -1,0 +1,70 @@
+{
+  "is_deck_screen": true,
+  "is_loaner": true,
+  "screen_type": "SOLO_GATE",
+  "deck_name": "Chispa Gigante",
+  "archetype": "Guerrero / El Héroe Elemental",
+  "total_cards_estimated": 40,
+  "loaner_tip": "Aprovecha las cartas de Magia de Campo y equipo para potenciar a tus Héroes Elementales y superar los obstáculos de la IA en este modo Solo.",
+  "key_starters": [
+    "HÉROE Elemental Avian",
+    "HÉROE Elemental Burstinatrix"
+  ],
+  "tuners_or_extenders": [
+    "HÉROE Elemental Sparkman"
+  ],
+  "extra_deck_cards": [
+    "HÉROE Elemental Flame Wingman",
+    "HÉROE Elemental Shining Flare Wingman"
+  ],
+  "support_spells_traps": [
+    "Polimerización",
+    "Rascacielos"
+  ],
+  "z_nodes": [
+    {
+      "node": 1,
+      "phase": "1. INICIO",
+      "card": "HÉROE Elemental Avian",
+      "action": "Invocación Normal para establecer presencia en el campo",
+      "ev": 98
+    },
+    {
+      "node": 2,
+      "phase": "2. EXTENSIÓN",
+      "card": "HÉROE Elemental Burstinatrix",
+      "action": "Invoca o prepara en mano para fusión",
+      "ev": 94
+    },
+    {
+      "node": 3,
+      "phase": "3. EXTRA DECK",
+      "card": "HÉROE Elemental Flame Wingman",
+      "action": "Invocación por Fusión usando Polimerización",
+      "ev": 96
+    },
+    {
+      "node": 4,
+      "phase": "4. REMATE",
+      "card": "Rascacielos",
+      "action": "Activa la Magia de Campo para boostear el Ataque y asegurar el OTK",
+      "ev": 95
+    }
+  ],
+  "strategy": {
+    "win_condition": "Invocar monstruos de fusión poderosos como HÉROE Elemental Flame Wingman apoyados por Rascacielos para limpiar el campo del oponente.",
+    "combo_steps": [
+      "1. Activa o ten en mano Polimerización junto con HÉROE Elemental Avian y HÉROE Elemental Burstinatrix.",
+      "2. Realiza la Invocación por Fusión para traer al campo a HÉROE Elemental Flame Wingman.",
+      "3. Activa la Carta Magia de Campo Rascacielos para aumentar el ATQ de tus Héroes al atacar monstruos con mayor ATQ.",
+      "4. Ataca al monstruo del oponente con Flame Wingman para infligir daño de efecto igual al ATQ del monstruo destruido."
+    ],
+    "end_board": "HÉROE Elemental Flame Wingman en posición de ataque con Rascacielos activa en la Zona de Magia de Campo.",
+    "ideal_hand": [
+      "Polimerización",
+      "HÉROE Elemental Avian",
+      "HÉROE Elemental Burstinatrix",
+      "Rascacielos"
+    ]
+  }
+}

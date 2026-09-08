@@ -1,0 +1,70 @@
+{
+  "is_deck_screen": true,
+  "is_loaner": true,
+  "screen_type": "SOLO_GATE / LOANER_DECK",
+  "deck_name": "Maquinaria de Combate",
+  "archetype": "Maquinaria (Machina)",
+  "total_cards_estimated": 40,
+  "loaner_tip": "Prioriza enviar a 'Maquinaria Irradiador' al cementerio con el efecto de 'Maquinaria Desenganextra' para preparar una Invocación Especial desde el cementerio en turnos posteriores.",
+  "key_starters": [
+    "Maquinaria Desenganextra (Machina Unclaspare)",
+    "Maquinaria Engranaje (Machina Gearframe)"
+  ],
+  "tuners_or_extenders": [
+    "Maquinaria Irradiador (Machina Radiator)",
+    "Maquinaria Fortaleza (Machina Fortress)"
+  ],
+  "extra_deck_cards": [
+    "Maquinaria Despliegue (Machina Citadel)",
+    "Número 81: Tren Cañón Superdreadnought (Superdreadnought Rail Cannon Super Dora)"
+  ],
+  "support_spells_traps": [
+    "Fuerza de Maquinaria (Machina Overdrive)",
+    "Reencuentro de Maquinaria (Machina Redeployment)"
+  ],
+  "z_nodes": [
+    {
+      "node": 1,
+      "phase": "1. INICIO",
+      "card": "Maquinaria Desenganextra",
+      "action": "Invocación Normal o Especial (Efecto: enviar Maquinaria al GY)",
+      "ev": 98
+    },
+    {
+      "node": 2,
+      "phase": "2. EXTENSIÓN",
+      "card": "Maquinaria Fortaleza",
+      "action": "Descarte de cartas Máquina para Invocación Especial",
+      "ev": 94
+    },
+    {
+      "node": 3,
+      "phase": "3. EXTRA DECK",
+      "card": "Número 81: Tren Cañón Superdreadnought",
+      "action": "Invocación Xyz Rango 10 usando monstruos nivel 10",
+      "ev": 96
+    },
+    {
+      "node": 4,
+      "phase": "4. REMATE",
+      "card": "Maquinaria Despliegue",
+      "action": "Efecto rápido de destrucción masiva en turno rival",
+      "ev": 95
+    }
+  ],
+  "strategy": {
+    "win_condition": "Establecer a 'Maquinaria Despliegue' en el cementerio para controlar el campo rival mediante su efecto de destrucción rápida.",
+    "combo_steps": [
+      "1. Invocar a 'Maquinaria Desenganextra' para enviar 'Maquinaria Despliegue' al cementerio.",
+      "2. Invocar a 'Maquinaria Fortaleza' descartando cartas de nivel alto desde la mano.",
+      "3. Usar 'Reencuentro de Maquinaria' para buscar piezas faltantes del combo.",
+      "4. Activar 'Fuerza de Maquinaria' para invocar desde el Deck a 'Maquinaria Despliegue' si el rival intenta destruir tus cartas."
+    ],
+    "end_board": "Maquinaria Despliegue en el cementerio, Maquinaria Fortaleza en campo y Fuerza de Maquinaria colocada.",
+    "ideal_hand": [
+      "Maquinaria Desenganextra",
+      "Maquinaria Fortaleza",
+      "Reencuentro de Maquinaria"
+    ]
+  }
+}

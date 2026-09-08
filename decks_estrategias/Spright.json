@@ -1,0 +1,69 @@
+{
+  "is_deck_screen": true,
+  "is_loaner": true,
+  "screen_type": "SOLO_GATE",
+  "deck_name": "Spright",
+  "archetype": "Spright",
+  "total_cards_estimated": 40,
+  "loaner_tip": "Aprovecha la capacidad de Invocación Especial masiva de Nivel/Rango/Link 2 para abrumar al rival y usa los efectos de interrupción rápida de Spright Starter y Spright Gigantic.",
+  "key_starters": [
+    "Spright Azul",
+    "Spright Jet"
+  ],
+  "tuners_or_extenders": [
+    "Spright Rojo",
+    "Spright Zanahoria"
+  ],
+  "extra_deck_cards": [
+    "Spright Gigantic",
+    "Gigant Spright Xyz / Spright Elf"
+  ],
+  "support_spells_traps": [
+    "Spright Starter",
+    "Spright Smashers"
+  ],
+  "z_nodes": [
+    {
+      "node": 1,
+      "phase": "1. INICIO",
+      "card": "Spright Azul",
+      "action": "Invocación Normal y busca Spright Jet",
+      "ev": 98
+    },
+    {
+      "node": 2,
+      "phase": "2. EXTENSIÓN",
+      "card": "Spright Jet",
+      "action": "Invocación Especial y busca Spright Starter",
+      "ev": 94
+    },
+    {
+      "node": 3,
+      "phase": "3. EXTRA DECK",
+      "card": "Spright Gigantic",
+      "action": "Invocación Xyz usando Azul y Jet",
+      "ev": 96
+    },
+    {
+      "node": 4,
+      "phase": "4. REMATE",
+      "card": "Spright Starter",
+      "action": "Invoca a Rojo o Zanahoria para asegurar la interrupción",
+      "ev": 95
+    }
+  ],
+  "strategy": {
+    "win_condition": "Establecer un campo con múltiples interrupciones de monstruos de Nivel 2 y denegar las jugadas clave del oponente con Spright Rojo y Zanahoria.",
+    "combo_steps": [
+      "1. Invoca de Modo Normal a Spright Azul para buscar Spright Jet en tu Deck.",
+      "2. Invoca de Modo Especial a Spright Jet (gracias a tener un monstruo de Nivel/Rango 2 en campo) y busca Spright Starter.",
+      "3. Activa Spright Starter para invocar de Modo Especial a Spright Rojo o Zanahoria desde el Deck.",
+      "4. Usa a Azul y Jet para Invocar por Xyz a Spright Gigantic y reclutar otro monstruo Spright."
+    ],
+    "end_board": "Spright Gigantic + Spright Rojo + Spright Zanahoria en el campo con Spright Smashers preparado.",
+    "ideal_hand": [
+      "Spright Azul",
+      "Spright Starter"
+    ]
+  }
+}

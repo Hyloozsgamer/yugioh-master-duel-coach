@@ -1,0 +1,71 @@
+{
+  "is_deck_screen": true,
+  "is_loaner": true,
+  "screen_type": "SOLO_GATE",
+  "deck_name": "Maestro del Blanco y Negro",
+  "archetype": "Caos / Dragón Blanco",
+  "total_cards_estimated": 40,
+  "loaner_tip": "Has sufrido una derrota en este desafío del Modo Solo. Revisa tu mano inicial, maximiza la sinergia de atributos LUZ y OSCURIDAD para invocar monstruos del arquetipo Caos y mantén la presión eliminando las amenazas del rival en cuanto bajen al campo.",
+  "key_starters": [
+    "Dragón Blanco de Ojos Azules",
+    "Dragón Negro de Ojos Rojos"
+  ],
+  "tuners_or_extenders": [
+    "Sabio con Ojos de Azul",
+    "Dragón del Caos Levianeer"
+  ],
+  "extra_deck_cards": [
+    "Dragón Plateado de Azure-Eyes",
+    "Dragón de Wightsworn Definitivo"
+  ],
+  "support_spells_traps": [
+    "Himno de Renacimiento",
+    "Tormenta Cenagosa"
+  ],
+  "z_nodes": [
+    {
+      "node": 1,
+      "phase": "1. INICIO",
+      "card": "Sabio con Ojos de Azul",
+      "action": "Invocación Normal y buscador de monstruo Cantante LUZ de Nivel 1",
+      "ev": 98
+    },
+    {
+      "node": 2,
+      "phase": "2. EXTENSIÓN",
+      "card": "Dragón Blanco de Ojos Azules",
+      "action": "Invocación Especial desde la mano o Cementerio mediante efectos de soporte",
+      "ev": 94
+    },
+    {
+      "node": 3,
+      "phase": "3. EXTRA DECK",
+      "card": "Dragón Plateado de Azure-Eyes",
+      "action": "Invocación por Sincronía (Nivel 1 Cantante + Nivel 8 Monstruo)",
+      "ev": 96
+    },
+    {
+      "node": 4,
+      "phase": "4. REMATE",
+      "card": "Dragón del Caos Levianeer",
+      "action": "Invocación Especial desterrando LUZ y OSCURIDAD del Cementerio para limpiar campo",
+      "ev": 95
+    }
+  ],
+  "strategy": {
+    "win_condition": "Estabilizar el control del juego temprano usando monstruos de alto ATK y los efectos de destierro de las cartas de tipo Caos.",
+    "combo_steps": [
+      "1. Invoca normalmente a Sabio con Ojos de Azul para buscar una pieza clave en tu Deck.",
+      "2. Usa el efecto de Sabio o de cartas de soporte como Cartas de la Consonancia para preparar el Cementerio.",
+      "3. Sincroniza o realiza Invocaciones Especiales de tus Dragones de Ojos Azules o Negro para presionar las LP del rival.",
+      "4. Despliega al Dragón del Caos Levianeer desterrando los monstruos necesarios para eliminar cartas molestas del adversario y asegurar el OTK."
+    ],
+    "end_board": "Dragón Plateado de Azure-Eyes protegido en posición de ataque junto a un Dragón Blanco de Ojos Azules y recursos en mano.",
+    "ideal_hand": [
+      "Sabio con Ojos de Azul",
+      "Dragón Blanco de Ojos Azules",
+      "Melodía de la Princesa del Dragón Dormido",
+      "Santuario del Dragón"
+    ]
+  }
+}

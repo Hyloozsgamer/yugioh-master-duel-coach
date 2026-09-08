@@ -1,0 +1,105 @@
+{
+  "screen_type": "DECK",
+  "is_deck_screen": true,
+  "deck_name": "Avance Spright",
+  "archetype": "Spright",
+  "loaner_tip": "Aprovecha la versatilidad de los monstruos de Nivel/Rango/Enlace 2 para abrumar a la IA con interrupciones múltiples y asegurar un bloqueo rápido usando Spright Elf y Gigantic Spright.",
+  "key_starters": [
+    "Spright Azul",
+    "Spright Jet"
+  ],
+  "tuners_or_extenders": [
+    "Spright Rojo",
+    "Spright Zanahoria",
+    "Castor Ágil"
+  ],
+  "extra_deck_cards": [
+    "Spright Gigantic",
+    "Elfa Spright",
+    "I:P Enmascarada"
+  ],
+  "support_spells_traps": [
+    "Arrancador Spright",
+    "Spright Smash! Smashing!"
+  ],
+  "z_nodes": [
+    {
+      "node": 1,
+      "phase": "1. INICIO",
+      "card": "Spright Azul",
+      "action": "Invocación Normal o Especial para buscar otro Spright",
+      "ev": 98
+    },
+    {
+      "node": 2,
+      "phase": "2. EXTENSIÓN",
+      "card": "Spright Jet",
+      "action": "Invocar y buscar Magia/Trampa de arquetipo como Arrancador Spright",
+      "ev": 95
+    },
+    {
+      "node": 3,
+      "phase": "3. EXTRA DECK",
+      "card": "Spright Gigantic",
+      "action": "Invocar por Xyz usando dos monstruos de Nivel 2",
+      "ev": 96
+    },
+    {
+      "node": 4,
+      "phase": "4. REMATE",
+      "card": "Elfa Spright",
+      "action": "Establecer campo de interrupción y protección en el turno rival",
+      "ev": 95
+    }
+  ],
+  "neural_sequence": [
+    {
+      "node": 1,
+      "phase": "1. INICIO",
+      "card": "Spright Azul",
+      "action": "Invocación Normal o Especial para buscar otro Spright",
+      "ev": 98,
+      "status": "ACTIVE"
+    },
+    {
+      "node": 2,
+      "phase": "2. EXTENSIÓN",
+      "card": "Spright Jet",
+      "action": "Invocar y buscar Magia/Trampa de arquetipo como Arrancador Spright",
+      "ev": 95,
+      "status": "PENDING"
+    },
+    {
+      "node": 3,
+      "phase": "3. EXTRA DECK",
+      "card": "Spright Gigantic",
+      "action": "Invocar por Xyz usando dos monstruos de Nivel 2",
+      "ev": 96,
+      "status": "PENDING"
+    },
+    {
+      "node": 4,
+      "phase": "4. REMATE",
+      "card": "Elfa Spright",
+      "action": "Establecer campo de interrupción y protección en el turno rival",
+      "ev": 95,
+      "status": "PENDING"
+    }
+  ],
+  "strategy": {
+    "win_condition": "Desplegar un campo resiliente de monstruos Rango/Nivel 2 con múltiples interrupciones y protegerlos con Elfa Spright para negar las jugadas clave del oponente.",
+    "main_combo": [
+      "1. Invocar de Modo Normal o Especial a Spright Azul y activar su efecto para buscar a Spright Jet.",
+      "2. Invocar a Spright Jet mediante su efecto y buscar Arrancador Spright.",
+      "3. Utilizar dos monstruos de Nivel 2 para invocar por Xyz a Spright Gigantic y activar su efecto para invocar un Spright desde el Deck.",
+      "4. Transicionar hacia Elfa Spright e I:P Enmascarada en el Extra Deck para consolidar el campo final con interrupciones."
+    ],
+    "alt_combo": [
+      "1. Usar cartas de motor alternativo como Castor Ágil enviadas al cementerio mediante Sprind Spright para generar extensiones adicionales.",
+      "2. Activar Magias de juego rápido para romper tableros establecidos de la IA."
+    ],
+    "opponent_turn": "Activar los efectos de negación de Spright Rojo o Spright Zanahoria para frenar activaciones de monstruos, magias o trampas del rival.",
+    "end_board": "Elfa Spright apuntando a un monstruo, Spright Gigantic o I:P Enmascarada, con Spright Rojo/Zanahoria en campo para interrupciones.",
+    "solo_mode_guide": "Prioriza anular las invocaciones o efectos de los monstruos jefes de la IA que puedan limpiar tu campo o banear tus recursos del cementerio."
+  }
+}

@@ -1,0 +1,71 @@
+{
+  "is_deck_screen": true,
+  "is_loaner": true,
+  "screen_type": "SOLO_GATE",
+  "deck_name": "Dúo de Ladrones Fantasma: Evil★Gemela",
+  "archetype": "Live☆Twin / Evil★Twin",
+  "total_cards_estimated": 40,
+  "loaner_tip": "Prioriza siempre invocar a Live☆Twin Ki-sikil y Live☆Twin Lil-la para iniciar tu cadena de invocaciones desde el Deck. No gastes tus recursos de interrupción hasta que el oponente comprometa su invocación normal.",
+  "key_starters": [
+    "Live☆Twin Ki-sikil (Live☆Twin Ki-sikil)",
+    "Live☆Twin Lil-la (Live☆Twin Lil-la)"
+  ],
+  "tuners_or_extenders": [
+    "Live☆Twin Lil-la Treat (Live☆Twin Lil-la Treat)",
+    "Live☆Twin Ki-sikil Frost (Live☆Twin Ki-sikil Frost)"
+  ],
+  "extra_deck_cards": [
+    "Evil★Gemela Ki-sikil (Evil★Twin Ki-sikil)",
+    "Evil★Gemela Lil-la (Evil★Twin Lil-la)"
+  ],
+  "support_spells_traps": [
+    "Secretos de Live☆Twin (Live☆Twin Sunny's Snitch)",
+    "Evil★Gemela Challenge (Evil★Twin Challenge)"
+  ],
+  "z_nodes": [
+    {
+      "node": 1,
+      "phase": "1. INICIO",
+      "card": "Live☆Twin Ki-sikil",
+      "action": "Invocación Normal para buscar a Lil-la",
+      "ev": 98
+    },
+    {
+      "node": 2,
+      "phase": "2. EXTENSIÓN",
+      "card": "Live☆Twin Lil-la",
+      "action": "Invocación Especial desde el Deck",
+      "ev": 94
+    },
+    {
+      "node": 3,
+      "phase": "3. EXTRA DECK",
+      "card": "Evil★Gemela Ki-sikil",
+      "action": "Invocación por Enlace (Link-2)",
+      "ev": 96
+    },
+    {
+      "node": 4,
+      "phase": "4. REMATE",
+      "card": "Evil★Gemela Lil-la",
+      "action": "Invocación por Enlace para destruir carta rival",
+      "ev": 95
+    }
+  ],
+  "strategy": {
+    "win_condition": "Establecer un bucle de resurrección entre Evil★Gemela Ki-sikil y Evil★Gemela Lil-la para robar cartas y destruir el campo del oponente cada turno.",
+    "combo_steps": [
+      "1. Invoca normalmente a Live☆Twin Ki-sikil y usa su efecto para invocar a Live☆Twin Lil-la desde el Deck.",
+      "2. Usa ambos monstruos para invocar por Enlace a Evil★Gemela Ki-sikil.",
+      "3. Activa el efecto de Evil★Gemela Ki-sikil en el cementerio para revivir a Live☆Twin Lil-la, luego invoca a Evil★Gemela Lil-la.",
+      "4. Usa el efecto de Evil★Gemela Lil-la al ser invocada para destruir una carta del oponente y mantén el ciclo de resurrección."
+    ],
+    "end_board": "Evil★Gemela Ki-sikil y Evil★Gemela Lil-la en campo con cartas de soporte como 'Secretos de Live☆Twin' seteadas.",
+    "ideal_hand": [
+      "Live☆Twin Ki-sikil",
+      "Live☆Twin Lil-la",
+      "Secretos de Live☆Twin",
+      "Cualquier carta de interrupción"
+    ]
+  }
+}

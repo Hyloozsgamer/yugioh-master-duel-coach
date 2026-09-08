@@ -1,0 +1,75 @@
+{
+  "is_deck_screen": true,
+  "is_loaner": true,
+  "screen_type": "LOANER_DECK",
+  "deck_name": "Siguiente Nivel de Spright",
+  "archetype": "Spright",
+  "total_cards_estimated": 40,
+  "loaner_tip": "Aprovecha la versatilidad de los monstruos de Nivel/Rango 2. Invocadores como 'Diva del Océano Profundo' y 'Castor Ágil' despliegan el campo para asegurar jugadas de Xyz o Enlace Rango/Link-2 rápidos.",
+  "key_starters": [
+    "Spright Azul",
+    "Spright Rojo",
+    "Spright Jet"
+  ],
+  "tuners_or_extenders": [
+    "Spright Zanahoria",
+    "Diva del Océano Profundo",
+    "Castor Ágil"
+  ],
+  "extra_deck_cards": [
+    "Gigantic Spright",
+    "Spright Elf",
+    "Spright Sprind"
+  ],
+  "support_spells_traps": [
+    "Starter de Spright",
+    "Tri-Spright",
+    "Impermanencia Infinita"
+  ],
+  "z_nodes": [
+    {
+      "node": 1,
+      "phase": "1. INICIO",
+      "card": "Spright Azul",
+      "action": "Invocación Normal o Especial para buscar otro Spright",
+      "ev": 98
+    },
+    {
+      "node": 2,
+      "phase": "2. EXTENSIÓN",
+      "card": "Spright Jet",
+      "action": "Invocar de Modo Especial desde la mano y buscar Starter de Spright",
+      "ev": 94
+    },
+    {
+      "node": 3,
+      "phase": "3. EXTRA DECK",
+      "card": "Gigantic Spright",
+      "action": "Invocar por Xyz usando 2 monstruos de Nivel 2",
+      "ev": 96
+    },
+    {
+      "node": 4,
+      "phase": "4. REMATE",
+      "card": "Spright Elf",
+      "action": "Invocar por Enlace para asegurar interrupciones y recursión",
+      "ev": 95
+    }
+  ],
+  "strategy": {
+    "win_condition": "Inundar el campo con monstruos de Nivel/Rango 2 para establecer una fuerte interrupción con Gigantic Spright, Spright Elf y las negaciones de Spright Rojo y Zanahoria.",
+    "combo_steps": [
+      "1. Activa o invoca a 'Diva del Océano Profundo' o usa 'Castor Ágil' para llenar el campo con monstruos de Nivel 2.",
+      "2. Invoca a 'Spright Azul' para buscar a 'Spright Jet' u otro monstruo Spright necesario.",
+      "3. Usa dos monstruos de Nivel 2 para la Invocación Xyz de 'Gigantic Spright' y activa su efecto para invocar desde el Deck.",
+      "4. Transiciona hacia monstruos de Enlace como 'Spright Elf' para proteger y reciclar recursos durante el turno del oponente."
+    ],
+    "end_board": "Gigantic Spright, Spright Elf en la Zona de Monstruos Extra, con Spright Rojo y Spright Zanahoria en mano o campo listos para negar efectos de monstruos y magias/trampas.",
+    "ideal_hand": [
+      "Spright Azul",
+      "Spright Jet",
+      "Starter de Spright",
+      "Diva del Océano Profundo"
+    ]
+  }
+}

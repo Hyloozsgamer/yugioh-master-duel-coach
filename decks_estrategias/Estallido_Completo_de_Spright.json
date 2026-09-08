@@ -1,0 +1,74 @@
+{
+  "is_deck_screen": true,
+  "is_loaner": true,
+  "screen_type": "LOANER_DECK",
+  "deck_name": "Estallido Completo de Spright",
+  "archetype": "Spright",
+  "total_cards_estimated": 40,
+  "loaner_tip": "Aprovecha los monstruos de Nivel/Rango 2 para inundar el campo y encadenar rápidamente los efectos de Invocación Especial de Spright Azul y Spright Jet.",
+  "key_starters": [
+    "Spright Azul",
+    "Spright Jet"
+  ],
+  "tuners_or_extenders": [
+    "Sapín Ronin",
+    "Spright Rojo",
+    "Spright Carapiñón"
+  ],
+  "extra_deck_cards": [
+    "Gigantic Spright",
+    "Spright Elfo",
+    "Spright Masquerena",
+    "Dragón de Polvo de Estrellas de Asalto"
+  ],
+  "support_spells_traps": [
+    "Arranque Spright",
+    "Poder Spright",
+    "Impermanencia Infinita"
+  ],
+  "z_nodes": [
+    {
+      "node": 1,
+      "phase": "1. INICIO",
+      "card": "Spright Azul",
+      "action": "Invocación Normal o Especial, busca otro monstruo Spright en el Deck.",
+      "ev": 99
+    },
+    {
+      "node": 2,
+      "phase": "2. EXTENSIÓN",
+      "card": "Spright Jet",
+      "action": "Invocación Especial desde la mano gracias a Spright Azul, busca Arranque Spright.",
+      "ev": 97
+    },
+    {
+      "node": 3,
+      "phase": "3. EXTRA DECK",
+      "card": "Gigantic Spright",
+      "action": "Invocación Xyz usando dos monstruos de Nivel 2 para invocar desde el Deck.",
+      "ev": 98
+    },
+    {
+      "node": 4,
+      "phase": "4. REMATE",
+      "card": "Spright Elfo",
+      "action": "Invocación por Enlace para proteger tus monstruos y reciclar recursos del Cementerio.",
+      "ev": 96
+    }
+  ],
+  "strategy": {
+    "win_condition": "Desplegar múltiples monstruos de Rango/Enlace 2 en el primer turno para establecer interrupciones con Gigantic Spright, Spright Rojo y Spright Zanahoria.",
+    "combo_steps": [
+      "1. Invoca normalmente a Spright Azul para activar su efecto y añadir Spright Jet a tu mano.",
+      "2. Invoca de Modo Especial a Spright Jet desde tu mano, activando su efecto para buscar la carta de hechizo Arranque Spright.",
+      "3. Activa Arranque Spright para Invocar de Modo Especial a Spright Rojo o Spright Zanahoria desde tu Deck.",
+      "4. Utiliza dos monstruos de Nivel 2 (como Azul y Jet) para Invocar Xyz a Gigantic Spright y asegurar aún más despliegue."
+    ],
+    "end_board": "Gigantic Spright + Spright Elfo + Spright Rojo/Zanahoria en el campo con interrupciones listas en el cementerio y mano.",
+    "ideal_hand": [
+      "Spright Azul",
+      "Spright Jet",
+      "Arranque Spright"
+    ]
+  }
+}

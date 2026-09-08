@@ -1,0 +1,71 @@
+{
+  "is_deck_screen": true,
+  "is_loaner": true,
+  "screen_type": "SOLO_GATE",
+  "deck_name": "Arcalich Adelantado",
+  "archetype": "Eldlich",
+  "total_cards_estimated": 40,
+  "loaner_tip": "La clave es la recursión infinita. Usa tus cartas de trampa para invocar a Eldlich el Señor de Oro desde el cementerio y mantén el control del campo eliminando las amenazas del rival con sus efectos de cementerio.",
+  "key_starters": [
+    "Eldlich el Señor de Oro",
+    "Tierras Malditas del Eldlixir"
+  ],
+  "tuners_or_extenders": [
+    "Conquistador de la Tierra Dorada",
+    "Huaquero de la Tierra Dorada"
+  ],
+  "extra_deck_cards": [
+    "Superdreadnought Rail Cannon Gustav Max",
+    "Superdreadnought Rail Cannon Juggernaut Liebe"
+  ],
+  "support_spells_traps": [
+    "Sanguinario del Eldlixir",
+    "Juicio Solemne"
+  ],
+  "z_nodes": [
+    {
+      "node": 1,
+      "phase": "1. INICIO",
+      "card": "Tierras Malditas del Eldlixir",
+      "action": "Activar para buscar a Eldlich el Señor de Oro",
+      "ev": 98
+    },
+    {
+      "node": 2,
+      "phase": "2. EXTENSIÓN",
+      "card": "Eldlich el Señor de Oro",
+      "action": "Enviar carta mágica/trampa al cementerio para invocarlo",
+      "ev": 94
+    },
+    {
+      "node": 3,
+      "phase": "3. EXTRA DECK",
+      "card": "Superdreadnought Rail Cannon Gustav Max",
+      "action": "Invocación Xyz (Nivel 10 + Nivel 10)",
+      "ev": 96
+    },
+    {
+      "node": 4,
+      "phase": "4. REMATE",
+      "card": "Superdreadnought Rail Cannon Juggernaut Liebe",
+      "action": "Invocación sobre Gustav Max para daño masivo",
+      "ev": 95
+    }
+  ],
+  "strategy": {
+    "win_condition": "Desgastar los recursos del oponente mediante trampas de control y finalizar con el daño de quemadura y ataque directo de los monstruos Xyz de Rango 10.",
+    "combo_steps": [
+      "1. Activa 'Tierras Malditas del Eldlixir' para añadir 'Eldlich el Señor de Oro' a tu mano.",
+      "2. Activa una carta de trampa 'Eldlixir' (como 'Sanguinario del Eldlixir') para invocar a Eldlich desde el mazo o cementerio.",
+      "3. Usa el efecto de Eldlich en el campo enviando una carta mágica/trampa al cementerio para destruir una carta del rival.",
+      "4. Superpone dos monstruos de Nivel 10 para invocar a 'Superdreadnought Rail Cannon Gustav Max' y luego sube a 'Juggernaut Liebe' para atacar."
+    ],
+    "end_board": "Eldlich el Señor de Oro en campo con trampas de interrupción (Conquistador/Huaquero) seteadas.",
+    "ideal_hand": [
+      "Eldlich el Señor de Oro",
+      "Tierras Malditas del Eldlixir",
+      "Sanguinario del Eldlixir",
+      "Juicio Solemne"
+    ]
+  }
+}

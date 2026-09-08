@@ -1,0 +1,71 @@
+{
+  "is_deck_screen": true,
+  "is_loaner": true,
+  "screen_type": "SOLO_GATE",
+  "deck_name": "AS-RESCATE",
+  "archetype": "Rescate-ACE",
+  "total_cards_estimated": 40,
+  "loaner_tip": "Prioriza invocar a 'Turbulencia Rescate-ACE' lo antes posible usando el efecto de 'Rescate-ACE Hidrante' para colocar tus trampas de interrupción directamente desde el deck.",
+  "key_starters": [
+    "Rescate-ACE Hidrante",
+    "Rescate-ACE Aire"
+  ],
+  "tuners_or_extenders": [
+    "Rescate-ACE Fuego",
+    "Rescate-ACE Monitor"
+  ],
+  "extra_deck_cards": [
+    "Enlace-ACE Rescate",
+    "Acceso Codificador Hablador"
+  ],
+  "support_spells_traps": [
+    "RESCATE-ACE ALERT!",
+    "RESCATE-ACE CONTAIN!",
+    "RESCATE-ACE EXTINGUISH!"
+  ],
+  "z_nodes": [
+    {
+      "node": 1,
+      "phase": "1. INICIO",
+      "card": "Rescate-ACE Hidrante",
+      "action": "Invocación Normal para buscar piezas del arquetipo",
+      "ev": 98
+    },
+    {
+      "node": 2,
+      "phase": "2. EXTENSIÓN",
+      "card": "Rescate-ACE Fuego",
+      "action": "Invocación Especial desde la mano para generar ventaja",
+      "ev": 94
+    },
+    {
+      "node": 3,
+      "phase": "3. EXTRA DECK",
+      "card": "Enlace-ACE Rescate",
+      "action": "Invocación por Enlace para proteger tus cartas",
+      "ev": 96
+    },
+    {
+      "node": 4,
+      "phase": "4. REMATE",
+      "card": "Turbulencia Rescate-ACE",
+      "action": "Colocar 4 magias/trampas desde el deck para control total",
+      "ev": 95
+    }
+  ],
+  "strategy": {
+    "win_condition": "Establecer un campo de control mediante las trampas de interrupción de Rescate-ACE y agotar los recursos del oponente.",
+    "combo_steps": [
+      "1. Invocar normalmente a 'Rescate-ACE Hidrante' para buscar 'Turbulencia Rescate-ACE' o una magia de búsqueda.",
+      "2. Usar el efecto de 'Rescate-ACE Fuego' para invocarlo especialmente si controlas un monstruo Rescate-ACE.",
+      "3. Invocar a 'Turbulencia Rescate-ACE' desterrando 2 cartas del cementerio o mediante su efecto propio.",
+      "4. Activar el efecto de 'Turbulencia Rescate-ACE' para colocar 'RESCATE-ACE ALERT!', 'RESCATE-ACE CONTAIN!' y 'RESCATE-ACE EXTINGUISH!' directamente desde el deck."
+    ],
+    "end_board": "Turbulencia Rescate-ACE con 3-4 magias/trampas seteadas y Rescate-ACE Hidrante en campo para protección.",
+    "ideal_hand": [
+      "Rescate-ACE Hidrante",
+      "Rescate-ACE Fuego",
+      "RESCATE-ACE ALERT!"
+    ]
+  }
+}

@@ -1,0 +1,70 @@
+{
+  "is_deck_screen": true,
+  "is_loaner": false,
+  "screen_type": "SOLO_GATE",
+  "deck_name": "¡Equipo de Rescate, Emergencia!",
+  "archetype": "AS-Rescate (Rescue-ACE)",
+  "total_cards_estimated": 40,
+  "loaner_tip": "Prioriza invocar a 'Turbulencia AS-Rescate' lo antes posible usando el efecto de 'Emergencia AS-Rescate' para setear tus trampas de interrupción directamente desde el deck.",
+  "key_starters": [
+    "AS-Rescate Hidrante (Rescue-ACE Hydrant)",
+    "Emergencia AS-Rescate (Rescue-ACE Emergency)"
+  ],
+  "tuners_or_extenders": [
+    "AS-Rescate Aire (Rescue-ACE Air Lifter)",
+    "AS-Rescate Fuego (Rescue-ACE Fire Attacker)"
+  ],
+  "extra_deck_cards": [
+    "Turbulencia AS-Rescate (Rescue-ACE Turbulence)",
+    "AS-Rescate Preventor (Rescue-ACE Preventer)"
+  ],
+  "support_spells_traps": [
+    "RESCATE-AS (RESCUE!)",
+    "CONTENCIÓN-AS (CONTAIN!)"
+  ],
+  "z_nodes": [
+    {
+      "node": 1,
+      "phase": "1. INICIO",
+      "card": "AS-Rescate Hidrante",
+      "action": "Invocación Normal para buscar piezas clave",
+      "ev": 98
+    },
+    {
+      "node": 2,
+      "phase": "2. EXTENSIÓN",
+      "card": "Emergencia AS-Rescate",
+      "action": "Invocación Especial de Turbulencia desde la mano/deck",
+      "ev": 94
+    },
+    {
+      "node": 3,
+      "phase": "3. EXTRA DECK",
+      "card": "Turbulencia AS-Rescate",
+      "action": "Efecto para setear 4 magias/trampas AS-Rescate",
+      "ev": 96
+    },
+    {
+      "node": 4,
+      "phase": "4. REMATE",
+      "card": "RESCATE-AS",
+      "action": "Interrupción en turno rival para revivir monstruos",
+      "ev": 95
+    }
+  ],
+  "strategy": {
+    "win_condition": "Establecer un campo de control mediante las trampas de interrupción seteadas por Turbulencia y agotar los recursos del oponente.",
+    "combo_steps": [
+      "1. Invocar a 'AS-Rescate Hidrante' para buscar 'Emergencia AS-Rescate'.",
+      "2. Activar 'Emergencia AS-Rescate' para invocar a 'Turbulencia AS-Rescate' desde la mano o cementerio.",
+      "3. Usar el efecto de 'Turbulencia AS-Rescate' para colocar 4 cartas de magia/trampa 'AS-Rescate' directamente desde el deck.",
+      "4. Activar las trampas en el turno del oponente para negar efectos o revivir monstruos y mantener el control."
+    ],
+    "end_board": "Turbulencia AS-Rescate con 4 cartas seteadas (RESCATE-AS, CONTENCIÓN-AS) y AS-Rescate Hidrante en campo.",
+    "ideal_hand": [
+      "AS-Rescate Hidrante",
+      "Emergencia AS-Rescate",
+      "AS-Rescate Aire"
+    ]
+  }
+}

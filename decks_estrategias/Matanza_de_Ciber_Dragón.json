@@ -1,0 +1,68 @@
+{
+  "is_deck_screen": true,
+  "is_loaner": true,
+  "screen_type": "SOLO_GATE",
+  "deck_name": "Matanza de Ciber Dragón",
+  "archetype": "Ciber Dragón",
+  "total_cards_estimated": 40,
+  "loaner_tip": "¡Victoria asegurada en este duelo de Modo Solo! Pulsa en Aceptar para avanzar a la siguiente recompensa o combate de la puerta.",
+  "key_starters": [
+    "Ciber Dragón",
+    "Ciber Dragón Herz"
+  ],
+  "tuners_or_extenders": [
+    "Ciber Dragón Vier"
+  ],
+  "extra_deck_cards": [
+    "Ciber Dragón Nova",
+    "Ciber Dragón Infinito"
+  ],
+  "support_spells_traps": [
+    "Emergencia Ciber",
+    "Sobrecarga de Máquina"
+  ],
+  "z_nodes": [
+    {
+      "node": 1,
+      "phase": "1. INICIO",
+      "card": "Ciber Dragón Herz",
+      "action": "Invocación Normal (Busca o ajusta Nivel)",
+      "ev": 98
+    },
+    {
+      "node": 2,
+      "phase": "2. EXTENSIÓN",
+      "card": "Ciber Dragón Vier",
+      "action": "Invocación Especial por efecto",
+      "ev": 94
+    },
+    {
+      "node": 3,
+      "phase": "3. EXTRA DECK",
+      "card": "Ciber Dragón Nova",
+      "action": "Invocación Xyz usando dos monstruos de Nivel 5",
+      "ev": 96
+    },
+    {
+      "node": 4,
+      "phase": "4. REMATE",
+      "card": "Ciber Dragón Infinito",
+      "action": "Invocación Xyz por Encima de Nova y victoria",
+      "ev": 99
+    }
+  ],
+  "strategy": {
+    "win_condition": "Reclama la victoria en la pantalla de resultados y continúa el Modo Solo para desbloquear más gemas y cartas.",
+    "combo_steps": [
+      "1. Haz clic en el botón 'ACEPTAR' para confirmar la victoria mostrada en pantalla.",
+      "2. Selecciona el siguiente nodo u oponente en el mapa del Modo Solo.",
+      "3. Revisa tu baraja de préstamo si cambian las reglas del siguiente combate.",
+      "4. Mantén la presión ofensiva usando las Fusiones y Xyz del arquetipo Ciber Dragón."
+    ],
+    "end_board": "Pantalla de recompensa superada con éxito.",
+    "ideal_hand": [
+      "Ciber Dragón",
+      "Ciber Dragón Vier"
+    ]
+  }
+}

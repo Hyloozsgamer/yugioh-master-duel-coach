@@ -1,0 +1,70 @@
+{
+  "is_deck_screen": true,
+  "is_loaner": true,
+  "screen_type": "SOLO_GATE",
+  "deck_name": "Chispa Gigante / Ciber Dragón",
+  "archetype": "Ciber Dragón",
+  "total_cards_estimated": 40,
+  "loaner_tip": "Cuidado con el 'Dragón Megaflowta Chimeratech' del adversario que puede usar tus monstruos en la Zona de Monstruos Extra para su Invocación Fusion. Prioriza mantener tus monstruos en las Zonas de Monstruos Principales o neutraliza sus Ciber Dragones.",
+  "key_starters": [
+    "Ciber Dragón",
+    "Sistema de Apoyo Ciber"
+  ],
+  "tuners_or_extenders": [
+    "Ciber Dragón Drei",
+    "Ciber Dragón Herz"
+  ],
+  "extra_deck_cards": [
+    "Dragón Nova Ciber",
+    "Dragón de Eternidad Ciber"
+  ],
+  "support_spells_traps": [
+    "Reparación de Emergencia Ciber",
+    "Fusión Ciber"
+  ],
+  "z_nodes": [
+    {
+      "node": 1,
+      "phase": "1. INICIO",
+      "card": "Ciber Dragón",
+      "action": "Invocación Normal o Especial al campo principal",
+      "ev": 98
+    },
+    {
+      "node": 2,
+      "phase": "2. EXTENSIÓN",
+      "card": "Ciber Dragón Herz",
+      "action": "Activación de efecto para buscar o cambiar nivel",
+      "ev": 94
+    },
+    {
+      "node": 3,
+      "phase": "3. EXTRA DECK",
+      "card": "Dragón Nova Ciber",
+      "action": "Invocación Xyz usando 2 monstruos de Nivel 5",
+      "ev": 96
+    },
+    {
+      "node": 4,
+      "phase": "4. REMATE",
+      "card": "Dragón de Eternidad Ciber",
+      "action": "Subir de rango desde Nova y asegurar el OTK",
+      "ev": 95
+    }
+  ],
+  "strategy": {
+    "win_condition": "Desplegar el potencial ofensivo del arquetipo Ciber Dragón para abrumar los Life Points del rival mediante ataques múltiples y monstruos de alto ATK.",
+    "combo_steps": [
+      "1. Invoca de Modo Especial a 'Ciber Dragón' si el rival controla monstruos y tú no.",
+      "2. Realiza la Invocación Normal de 'Ciber Dragón Herz' o 'Ciber Dragón Drei' para manipular los niveles a Nivel 5.",
+      "3. Superpone ambos monstruos de Nivel 5 para Invocar Xyz a 'Dragón Nova Ciber'.",
+      "4. Utiliza el efecto de 'Dragón Nova Ciber' o desúne un material para revivir un 'Ciber Dragón' y luego evoluciona a 'Dragón de Eternidad Ciber'."
+    ],
+    "end_board": "Dragón de Eternidad Ciber en el campo con cartas de apoyo Ciber preparadas en la mano/magias.",
+    "ideal_hand": [
+      "Ciber Dragón",
+      "Ciber Dragón Herz",
+      "Reparación de Emergencia Ciber"
+    ]
+  }
+}
