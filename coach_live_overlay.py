@@ -1589,6 +1589,18 @@ class LiveCoachOverlay:
         self._timeline_render_pending = False
         self._render_timeline()
 
+    def _set_active_phase(self, active_code, active_name=None):
+        for code, lbl in getattr(self, "phase_btns", {}).items():
+            if code == active_code:
+                if code == "BP":
+                    lbl.config(fg="#FFFFFF", bg="#DC2626")
+                else:
+                    lbl.config(fg="#040711", bg="#00F5FF")
+            else:
+                lbl.config(fg="#64748B", bg="#0D192E")
+        if active_name and hasattr(self, "status_lbl"):
+            self.status_lbl.config(text=f"[FASE TACTICA: {active_name}]")
+
 def main():
     try:
         root = tk.Tk()
@@ -1601,15 +1613,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-
-    def _set_active_phase(self, active_code, active_name=None):
-        for code, lbl in getattr(self, "phase_btns", {}).items():
-            if code == active_code:
-                if code == "BP":
-                    lbl.config(fg="#FFFFFF", bg="#DC2626")
-                else:
-                    lbl.config(fg="#040711", bg="#00F5FF")
-            else:
-                lbl.config(fg="#64748B", bg="#0D192E")
-        if active_name and hasattr(self, "status_lbl"):
-            self.status_lbl.config(text=f"[FASE TÁCTICA: {active_name}]")
