@@ -1,22 +1,22 @@
-# 🧠 Guía Táctica y Estratégica: Guerreros Magnéticos (Magnet Warriors)
-**Modalidad:** 🛡️ Baraja Personal | **Arquetipo:** Magnet Warrior / Magna Guerrero
+# Guía Táctica y Estratégica: Guerreros Magnéticos (Magnet Warriors)
+**Modalidad:** Baraja Personal | **Arquetipo:** Magnet Warrior / Magna Guerrero
 
 ---
 
-## 🎯 Condición de Victoria (Win Condition)
+## Condición de Victoria (Win Condition)
 Establecer un control de campo mediante la negación de efectos de Imperion Magnum y la capacidad de reciclaje del arquetipo.
 
 ---
 
-## 🃏 Cartas Clave del Mazo
-- **⚡ Starters (Apertura Turno 1):** Guerrero Magnético Alfa, Guerrero Magnético Beta
-- **🔄 Cantantes / Extensores:** Guerrero Magnético Gamma
-- **👑 Jefes del Extra Deck:** Imperion Magnum, el Guerrero Magnético de Batalla, Gorgónica Guardiana
-- **🛡️ Magias y Trampas de Soporte:** Campo Magnético, Triunfo Magnético
+## Cartas Clave del Mazo
+- **Starters (Apertura Turno 1):** Guerrero Magnético Alfa, Guerrero Magnético Beta
+- **Cantantes / Extensores:** Guerrero Magnético Gamma
+- **Jefes del Extra Deck:** Imperion Magnum, el Guerrero Magnético de Batalla, Gorgónica Guardiana
+- **Magias y Trampas de Soporte:** Campo Magnético, Triunfo Magnético
 
 ---
 
-## 🔄 Secuencia de Combo Óptima (Paso a Paso)
+## Secuencia de Combo Óptima (Paso a Paso)
 - 1. Invocar a Guerrero Magnético Beta para añadir a tu mano a Guerrero Magnético Alfa o Gamma.
 - 2. Usar el efecto de Guerrero Magnético Gamma para invocar especialmente a otro Guerrero Magnético desde la mano.
 - 3. Utilizar Campo Magnético para recuperar guerreros del cementerio y preparar la fusión de Imperion Magnum.
@@ -24,10 +24,10 @@ Establecer un control de campo mediante la negación de efectos de Imperion Magn
 
 ---
 
-## 🛡️ Campo Final Ideal (End Board)
+## Campo Final Ideal (End Board)
 Imperion Magnum, el Guerrero Magnético de Batalla con Campo Magnético activo para protección.
 
 ---
 
-## 💡 Consejo Táctico para Vencer a la IA de este Escenario
+## Táctica: Consejo Táctico para Vencer a la IA de este Escenario
 Prioriza invocar a 'Imperion Magnum, el Guerrero Magnético de Batalla' usando los efectos de los guerreros de nivel 3 para reciclar recursos y negar efectos clave del rival.

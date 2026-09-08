@@ -340,7 +340,7 @@ Devuelve:
   }},
   "recommended_play": {{
     "card_name": "Nombre exacto de la carta en mano a jugar AHORA",
-    "action": "Acción específica (ej: ✨ Activar efecto en mano / ⚡ Invocación Normal / 🛡️ Colocar Boca Abajo)",
+    "action": "Acción específica (ej: Activar efecto en mano / Invocación Normal / Colocar Boca Abajo)",
     "client_procedure": [
       "1. Pulsa en tu mano la carta [Nombre]",
       "2. Selecciona [Activar / Invocar]",
@@ -561,7 +561,7 @@ Devuelve SIEMPRE un JSON válido con este esquema:
 
             strat = deck_data.get("strategy", {})
             is_loaner = deck_data.get("is_loaner", True)
-            loaner_badge = "🎮 Baraja de Préstamo (Modo Solo Konami)" if is_loaner else "🛡️ Baraja Personal"
+            loaner_badge = "Baraja de Préstamo (Modo Solo Konami)" if is_loaner else "Baraja Personal"
             loaner_tip = deck_data.get("loaner_tip", "Sigue los combos pensados por Konami para este escenario.")
 
             tuners_str = ", ".join(deck_data.get("tuners_or_extenders", [])) or "Extensores temáticos del arquetipo"
@@ -580,25 +580,25 @@ Devuelve SIEMPRE un JSON válido con este esquema:
             solo_guide = strat.get("solo_mode_ai_guide") or strat.get("solo_mode_guide") or loaner_tip
 
             lines = [
-                f"# 🧠 Guía Táctica Profesional: {raw_name}",
+                f"# Guía Táctica Profesional: {raw_name}",
                 f"**Modalidad:** {loaner_badge} | **Arquetipo:** {deck_data.get('archetype', 'General')}",
                 "",
                 "---",
                 "",
-                "## 🎯 Condición de Victoria (Win Condition)",
+                "## Condición de Victoria (Win Condition)",
                 strat.get('win_condition', 'Construir presencia en mesa y agotar los recursos del rival.'),
                 "",
                 "---",
                 "",
-                "## 🃏 Cartas Clave y su Rol Táctico",
-                f"- **⚡ Starters Principales (Turno 1 / Iniciadores):** {', '.join(deck_data.get('key_starters', [])) or 'Cartas de búsqueda inicial'}",
-                f"- **🔄 Extensores y Soporte:** {tuners_str}",
-                f"- **👑 Jefes del Extra Deck:** {extra_str}",
-                f"- **🛡️ Magias y Trampas Clave:** {spells_str}",
+                "## Cartas Clave y su Rol Táctico",
+                f"- **[Starters Principales] (Turno 1 / Iniciadores):** {', '.join(deck_data.get('key_starters', [])) or 'Cartas de búsqueda inicial'}",
+                f"- **[Extensores] y Soporte:** {tuners_str}",
+                f"- **[Jefes del Extra Deck]:** {extra_str}",
+                f"- **[Magias y Trampas] Clave:** {spells_str}",
                 "",
                 "---",
                 "",
-                "## 🔄 Línea de Combo Principal (Paso a Paso)"
+                "## Línea de Combo Principal (Paso a Paso)"
             ]
             for step in main_steps:
                 clean_s = str(step).strip()
@@ -612,7 +612,7 @@ Devuelve SIEMPRE un JSON válido con este esquema:
                     "",
                     "---",
                     "",
-                    "## ⚡ Línea Alternativa / Turno 2 (Going Second)"
+                    "## Línea Alternativa / Turno 2 (Going Second)"
                 ])
                 for step in alt_steps:
                     lines.append(f"- {step}")
@@ -621,17 +621,17 @@ Devuelve SIEMPRE un JSON válido con este esquema:
                 "",
                 "---",
                 "",
-                "## ⚔️ Cómo Jugar en el Turno del Rival (Interrupciones)",
+                "## Cómo Jugar en el Turno del Rival (Interrupciones)",
                 str(opp_actions),
                 "",
                 "---",
                 "",
-                "## 🛡️ Campo Final Ideal (End Board)",
+                "## Campo Final Ideal (End Board)",
                 str(strat.get('end_board', 'Monstruos jefes y recursos colocados listos para responder.')),
                 "",
                 "---",
                 "",
-                "## 💡 Guía Táctica para Vencer a la IA del Modo Solo",
+                "## Guía Táctica para Vencer a la IA del Modo Solo",
                 str(solo_guide)
             ])
 

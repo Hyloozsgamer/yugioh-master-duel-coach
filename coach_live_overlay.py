@@ -655,15 +655,15 @@ class LiveCoachOverlay:
         self._manual_scan_in_progress = True
 
         # Feedback visual instantáneo en el botón
-        self.scan_deck_btn.config(text="⌛ ESCANEANDO...", bg="#FEF08A")
-        self.status_lbl.config(text="🔍 Analizando pantalla de Master Duel...", fg="#00F5FF")
+        self.scan_deck_btn.config(text="ESCANEANDO...", bg="#FEF08A")
+        self.status_lbl.config(text="Analizando pantalla de Master Duel...", fg="#00F5FF")
         self.root.update_idletasks()
 
         def task():
             try:
                 frame = self.brain.capture_game_screen()
                 if frame is None:
-                    self.root.after(0, lambda: self.status_lbl.config(text="⚠️ Abre o enfoca Yu-Gi-Oh! Master Duel", fg="#FEF08A"))
+                    self.root.after(0, lambda: self.status_lbl.config(text="Abre o enfoca Yu-Gi-Oh! Master Duel", fg="#FEF08A"))
                     return
 
                 # Escaneo unificado instantáneo en una sola llamada de alta velocidad
@@ -702,8 +702,8 @@ class LiveCoachOverlay:
             return
 
         self.is_scanning_deck = True
-        self.status_lbl.config(text="🔍 Escaneando baraja y generando estrategia...", fg="#FEF08A")
-        self.deck_title_lbl.config(text="🔍 Escaneando receta de Konami...", font=("Segoe UI", 9, "bold"), fg="#FEF08A", bg="#854D0E")
+        self.status_lbl.config(text="Escaneando baraja y generando estrategia...", fg="#FEF08A")
+        self.deck_title_lbl.config(text="Escaneando receta de Konami...", font=("Segoe UI", 9, "bold"), fg="#FEF08A", bg="#854D0E")
         
         def task():
             try:
@@ -987,7 +987,7 @@ class LiveCoachOverlay:
                 if photo:
                     thumb_c.create_image(23, 32, image=photo)
                 else:
-                    thumb_c.create_text(23, 32, text="🃏", font=("Segoe UI", 12))
+                    thumb_c.create_text(23, 32, text="[CARD]", font=("Segoe UI", 12))
                     self._load_z_image_async(passcode)
             else:
                 thumb_c.create_text(23, 32, text="⚡", font=("Segoe UI", 12))
@@ -1011,24 +1011,24 @@ class LiveCoachOverlay:
         self.best_card_lbl.config(text=c_name)
         
         # Badge de fase / acción
-        badge_text = f"⚡ {phase.upper()}" if phase else "⚡ JUGADA ÓPTIMA"
+        badge_text = f"[{phase.upper()}]" if phase else "[JUGADA ÓPTIMA]"
         self.hero_action_badge.config(text=badge_text[:20])
 
-        self.best_action_lbl.config(text=f"👉 {act}")
+        self.best_action_lbl.config(text=f"> {act}")
         self.pct_lbl.config(text=f"{pct:.0f}% EV")
         self.prob_bar["value"] = pct
 
         # Razón táctica
         if "Normal" in act:
-            self.hero_why_lbl.config(text="💡 Inicia la jugada preparando monstruos o búsquedas clave.")
+            self.hero_why_lbl.config(text="Inicia la jugada preparando monstruos o búsquedas clave.")
         elif "Especial" in act:
-            self.hero_why_lbl.config(text="💡 Extiende presencia en campo sin gastar tu Invocación Normal.")
+            self.hero_why_lbl.config(text="Extiende presencia en campo sin gastar tu Invocación Normal.")
         elif "Fusión" in act or "Enlace" in act or "Xyz" in act or "Sincronía" in act:
-            self.hero_why_lbl.config(text="💡 Invoca tu monstruo del Extra Deck para dominar el duelo.")
+            self.hero_why_lbl.config(text="Invoca tu monstruo del Extra Deck para dominar el duelo.")
         elif "Ataque" in act or "Batalla" in act or "OTK" in act:
-            self.hero_why_lbl.config(text="💡 Fase de combate: Ataca directamente o supera los monstruos rivales.")
+            self.hero_why_lbl.config(text="Fase de combate: Ataca directamente o supera los monstruos rivales.")
         else:
-            self.hero_why_lbl.config(text=f"💡 Paso táctico para asegurar la victoria.")
+            self.hero_why_lbl.config(text=f"Paso táctico para asegurar la victoria.")
 
         # Cargar arte en Hero canvas (84x122)
         passcode = self._get_passcode_for_card(c_name)
@@ -1036,7 +1036,7 @@ class LiveCoachOverlay:
             self._load_big_image_async(passcode)
         else:
             self.art_canvas.delete("all")
-            self.art_canvas.create_text(42, 61, text="🃏", font=("Segoe UI", 24), fill="#00F5FF")
+            self.art_canvas.create_text(42, 61, text="[CARD]", font=("Segoe UI", 24), fill="#00F5FF")
 
     def _init_fast_card_index(self):
         self._card_exact_index = {}
@@ -1214,7 +1214,7 @@ class LiveCoachOverlay:
         
         active_modal = data.get("active_modal")
         if active_modal and str(active_modal).lower() != "null":
-            self.modal_banner.config(text=f"⚡ ACCIÓN REQUERIDA: {active_modal}")
+            self.modal_banner.config(text=f"[ACCIÓN REQUERIDA] {active_modal}")
             self.modal_banner.pack(fill="x", padx=4, pady=2, after=self.root.winfo_children()[0])
         else:
             self.modal_banner.pack_forget()
@@ -1251,12 +1251,12 @@ class LiveCoachOverlay:
                 proc_str = " | ".join(proc_list[:2])
             else:
                 proc_str = str(proc_list)
-            self.best_action_lbl.config(text=f"👉 {act}\n({proc_str})")
+            self.best_action_lbl.config(text=f"> {act}\n({proc_str})")
 
         # Actualizar alerta táctica / amenaza
         threat_msg = data.get("coach_comment") or f"Nivel de Amenaza: {data.get('threat_level', 'NORMAL')}"
         if hasattr(self, "threat_desc_lbl"):
-            self.threat_desc_lbl.config(text=f"🛡️ Alerta Táctica: {threat_msg}")
+            self.threat_desc_lbl.config(text=f"Alerta Táctica: {threat_msg}")
 
         hand_cards = data.get("hand_cards", [])
         for lbl in self.hand_labels:
@@ -1299,10 +1299,10 @@ class LiveCoachOverlay:
                     if photo:
                         h_canvas.create_image(12, 18, image=photo)
                     else:
-                        h_canvas.create_text(12, 18, text="🃏", font=("Segoe UI", 10))
+                        h_canvas.create_text(12, 18, text="[CARD]", font=("Segoe UI", 10))
                         self._load_z_image_async(passcode)
                 else:
-                    h_canvas.create_text(12, 18, text="🃏", font=("Segoe UI", 10))
+                    h_canvas.create_text(12, 18, text="[CARD]", font=("Segoe UI", 10))
 
                 # Información de carta
                 info_col = tk.Frame(row, bg="#080E1C")
@@ -1320,7 +1320,7 @@ class LiveCoachOverlay:
 
                 # Badge de acción
                 is_rec = is_opt or (name.lower() in c_name.lower() or c_name.lower() in name.lower())
-                status_tag = "👉 JUGAR AHORA" if is_rec else ("Extensión" if idx < 2 else "Guardar")
+                status_tag = "JUGAR AHORA" if is_rec else ("Extensión" if idx < 2 else "Guardar")
                 tag_bg = "#10B981" if is_rec else ("#0284C7" if idx < 2 else "#D97706")
                 tag_fg = "#040711" if is_rec else "#FFFFFF"
 
