@@ -82,6 +82,11 @@ class LiveCoachOverlay:
         # Iniciar bucle de escaneo rápido de duelo
         self.auto_thread = threading.Thread(target=self._fast_scanning_loop, daemon=True)
         self.auto_thread.start()
+        self.hero_shimmer_frames = []
+        self._shimmer_idx = 0
+        self._border_pulse_step = 0
+        self._start_hero_shimmer_loop()
+        self._start_border_pulse_loop()
         self._start_global_f5_listener()
 
     def _load_lang_config(self) -> str:
@@ -1113,6 +1118,69 @@ class LiveCoachOverlay:
     def _animate_z_pulse(self):
         pass
 
+
+    def _generate_hero_shimmer_frames(self, passcode: int, base_img):
+        if not hasattr(self, "hero_shimmer_cache"):
+            self.hero_shimmer_cache = {}
+        if passcode and passcode in self.hero_shimmer_cache:
+            self.hero_shimmer_frames = self.hero_shimmer_cache[passcode]
+            self._shimmer_idx = 0
+            return
+        try:
+            import numpy as np
+            base_rgba = base_img.convert("RGBA").resize((84, 122), Image.Resampling.LANCZOS)
+            w, h = base_rgba.size
+            frames = []
+            total_frames = 22
+            for i in range(total_frames):
+                if i < 13:
+                    center_x = int(-25 + (i / 12.0) * (w + 50))
+                    arr = np.zeros((h, w, 4), dtype=np.uint8)
+                    for y in range(h):
+                        bx = int(center_x + (y - h / 2) * 0.45)
+                        for x in range(max(0, bx - 16), min(w, bx + 16)):
+                            dist = abs(x - bx)
+                            arr[y, x] = [0, 245, 255, int((1.0 - dist / 16.0) * 115)]
+                    shine = Image.fromarray(arr, "RGBA")
+                    comp = Image.alpha_composite(base_rgba, shine)
+                else:
+                    comp = base_rgba
+                frames.append(ImageTk.PhotoImage(comp))
+            self.hero_shimmer_frames = frames
+            self._shimmer_idx = 0
+            if passcode:
+                self.hero_shimmer_cache[passcode] = frames
+        except Exception:
+            pass
+
+    def _start_hero_shimmer_loop(self):
+        def _step():
+            if getattr(self, "hero_shimmer_frames", None) and getattr(self, "is_running", True):
+                try:
+                    self._shimmer_idx = (self._shimmer_idx + 1) % len(self.hero_shimmer_frames)
+                    photo = self.hero_shimmer_frames[self._shimmer_idx]
+                    self.art_canvas.delete("all")
+                    self.art_canvas.create_image(42, 61, image=photo)
+                except Exception:
+                    pass
+            if getattr(self, "is_running", True):
+                self.root.after(45, _step)
+        self.root.after(200, _step)
+
+    def _start_border_pulse_loop(self):
+        colors = ["#00F5FF", "#38BDF8", "#7DD3FC", "#0284C7", "#00F5FF"]
+        def _step():
+            if getattr(self, "is_running", True):
+                try:
+                    self._border_pulse_step = (getattr(self, "_border_pulse_step", 0) + 1) % len(colors)
+                    col = colors[self._border_pulse_step]
+                    if hasattr(self, "art_canvas") and self.art_canvas.winfo_exists():
+                        self.art_canvas.config(highlightbackground=col)
+                except Exception:
+                    pass
+                self.root.after(120, _step)
+        self.root.after(300, _step)
+
     def _start_global_f5_listener(self):
         def _f5_loop():
             import ctypes
@@ -1352,6 +1420,7 @@ class LiveCoachOverlay:
             self._current_photo = photo
             self.art_canvas.delete("all")
             self.art_canvas.create_image(42, 61, image=photo)
+            self._generate_hero_shimmer_frames(passcode, image)
         except Exception:
             pass
 
