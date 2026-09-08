@@ -2,7 +2,7 @@
   <img src="assets/banner.png" alt="Yu-Gi-Oh! Master Duel Coach APP Banner" width="100%" />
 </p>
 
-<h1 align="center">👁️ [Yu-Gi-Oh] Master Duel Coach APP // Alpha version</h1>
+<h1 align="center">👁️ [Yu-Gi-Oh] Master Duel Coach APP // Release v0.01</h1>
 
 <p align="center">
   <i>«¡No confíes solo en la suerte! El verdadero duelista forja su propio destino combinando el Corazón de las Cartas con la tecnología táctica más avanzada del Milenio.»</i>
@@ -13,6 +13,7 @@
   <img src="https://img.shields.io/badge/MILLENNIUM_EYE-TACTICAL_AI-FFD700?style=for-the-badge" />
   <img src="https://img.shields.io/badge/Python-3.10%2B-blue?style=for-the-badge" />
   <img src="https://img.shields.io/badge/LICENSE-MIT-green?style=for-the-badge" />
+  <img src="https://img.shields.io/badge/Release-v0.01-00F5FF?style=for-the-badge" />
 </p>
 
 <p align="center">
