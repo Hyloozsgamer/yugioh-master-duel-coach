@@ -5,7 +5,7 @@
 <h1 align="center">[Yu-Gi-Oh] Master Duel Coach APP // Release v0.01</h1>
 
 <p align="center">
-  <i>«¡No confíes solo en la suerte! El verdadero duelista forja su propio destino combinando el Corazón de las Cartas con la tecnología táctica más avanzada del Milenio.»</i>
+  <i>HUD táctico de asistencia en tiempo real e inteligencia artificial para Yu-Gi-Oh! Master Duel.</i>
 </p>
 
 <p align="center">
@@ -27,7 +27,6 @@
 
 ---
 
-> ### *«¡ES HORA DEL DU-DU-DU-DUELO!»*
 > **Duel Master Coach** es un HUD táctico inteligente en tiempo real que se proyecta sobre **Yu-Gi-Oh! Master Duel**. Inspirado en interfaces modernas de e-sports de élite (*Mobalytics / Blitz.gg*) y en los legendarios sistemas holográficos de KaibaCorp: analiza tu mano, calcula probabilidades (EV), traza rutas de invocación paso a paso y te alerta de las trampas e interrupciones del rival antes de que caigas en ellas.
 
 ---
